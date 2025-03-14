@@ -1,0 +1,633 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>@ DEPARTAMENTOS - GRU 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+	<!-- Outros elementos do cabeçalho -->
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+</head>
+</head>
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<header id="header" class="alt">
+			<div style="float: left;">
+				<h1><a href="homepage.html" class="image"><img src="images/logo.png" alt="Logo"></a></h1>
+			</div>
+			<div style="margin: 0 auto;">
+				<h1 style="color: #2c3464;">DEPARTAMENTOS - GRU II</h1>
+			</div>
+			<nav>
+				<span id="loginDropdown" style="position: relative;">
+					<a href="#" onclick="toggleDropdown(event)"
+						style="background-color: white; border-radius: 10px; color: black; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1)"
+						onmouseover="changeBackgroundColor(true)" onmouseout="changeBackgroundColor(false)">Login: ADMIN
+						<i class="fas fa-cog"></i></a>
+
+					<!-- Dropdown de opções -->
+					<div id="dropdownContent">
+						<a href="#" style="display: flex; align-items: center;">
+							<span style="margin-right: auto;">Perfil</span>
+							<i class="fas fa-user" style="margin-left: 5px;"></i>
+						</a>
+						<a href="#" onclick="showLoadingModal()" id="sairBtn"
+							style="display: flex; align-items: center;">
+							<span style="margin-right: auto;">Sair</span>
+							<i class="fas fa-times" style="margin-left: 5px;"></i>
+						</a>
+						<!-- Outras opções de logout aqui -->
+					</div>
+				</span>
+				<a href="#menu" style="box-shadow: 0px 0px 5px rgba(0, 0, 0, 1)">Menu | </a>
+			</nav>
+		</header>
+		<script>
+			function changeBackgroundColor(isHover) {
+				var loginLink = document.getElementById("loginDropdown").querySelector("a");
+				if (isHover) {
+					loginLink.style.backgroundColor = "#2c3464";
+					loginLink.style.color = "white";
+				} else {
+					loginLink.style.backgroundColor = "white";
+					loginLink.style.color = "black";
+				}
+			}
+
+			function toggleDropdown(event) {
+				event.preventDefault();
+				var dropdown = document.getElementById("dropdownContent");
+				if (dropdown.style.display === "none" || dropdown.style.display === "") {
+					dropdown.style.display = "block";
+				} else {
+					dropdown.style.display = "none";
+				}
+
+				if (event.target.textContent === "Sair") {
+					document.getElementById("logoutModal").style.display = "block";
+					// Simule um atraso para a barra de carregamento
+					setTimeout(function () {
+						// Aqui você pode redirecionar o usuário para a página de login ou executar outras ações de logout
+						// window.location.href = "pagina_de_login.html";
+						// Por enquanto, vamos apenas esconder o modal
+						document.getElementById("logoutModal").style.display = "none";
+						dropdown.style.display = "none"; // Esconder o menu após o logout
+					}, 2000); // Tempo simulado de 2 segundos
+				}
+			}
+
+			function showLoadingModal() {
+				// Exibe o modal de barra de carregamento
+				document.getElementById("loaderModal").style.display = "block";
+
+				// Armazena a posição atual da barra de rolagem
+				var scrollPosition = window.scrollY;
+
+				// Define um atraso para o redirecionamento (2 segundos neste exemplo)
+				setTimeout(function () {
+					// Redireciona para a página index
+					window.location.href = "index.html";
+
+					// Restaura a posição da barra de rolagem após o redirecionamento
+					window.scrollTo(0, scrollPosition);
+				}, 2000); // Ajuste este valor conforme necessário
+
+				// Evita o comportamento padrão do link (redirecionamento imediato)
+				event.preventDefault();
+			}
+		</script>
+		<style>
+			#dropdownContent {
+				display: none;
+				position: absolute;
+				top: 110%;
+				left: 0;
+				width: 97%;
+				margin-top: 1em;
+				background-color: white;
+				border-radius: 10px;
+				color: black;
+				box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+				animation: fadeIn 0.3s ease-in-out;
+
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(-10px);
+				}
+
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			#dropdownContent a:hover {
+				background-color: #2c3464;
+				border-radius: 10px;
+				width: 100%;
+				/* ou qualquer outra cor de sua escolha */
+			}
+
+			/* Estilos para o modal */
+			.modal {
+				display: none;
+				position: fixed;
+				z-index: 9999;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgba(0, 0, 0, 0.7);
+				backdrop-filter: blur(5px);
+				/* Adiciona o efeito de fundo borrado */
+			}
+
+			.modal-content {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: transparent;
+				padding: 20px;
+				width: 80%;
+				text-align: center;
+				border-radius: 10px;
+			}
+
+			.loader {
+				border: 16px solid #f3f3f3;
+				/* Light grey */
+				border-top: 16px solid #2c3464;
+				/* Blue */
+				border-radius: 50%;
+				width: 120px;
+				height: 120px;
+				animation: spin 1.5s linear infinite;
+				margin: auto;
+			}
+
+			@keyframes spin {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+		<div id="loaderModal" class="modal">
+			<div class="modal-content">
+				<div class="loader"></div>
+				<h2 id="loadingText" style="font-size: larger; font-weight: bolder; color: white;">REDIRECIONANDO...
+				</h2>
+			</div>
+		</div>
+
+	<!-- Menu -->
+	<nav id="menu">
+		<div class="inner">
+			<h2>Menu</h2>
+			<ul class="links">
+				<li><a href="homepage.html">INÍCIO</a></li>
+				<li><a href="armazem.html">ARMAZÉM</a></li>
+				<li><a href="transportes.html">TRANSPORTES</a></li>
+				<li id="colaboradores" onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
+					<a href="colaboradores.html" class="special">COLABORADORES</a>
+					<ul class="submenu" style="margin: 0px; border: 1px; box-shadow: inset #2c3464;">
+						<a href="organogramas.html">Organogramas</a>
+						<a href="colab-listagem.html">Lista de Contatos</a>
+					</ul>
+				</li>
+				<li><a href="departamentos.html">DEPARTAMENTOS</a></li>
+				<li id="unidades" onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
+					<a href="unidades.html" class="special">UNIDADES</a>
+					<ul class="submenu" style="margin: 0; border: 1px">
+						<a href="index-gru1.html">GRU 1</a>
+						<a href="#">GRU 2</a>
+						<a href="index-gru3.html">GRU 3</a>
+						<a href="index-rjo.html">RJO</a>
+						<a href="index-rao.html">RAO</a>
+						<a href="index-jbt.html">JBT</a>
+					</ul>
+				</li>
+				<li id="clientes" onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
+					<a href="clientes.html" class="special">CLIENTES</a>
+					<ul class="submenu" style="margin: 0; border: 1px">
+						<a href="sessp.html">SESSP</a>
+						<a href="smsgru.html">SMSGRU</a>
+						<a href="ccd.html">CCD</a>
+						<a href="domicile.html">DOMICILE</a>
+					</ul>
+				</li>
+				<li><a href="renatoqueiroz.html">CRÉDITOS</a></li>
+			</ul>
+			<a href="#" class="close"></a>
+		</div>
+	</nav>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				var colaboradoresLi = document.getElementById("colaboradores");
+				var unidadesLi = document.getElementById("unidades");
+				var clientesLi = document.getElementById("clientes");
+
+				function showSubmenu(li) {
+					var submenu = li.querySelector(".submenu");
+					submenu.classList.add("active");
+				}
+
+				function hideSubmenu(li) {
+					var submenu = li.querySelector(".submenu");
+					submenu.classList.remove("active");
+				}
+
+				colaboradoresLi.addEventListener("mouseenter", function () {
+					showSubmenu(colaboradoresLi);
+				});
+				colaboradoresLi.addEventListener("mouseleave", function () {
+					hideSubmenu(colaboradoresLi);
+				});
+
+				unidadesLi.addEventListener("mouseenter", function () {
+					showSubmenu(unidadesLi);
+				});
+				unidadesLi.addEventListener("mouseleave", function () {
+					hideSubmenu(unidadesLi);
+				});
+
+				clientesLi.addEventListener("mouseenter", function () {
+					showSubmenu(clientesLi);
+				});
+				clientesLi.addEventListener("mouseleave", function () {
+					hideSubmenu(clientesLi);
+				});
+
+				// Adicionar eventos de clique aos submenus
+				var submenus = document.querySelectorAll(".submenu");
+				submenus.forEach(function (submenu) {
+					submenu.addEventListener("click", function (event) {
+						event.stopPropagation(); // Impede que o evento de clique no submenu propague para o menu principal
+					});
+				});
+
+				// Adicionar evento de clique ao botão de close
+				document.querySelector("#menu .close").addEventListener("click", function (event) {
+					event.preventDefault();
+					// Fechar o menu aqui
+					console.log("Fechar menu");
+				});
+			});
+		</script>
+
+		<style>
+			/* Adiciona estilos para os submenus */
+			.submenu {
+				opacity: 0;
+				max-height: 0;
+				overflow: hidden;
+				transition: max-height 0.6s ease, opacity 0.6s ease;
+			}
+
+			.submenu.active {
+				max-height: 2000px;
+				/* Ajuste conforme necessário */
+				opacity: 1;
+			}
+
+			/* Adiciona rolagem vertical ao menu */
+			#menu .inner {
+				overflow-y: auto;
+				max-height: 800vh;
+				/* Defina a altura máxima conforme necessário */
+			}
+		</style>
+
+		<!-- Banner -->
+		<section id="banner"
+			style="background-image: url('images/bg-arm.png'); background-size: cover; background-position: center;">
+			<div class=" inner">
+				<h2 style="color:#2c3464">DEPARTAMENTOS - GRU II</h2>
+				<p style="color:#2c3464">Gestão à Vista da Logística que leva saúde até você.</p>
+			</div>
+		</section>
+
+		<!-- Four -->
+		<section id="four" class="wrapper alt style1">
+			<div class="inner" style="width: 85%;">
+				<!-- Outros elementos aqui -->
+				<h2 class="inicio-dep" align="center">NAVEGUE POR OUTROS DEPARTAMENTOS</h2>
+				<p class="inicio-dep" align="center">Gerencie os demais setores e departamentos da unidade por meio de
+					Dashboards e KPIs decisivos para a tomada de decisões.</p>
+
+				<!-- Adicionando a label e o input -->
+				<div style="margin-bottom: 2em; display: inline-block; width: 100%;">
+					<label for="demo-name">Filtrar por Departamento:</label>
+					<input type="text" name="demo-name" id="demo-name" value="Nome do departamento"
+						onfocus="clearInput()" onblur="restoreInput()" onkeyup="filterTable()">
+				</div>
+				<section class="features" align="center">
+					<article style="width: 23.5%;">
+						<a href="armazem.html" target="_blank" class="image"><img src="images/arm.jpg" alt="" /></a>
+						<h3 class="major-inicio">ARMAZÉM</h3>
+						<p>Visualize Manifestos, CT-Es, ARs, Minutas, Devoluções, Transferencias e
+							Remanejamentos no TMS.</p>
+						<a href="armazem.html" target="_blank" class="special">ACESSE O ARMAZÉM</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="transportes.html" target="_blank" class="image"><img src="images/transp.jpg"
+								alt="" /></a>
+						<h3 class="major-inicio">TRANSPORTES</h3>
+						<p>Visualize Manifestos, CT-Es, ARs, Minutas, Devoluções, Transferencias e
+							Remanejamentos no TMS.</p>
+						<a href="transportes.html" target="_blank" class="special">ACESSE OS TRANSPORTES</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="colaboradores.html" target="_blank" class="image"><img src="images/colab.jpg"
+								alt="" /></a>
+						<h3 class="major-inicio">COLABORADORES</h3>
+						<p>Visualize Manifestos, CT-Es, ARs, Minutas, Devoluções, Transferencias e
+							Remanejamentos no TMS.</p>
+						<a href="colaboradores.html" target="_blank" class="special">ACESSE OS CONTATOS</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="https://tms.rvimola.com.br" target="_blank" class="image"><img src="images/pic04.jpg"
+								alt="" /></a>
+						<h3 class="major-inicio">EXPEDIÇÃO</h3>
+						<p>Visualize Manifestos, CT-Es, ARs, Minutas, Devoluções, Transferencias e
+							Remanejamentos no TMS.</p>
+						<a href="https://tms.rvimola.com.br" target="_blank" class="special">ACESSE O TMS</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="frota.html" target="_blank" class="image"><img src="images/frota.png" alt="" /></a>
+						<h3 class="major-inicio">FROTA</h3>
+						<p>Analise os veículos da unidade categorizados por frota ou agregado. Gerencie gastos,
+							manutenções e permissões.</p>
+						<a href="frota.html" target="_blank" class="special">ACESSAR</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="http://10.6.0.19/" target="_blank" class="image"><img src="images/pic06.jpg"
+								alt="" /></a>
+						<h3 class="major-inicio">SORTER</h3>
+						<p>Gerencie os pedidos, volumes, derrubadas e desempenho da equipe durante a operação do
+							equipamento.</p>
+						<a href="http://10.6.0.19/" target="_blank" class="special">ACESSE A BRINT</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="#" target="_blank" class="image"><img src="images/logimat.jpeg" alt="" /></a>
+						<h3 class="major-inicio">LOGIMAT</h3>
+						<p>Verifique os relatórios, bandejas, produtos e posições ocupadas e livres no equipamento.
+						</p>
+						<a href="#" target="_blank" class="special">ACESSE o site</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="rh.html" target="_blank" class="image"><img src="images/rh.png" alt="" /></a>
+						<h3 class="major-inicio">RH</h3>
+						<p>Supervisione os treinamentos, integrações, contratações, promoções e afastamentos dos
+							colaboradores na unidade.</p>
+						<a href="rh.html" target="_blank" class="special">ACESSAR</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="https://portal.rvimola.com.br" target="_blank" class="image"><img src="images/ti.PNG"
+								alt="" /></a>
+						<h3 class="major-inicio">TI</h3>
+						<p>Abra e visualize chamados, solicite suporte e gerencie as solicitações de Help Desk,
+							Infra e Open
+							Data.</p>
+						<a href="https://portal.rvimola.com.br" target="_blank" class="special">ACESSE O PORTAL</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="insumos.html" target="_blank" class="image"><img src="images/insumos2.png"
+								alt="" /></a>
+						<h3 class="major-inicio">INSUMOS</h3>
+						<p>Controle a compra e utilização de insumos pelas àreas da unidade. Analise por Dashboards
+							e KPIs.</p>
+						<a href="insumos.html" target="_blank" class="special">ACESSE O DASH</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="sst.html" target="_blank" class="image"><img src="images/sst.png" alt="" /></a>
+						<h3 class="major-inicio">SST</h3>
+						<p>Inspecione a CIPA, Brigada de Incendios, DDSs, Checklist e EPIs utilizados peos
+							colaboradores na unidade.
+						</p>
+						<a href="sst.html" target="_blank" class="special">ACESSAR</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="cs.html" target="_blank" class="image"><img src="images/cs.png" alt="" /></a>
+						<h3 class="major-inicio">CUSTOMER SERVICE</h3>
+						<p>Veja os portais do cliente, chamados, solicitações de atendimento e faturamentos de cada
+							cliente.
+						</p>
+						<a href="cs.html" target="_blank" class="special">ACESSAR</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="aereo.html" target="_blank" class="image"><img src="images/aereo.png" alt="" /></a>
+						<h3 class="major-inicio">AÉREO</h3>
+						<p>Cheque documentações, agendamentos, clientes, companhias aéreas, parceiros e cargas
+							transportadas.
+						</p>
+						<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="clientes.html" target="_blank" class="image"><img src="images/clientes.png"
+								alt="" /></a>
+						<h3 class="major-inicio">CLIENTES</h3>
+						<p>Consulte faturamentos, inventários agendados, auditorias previstas, bases no CLIF dos
+							clientes na unidade.
+						</p>
+						<a href="clientes.html" target="_blank" class="special">CONSULTAR</a>
+					</article>
+					<article style="width: 23.5%;">
+						<a href="https://rvimola.qualyteam.com.br/login/login.aspx" target="_blank" class="image"><img
+								src="images/qt.jpg" alt="" /></a>
+						<h3 class="major-inicio">QUALYTEAM</h3>
+						<p>Faça gestão dos POPs e documentações relacionadas, além de controle completo de OCs e
+							análise de RNCs.
+						</p>
+						<a href="https://rvimola.qualyteam.com.br/login/login.aspx" target="_blank"
+							class="special">ACESSE O QT</a>
+					</article>
+
+				</section>
+			</div>
+		</section>
+
+		</section>
+
+	</div>
+	</section>
+
+	</section>
+
+	<!-- Footer -->
+	<section id="footer" align="center">
+		<div class="inner">
+
+
+			<ul class="copyright" style="margin-top: 0em;">
+
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4476.093092360823!2d-46.39351097025254!3d-23.425886887362147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce63722b06ea01%3A0x81c23ca7e1c2fb28!2sRV%20%C3%8Dmola%20Transportes%20e%20Log%C3%ADstica%20Ltda!5e1!3m2!1spt-BR!2sbr!4v1710303321607!5m2!1spt-BR!2sbr"
+					width="59.5%" height="400" style="border:0; display: inline-block;" allowfullscreen=""
+					loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!4v1710303803712!6m8!1m7!1skPwp8wOWsh4oRVVJV4PlSQ!2m2!1d-23.42133929425817!2d-46.38870993741828!3f151.26572609106947!4f2.763920920228628!5f0.7820865974627469"
+					width="40%" height="400" style="border:0; display: inline-block;" allowfullscreen=""
+					loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+				<img src=" images/logo-escuro.png" style="vertical-align: middle;">
+				<li style="margin: 0;">2024 &copy; <a href="https://rvimola.com.br">RV Ímola
+					</a>Transportes e Logistica LTDA. Todos os
+					direitos reservados.</li>
+				<a href="https://www.facebook.com/rvimola/" class="icon brands fa-facebook-f"
+					style="color: white;"></a>
+				<a href="https://www.instagram.com/rvimola/" class="icon brands fa-instagram"
+					style="padding-left: 1em; color: white;"></a>
+				<a href="https://www.linkedin.com/company/rvimola/" class="icon brands fa-linkedin"
+					style="padding-left: 1em; color: white;"></a>
+				</li>
+
+				<li>Desenvolvido por: <a href="renatoqueiroz.html">Renato S. Queiroz</a></li>
+				<a href="https://www.linkedin.com/in/renato-queiroz/" class="icon brands fa-linkedin"
+					style="color: white;"></a>
+				</a>
+				</li>
+				</li>
+			</ul>
+		</div>
+
+	</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		function clearInput() {
+			document.getElementById('demo-name').value = '';
+		}
+
+		function restoreInput() {
+			if (document.getElementById('demo-name').value === '') {
+				document.getElementById('demo-name').value = 'Nome do departamento';
+			}
+		}
+
+		function filterTable() {
+			var input, filter, section, articles, i, h3, p, txtValue;
+			input = document.getElementById("demo-name");
+			filter = input.value.toUpperCase();
+			section = document.getElementById("four"); // ID da seção onde estão os elementos a serem filtrados
+			articles = section.getElementsByTagName("article");
+
+			for (i = 0; i < articles.length; i++) {
+				h3 = articles[i].getElementsByTagName("h3")[0]; // Primeiro elemento <h3> dentro do <article>
+				p = articles[i].getElementsByTagName("p")[0]; // Primeiro elemento <p> dentro do <article>
+
+				// Concatena o texto do <h3> e do <p> para buscar em ambos
+				txtValue = h3.textContent || h3.innerText;
+				txtValue += " " + (p.textContent || p.innerText);
+
+				// Verifica se o texto filtrado está presente no <h3> ou <p>
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					articles[i].style.display = "";
+				} else {
+					articles[i].style.display = "none";
+				}
+			}
+		}
+		
+		function expandInner(element) {
+			element.style.transition = "width 0.5s ease";
+			element.style.width = "100%";
+
+			// Define a opacidade dos outros elementos .inner para 0.5
+			var siblingElements = getSiblings(element);
+			for (var i = 0; i < siblingElements.length; i++) {
+				siblingElements[i].style.opacity = '0.4';
+			}
+		}
+
+		function collapseInner(element) {
+			element.style.transition = "width 0.5s ease";
+			element.style.width = ""; // Reseta a largura para o valor padrão
+
+			// Define a opacidade dos outros elementos .inner de volta para 1
+			var siblingElements = getSiblings(element);
+			for (var i = 0; i < siblingElements.length; i++) {
+				siblingElements[i].style.opacity = '1';
+			}
+		}
+
+		function getSiblings(element) {
+			var siblings = [];
+			var sibling = element.parentNode.firstChild;
+			for (; sibling; sibling = sibling.nextSibling) {
+				if (sibling.nodeType === 1 && sibling !== element) {
+					siblings.push(sibling);
+				}
+			}
+			return siblings;
+		}
+	</script>
+
+	<a href="#top">
+		<svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 25 20" data-name="Layer 1">
+			<path
+				d="M17.71,11.29l-5-5a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-5,5a1,1,0,0,0,1.42,1.42L11,9.41V17a1,1,0,0,0,2,0V9.41l3.29,3.3a1,1,0,0,0,1.42,0A1,1,0,0,0,17.71,11.29Z" />
+		</svg>
+	</a>
+
+	<style>
+		/* Ajusta o tamanho do ícone dentro dos botões slick-prev e slick-next */
+		.slick-prev:before,
+		.slick-next:before {
+			font-size: 35px;
+			/* Define o tamanho do ícone */
+		}
+	</style>
+	<style>
+		.image img {
+			transition: transform 0.3s ease-out;
+			/* ou ease-in ou linear */
+		}
+
+		.image img:hover {
+			transform: scale(0.98);
+		}
+	</style>
+
+</body>
+
+</html>

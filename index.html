@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<!--
+    Solid State by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>@ INTRANET - GRU 2</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body class="is-preload">
+
+	<!-- Banner -->
+	<section id="banner-home">
+		<div class="inner">
+			<video autoplay loop muted>
+				<source src="images/Comfrio.mp4" type="video/mp4">
+				<!-- Fallback para navegadores que não suportam a tag video -->
+				Your browser does not support the video tag.
+			</video>
+			<h2>INTRANET | COMFRIO</h2>
+			<p>Gestão à Vista que cuida do alimento do Brasil</p>
+		</div>
+		<form id="login-form" method="post" action="#">
+			<div class="row gtr-uniform">
+				<div class="col-6 col-12-xsmall" style="padding: 0 0 0 8.2em; width: 31.5%;">
+					<label for="demo-email">Usuário</label>
+					<input type="email" name="demo-email" id="demo-email" value="" />
+				</div>
+			</div>
+			<div class="row gtr-uniform" style="margin-top: 1em;">
+				<div class="col-6 col-12-xsmall" style="padding: 0 0 0 8.2em; width: 31.5%;">
+					<label for="demo-name">Senha</label>
+					<input type="password" name="demo-name" id="demo-name" value="" />
+				</div>
+			</div>
+		</form>
+		<div class="inner">
+			<button id="entrar-loader-button" class="button-home">Entrar</button>
+			<img src="images/LogoComfrio.png" alt="Logo" class="logo" style="width: 270px; height: auto;">
+		</div>
+	</section>
+
+	<!-- Modal -->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<p style="font-size: 1.5em;"><strong style="color: #616163;">ATENÇÃO</strong></p>
+			<p style="font-size: 1.2em; margin-top: -2em;">Usuário ou senha inválidos.</p>
+			<p style="font-size: 1.2em; margin-top: -2em;">Verifique e tente novamente.</p>
+		</div>
+	</div>
+
+	<!-- Modal Loader para entrada -->
+	<div id="myModalLoaderEntrar" class="modal">
+		<div class="modal-content">
+			<div class="loader"></div>
+			<h2 id="loadingText">REDIRECIONANDO...</h2>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<a href="#top">
+		<svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 25 20" data-name="Layer 1">
+			<path
+				d="M17.71,11.29l-5-5a1,1,0,0,0-.33-.21,1,1,0,0,0-.76,0,1,1,0,0,0-.33.21l-5,5a1,1,0,0,0,1.42,1.42L11,9.41V17a1,1,0,0,0,2,0V9.41l3.29,3.3a1,1,0,0,0,1.42,0A1,1,0,0,0,17.71,11.29Z" />
+		</svg>
+	</a>
+
+	<style>
+		/* Modal */
+		.modal {
+			display: none;
+			/* Esconde o modal por padrão */
+			position: fixed;
+			/* Permite que o modal seja fixado na tela */
+			z-index: 1000;
+			/* Coloca o modal na frente de outros elementos */
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			/* Adiciona scroll se necessário */
+			background-color: rgba(0, 0, 0, 0.4);
+			/* Fundo semi-transparente */
+		}
+
+		/* Conteúdo do modal */
+		.modal-content {
+			background-color: #fefefe;
+			border-radius: 10px;
+			margin: 20% auto;
+			/* Reduz a margem superior e inferior */
+			padding: 15px;
+			width: 30%;
+			/* Largura do modal */
+			opacity: 0;
+			/* Inicialmente oculto */
+			animation: fadeIn 0.3s ease-in forwards;
+			/* Animação de fade-in */
+		}
+
+		/* Animação de fade-in */
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		/* Modal ativo */
+		.modal.active {
+			display: block;
+			/* Exibe o modal */
+		}
+
+		/* Botão de fechar */
+		.close {
+			color: #fff;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		/* Estilos para o modal loader */
+		#myModalLoaderEntrar {
+			display: none;
+			position: fixed;
+			z-index: 9999;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0, 0, 0, 0.7);
+			backdrop-filter: blur(5px);
+			/* Adiciona o efeito de fundo borrado */
+		}
+
+		/* Conteúdo do modal loader */
+		#myModalLoaderEntrar .modal-content {
+			position: absolute;
+			top: 10%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: transparent;
+			padding: 20px;
+			width: 80%;
+			text-align: center;
+			border-radius: 10px;
+		}
+
+		/* Estilos para o loader */
+		#myModalLoaderEntrar .loader {
+			border: 16px solid #f3f3f3;
+			/* Light grey */
+			border-top: 16px solid #616163;
+			/* Blue */
+			border-radius: 50%;
+			width: 120px;
+			height: 120px;
+			animation: spin 1.5s linear infinite;
+			margin: auto;
+		}
+
+		/* Animação para girar o loader */
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+
+
+	<script>
+		// Função para fazer login
+		function doLogin() {
+			var username = $('#demo-email').val();
+			var password = $('#demo-name').val();
+
+			// Verificar se o usuário e senha estão preenchidos corretamente
+			if (username === 'admin' && password === 'admin') {
+				// Redirecionar para homepage.html após 2 segundos
+				setTimeout(function () {
+					window.location.href = 'homepage.html';
+				}, 2000);
+			} else {
+				// Mostrar o modal de usuário não cadastrado
+				$('#myModal').addClass('active');
+			}
+		}
+
+		// Ao clicar no botão de entrar (para abrir o modal de carregamento)
+		$('#entrar-loader-button').click(function () {
+			var username = $('#demo-email').val();
+			var password = $('#demo-name').val();
+
+			if (username === 'admin' && password === 'admin') {
+				openEntrarLoaderModal();
+				setTimeout(function () {
+					window.location.href = 'homepage.html';
+				}, 2000);
+			} else {
+				doLogin();
+			}
+		});
+
+		// Ao clicar no botão de fechar do modal
+		$('.close').click(function () {
+			// Esconder o modal
+			$('#myModal').removeClass('active');
+		});
+
+		// Ao clicar fora do modal
+		$(window).click(function (e) {
+			if ($(e.target).hasClass('modal')) {
+				// Esconder o modal
+				$('#myModal').removeClass('active');
+			}
+		});
+
+		// Função para abrir o modal loader de entrada
+		function openEntrarLoaderModal() {
+			$('#myModalLoaderEntrar').css('display', 'flex');
+		}
+
+		// Ao clicar fora do modal loader de entrada
+		$(window).click(function (e) {
+			if (e.target.id === 'myModalLoaderEntrar') {
+				closeEntrarLoaderModal();
+			}
+		});
+
+		// Função para fechar o modal loader de entrada
+		function closeEntrarLoaderModal() {
+			$('#myModalLoaderEntrar').css('display', 'none');
+		}
+
+		// Função para autenticar usuário usando Firebase
+		function login() {
+			var email = $('#demo-email').val();
+			var password = $('#demo-name').val();
+
+			firebase.auth().signInWithEmailAndPassword(email, password)
+				.then(function (userCredential) {
+					// Autenticação bem-sucedida, redirecionar para a página de homepage
+					window.location.href = 'homepage.html';
+				})
+				.catch(function (error) {
+					// Mostrar erro no console
+					console.error('Erro de autenticação:', error.message);
+					// Mostrar modal de erro de autenticação
+					$('#myModal').addClass('active');
+				});
+		}
+	</script>
+
+
+	<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+	<script>
+
+		const firebaseConfig = {
+			apiKey: "AIzaSyBu62-PmM1YmQOJ_20C-U6BiYlzOHd5CjY",
+			authDomain: "intranetgru2.firebaseapp.com",
+			databaseURL: "https://intranetgru2-default-rtdb.firebaseio.com",
+			projectId: "intranetgru2",
+			storageBucket: "intranetgru2.appspot.com",
+			messagingSenderId: "427536035465",
+			appId: "1:427536035465:web:13f2d7ee083e0763d5a058",
+			measurementId: "G-ZP7C60BRKG"
+		};
+		firebase.initializeApp(firebaseConfig);
+
+		function login() {
+			firebase.auth().signInWithEmailAndPassword(
+				form.email().value, form.password().value
+			).then(response => {
+				window.location.href = "/homepage.html";
+
+			}).catch(error => {
+				console.log('error', response)
+
+			});
+
+
+
+
+		}
+
+
+
+
+	</script>
+
+</body>
+
+</html>
