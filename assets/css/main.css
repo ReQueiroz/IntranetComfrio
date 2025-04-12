@@ -3209,8 +3209,8 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-	background-color: #4c5c96;
-	box-shadow: none;
+	background-color: #666;
+
 }
 
 input[type="submit"].primary:hover,
@@ -3218,7 +3218,8 @@ input[type="reset"].primary:hover,
 input[type="button"].primary:hover,
 button.primary:hover,
 .button.primary:hover {
-	background-color: #53639e;
+	background-color: #2e3141;
+
 }
 
 input[type="submit"].primary:active,
@@ -3227,6 +3228,7 @@ input[type="button"].primary:active,
 button.primary:active,
 .button.primary:active {
 	background-color: #45558d;
+
 }
 
 input[type="submit"].primary.icon:before,
@@ -3235,6 +3237,7 @@ input[type="button"].primary.icon:before,
 button.primary.icon:before,
 .button.primary.icon:before {
 	color: #7985b0;
+
 }
 
 input[type="submit"].fit,
@@ -5155,3 +5158,58 @@ a[href="#top"]:hover {
 		transform: rotate(360deg);
 	}
 }
+
+.filter-btn {
+	cursor: pointer;
+	padding: 10px 20px;
+	border-radius: 20px;
+	background-color: #f0f0f0;
+	color: #333;
+	font-weight: bold;
+	transition: 0.3s;
+  }
+
+  .filter-btn.active, .filter-btn:hover {
+	background-color: #616163;
+	color: white;
+  }
+
+  .inner {
+	display: flex; /* ou block, depende do seu layout */
+	flex-direction: column; /* se estiver usando */
+	transition: all 0.4s ease;
+	opacity: 1;
+	visibility: visible;
+	position: relative;
+  }
+
+  .hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	position: absolute;
+  }
+
+  .fade-enter {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  
+  .fade-enter-active {
+	opacity: 1;
+	transform: translateY(0);
+  }
+  
+  .fade-exit {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  
+  .fade-exit-active {
+	opacity: 0;
+	transform: translateY(-20px);
+  }
+
+  
