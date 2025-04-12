@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>@ DASHBOARDS (BI) | COMFRIO </title>
+    <title>@ DASHBOARDS (BI) | MELHORIA CONTÍNUA </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -33,7 +33,7 @@
 				<h1><a href="homepage.html" class="image"><img src="images/LogoComfrio.png" style="width: 100px; height: auto;"></a></h1>
 			</div>
 			<div style="margin: 0 auto; padding-left: 7em;">
-				<h1 style="color: #616163; font-size: 900;">DASHBOARDS (BI)</h1>
+				<h1 style="color: #616163; font-size: 900;">DASHBOARDS (BI) | CORPORATIVO</h1>
 			</div>
 			<nav style="display: flex; align-items: center;">
 				<div id="sectorContainer"
@@ -415,7 +415,7 @@
 		
 			<!-- Conteúdo -->
 			<div class="inner" style="position: relative; text-align: center; padding: 20px;">
-				<h2 style="color:#fff; margin: 0;">DASHBOARDS (BI)</h2>
+				<h2 style="color:#fff; margin: 0;">DASHBOARDS (BI) | CORP.</h2>
 				<p style="color:#fff; margin: 0;">Nós cuidamos do alimento do Brasil</p>
 			</div>
 		</section>
@@ -425,6 +425,7 @@
 
 	</div>
 </section>
+
 			<!-- One -->
 			<section id="one" class="wrapper spotlight style1" style="padding: 20px 8em 0em 8em; position: relative; display: flex; flex-wrap: wrap; background-image: url('images/background-logo.jpg');
 			background-size: cover;
@@ -437,116 +438,116 @@
 					</div>
 				</div>
 
-				<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+				<div style="width: 100%; text-align: center; padding: 1em;">
+					<ul id="painel-filters" style="list-style: none; padding: 0; margin: 0; display: inline-flex; gap: 10px; justify-content: center;">
+						<li class="filter-btn active" data-filter="todos">Todos</li>
+						<li class="filter-btn" data-filter="esg">ESG</li>
+						<li class="filter-btn" data-filter="facilities">Facilities</li>
+						<li class="filter-btn" data-filter="qualidade">Qualidade</li>
+						<li class="filter-btn" data-filter="pessoas">Pessoas</li>
+					</ul>
+				</div>
 
-					<div class="inner"
-						style="flex-basis: 100%; max-width: 100%; max-height: 300px; margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
+				  <div id="painel-container" style="display: flex; flex-wrap: wrap; justify-content: center; position: relative;">
+
+					<div class="inner" data-categoria="esg"
+						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
 						<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
-								src="images/aguad.png" style="max-height: 200px; width: auto; display: block; margin: 0 auto;"></a>
+								src="images/agua.png"></a>
 						<div class="content" align="center" style="padding: 5%;">
-							<H3 class="major-inicio">CONSUMO DE ÁGUA</H3>
-							<p>Visualize o consumo de àgua das unidades Comfrio espalhadas por todo o Brasil!</p>
+							<H3 class="major-inicio">ÁGUA</H3>
 							<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 						</div>
 					</div>
-					<div class="inner"
-						style="flex-basis: 100%; max-width: 100%; max-height: 300px; margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
+					
+					<div class="inner" data-categoria="esg"
+						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
 						<a href="https://app.powerbi.com/view?r=eyJrIjoiOTM4ZGU4YTQtNjRjZi00NjEzLTkxZGMtYTYxNDc1OGJjOTY3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%;"><img
-								src="images/eeletricad.png" style="max-height: 200px; width: auto; display: block; margin: 0 auto;"></a>
+								src="images/eeletrica.png"></a>
 						<div class="content" align="center" style="padding: 5%;">
-							<h3 class="major-inicio">ENERGIA ELÉTRICA</h3>
-							<p>Visualize o consumo de energia elétrica das unidades Comfrio </br>espalhadas por todo o Brasil!</p>
+							<h3 class="major-inicio">ENERGIA </h3>
 							<a href="https://app.powerbi.com/view?r=eyJrIjoiOTM4ZGU4YTQtNjRjZi00NjEzLTkxZGMtYTYxNDc1OGJjOTY3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special" title="Acessar Armazém">ACESSAR</a>
 						</div>
 					</div>
-					<div class="inner"
-						style="flex-basis: 100%; max-width: 100%; max-height: 300px; margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="https://app.powerbi.com/view?r=eyJrIjoiYTAyYzg3YjAtZGEwYS00Yjg1LWExMzUtNTMyYzg5MTdiYWY5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img src="images/planodeacaod.png" style="max-height: 200px; width: auto; display: block; margin: 0 auto;"></a>
+					<div class="inner" data-categoria="qualidade"
+						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiYTAyYzg3YjAtZGEwYS00Yjg1LWExMzUtNTMyYzg5MTdiYWY5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+							<img src="images/planodeacao.png"></a>
 						<div class="content" align="center" style="padding: 5%;">
 							<H3 class="major-inicio">PLANOS DE AÇÃO</H3>
-							<p>Navegue pelos planos de ação elaborados nas unidades pelo time EOP!</p>
 							<a href="https://app.powerbi.com/view?r=eyJrIjoiYTAyYzg3YjAtZGEwYS00Yjg1LWExMzUtNTMyYzg5MTdiYWY5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 						</div>
 					</div>
-					<div class="inner"
-					style="flex-basis: 100%; max-width: 100%; max-height: 300px; margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-					onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-					<a href="https://app.powerbi.com/view?r=eyJrIjoiMTU5NzQyMTAtNzYwYy00OGNmLWJjY2ItOWE3YmI5YmY0MjNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img src="images/produtividaded.png" style="max-height: 200px; width: auto; display: block; margin: 0 auto;"></a>
+					<div class="inner" data-categoria="pessoas"
+					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiMTU5NzQyMTAtNzYwYy00OGNmLWJjY2ItOWE3YmI5YmY0MjNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+						<img src="images/prod.png"></a>
 					<div class="content" align="center" style="padding: 5%;">
 						<H3 class="major-inicio">PRODUTIVIDADE</H3>
-						<p>Gerencie o desempenho da produtividade mensal e diária das unidades, organizadas pelos seus segmentos!</p>
 						<a href="https://app.powerbi.com/view?r=eyJrIjoiMTU5NzQyMTAtNzYwYy00OGNmLWJjY2ItOWE3YmI5YmY0MjNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 					</div>
 				</div>
-				<div class="inner"
-				style="flex-basis: 100%; max-width: 100%; max-height: 300px; margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-				onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-				<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRjY2YwZmYtMzk0OC00OGJiLWIyODUtYzAzYTM3ODJiYTRlIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img src="images/bpom.png" style="max-height: 200px; width: auto; display: block; margin: 0 auto;"></a>
+				<div class="inner" data-categoria="qualidade"
+				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRjY2YwZmYtMzk0OC00OGJiLWIyODUtYzAzYTM3ODJiYTRlIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+					<img src="images/bpom.png"></a>
 				<div class="content" align="center" style="padding: 5%;">
 					<H3 class="major-inicio">BPOM</H3>
-					<p>Visualize o desempenho das unidades nos quesitos BPOm relatados pelo time EOP!</p>
 					<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRjY2YwZmYtMzk0OC00OGJiLWIyODUtYzAzYTM3ODJiYTRlIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 				</div>
 			</div>
-				<div class="inner"
-				style="flex-basis: 100%; max-width: 100%; max-height: 300px; margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-				onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-				<a href="https://app.powerbi.com/view?r=eyJrIjoiNjczYTNmYjMtMDYwNS00NzcxLTk0MDgtY2VmZWIwMTkyZmM5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img src="images/ppho.png" style="max-height: 200px; width: auto; display: block; margin: 0 auto;"></a>
+				<div class="inner" data-categoria="qualidade"
+				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiNjczYTNmYjMtMDYwNS00NzcxLTk0MDgtY2VmZWIwMTkyZmM5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img src="images/ppho.png"></a>
 				<div class="content" align="center" style="padding: 5%;">
 					<H3 class="major-inicio">PPHO, PSO E BPOC</H3>
-					<p>Visualize o desempenho das unidades nos quesitos de PPHO, PSO e BPOc </br>relatados pelo time EOP!</p>
 					<a href="https://app.powerbi.com/view?r=eyJrIjoiNjczYTNmYjMtMDYwNS00NzcxLTk0MDgtY2VmZWIwMTkyZmM5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 				</div>
 			</div>
-			<div class="inner"
-				style="flex-basis: 100%; max-width: 100%; max-height: 300px; margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-				onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-				<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRlMGQ2YWQtOTI2MC00MDgyLTg5YTctODNkMTk2ZjQ1NDJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img src="images/mtr.png" style="max-height: 200px; width: auto; display: block; margin: 0 auto;"></a>
+			<div class="inner" data-categoria="facilities"
+				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRlMGQ2YWQtOTI2MC00MDgyLTg5YTctODNkMTk2ZjQ1NDJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+					<img src="images/mtr.png"></a>
 				<div class="content" align="center" style="padding: 5%;">
 					<H3 class="major-inicio">MTR</H3>
-					<p>Consulte a gestão de resíduos das unidades Comfrio em todo o Brasil!</p>
 					<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRlMGQ2YWQtOTI2MC00MDgyLTg5YTctODNkMTk2ZjQ1NDJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 				</div>
 			</div>
-			<div class="inner"
-			style="flex-basis: 100%; max-width: 100%; max-height: 300px; margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-			onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-			<a href="https://app.powerbi.com/view?r=eyJrIjoiNjM0ZDQxZDAtYjlkOS00MmY1LTgxMGQtN2ViMTIwYTVmZjVkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img src="images/cep.png" style="max-height: 200px; width: auto; display: block; margin: 0 auto;"></a>
+			<div class="inner" data-categoria="esg"
+			style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiNjM0ZDQxZDAtYjlkOS00MmY1LTgxMGQtN2ViMTIwYTVmZjVkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+				<img src="images/tempumi.png"></a>
 			<div class="content" align="center" style="padding: 5%;">
-				<H3 class="major-inicio">TEMPERATURA E UMIDADE</H3>
-				<p>Navegue pelas aferições de temperatura e umidade medidas </br>nos ambientes das unidades Comfrio!</p>
+				<H3 class="major-inicio">TEMP. & UMID.</H3>
 				<a href="https://app.powerbi.com/view?r=eyJrIjoiNjM0ZDQxZDAtYjlkOS00MmY1LTgxMGQtN2ViMTIwYTVmZjVkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 			</div>
 		</div>
-		<div class="inner"
-		style="flex-basis: 100%; max-width: 100%; max-height: 300px; margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-		onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-		<a href="https://app.powerbi.com/view?r=eyJrIjoiYjVmN2EyODEtNDliNy00MzNhLThlYmQtMTk2NzZhMjFjOWUzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img src="images/viagens.png" style="max-height: 200px; width: auto; display: block; margin: 0 auto;"></a>
+		<div class="inner" data-categoria="pessoas"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiYjVmN2EyODEtNDliNy00MzNhLThlYmQtMTk2NzZhMjFjOWUzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+			<img src="images/viagem.png"></a>
 		<div class="content" align="center" style="padding: 5%;">
 			<H3 class="major-inicio">VIAGENS</H3>
-			<p>Consulte os gastos com viagens, reservas de hotel e locações de veículos </br>realizados pelos colaboradores!</p>
 			<a href="https://app.powerbi.com/view?r=eyJrIjoiYjVmN2EyODEtNDliNy00MzNhLThlYmQtMTk2NzZhMjFjOWUzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 		</div>
 	</div>
-				</div>
+	<div class="inner" data-categoria="pessoas"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+				src="images/multas.png"></a>
+		<div class="content" align="center" style="padding: 5%;">
+			<H3 class="major-inicio">MULTAS</H3>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+		</div>
+	</div>
+</div>
 
 				</div>
-				<div class="inner"
-						style="flex-basis: 100%; max-width: 100%; max-height: 300px; margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
-								src="images/multas.png" style="max-height: 200px; width: auto; display: block; margin: 0 auto;"></a>
-						<div class="content" align="center" style="padding: 5%;">
-							<H3 class="major-inicio">MULTAS E NOTIFICAÇÕES</H3>
-							<p>Acesse e controle as multas emitidas nos veículos utilizados pelos colaboradores!</p>
-							<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
-						</div>
-					</div>
+
+				
+					
 				<ul class="actions">
-					<a href="Corporativo.html" class="special" style="margin: 0;">VOLTAR AO INÍCIO</a>
+					<a href="Corporativo.html" class="special" style="margin: 0;">VOLTAR</a>
 				</ul>
 
 
@@ -720,11 +721,37 @@
 
 			// Evita o comportamento padrão do link (redirecionamento imediato)
 			event.preventDefault();
-		}
-
+		}		
 	</script>
 
-
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const filterButtons = document.querySelectorAll(".filter-btn");
+		const painelCards = document.querySelectorAll("#painel-container .inner");
+	
+		filterButtons.forEach(button => {
+			button.addEventListener("click", function () {
+				// Remove 'active' de todos os botões
+				filterButtons.forEach(btn => btn.classList.remove("active"));
+				// Adiciona 'active' ao botão clicado
+				this.classList.add("active");
+	
+				const filtro = this.getAttribute("data-filter");
+	
+				painelCards.forEach(card => {
+					const categoria = card.getAttribute("data-categoria");
+	
+					if (filtro === "todos" || filtro === categoria) {
+						card.style.display = "flex"; // ou "block", dependendo do layout
+					} else {
+						card.style.display = "none";
+					}
+				});
+			});
+		});
+	});
+	</script>
+	
 
 	<a href="#top">
 		<svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 25 20" data-name="Layer 1">
@@ -846,9 +873,19 @@
 				transform: rotate(360deg);
 			}
 		}
+		
+		#painel-container .inner {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#painel-container .inner.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
 	</style>
-
-
 
 </body>
 

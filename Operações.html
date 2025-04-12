@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>@ INÍCIO | COMFRIO </title>
+    <title>@ OPERAÇÕES | MELHORIA CONTÍNUA </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -302,7 +302,6 @@
 		</script>
 
 		<style>
-			
 			.search-input {
 				width: 0;
 				/* Largura inicialmente zero para estar completamente recolhido */
@@ -384,8 +383,8 @@
             <li><a href="Corporativo.html">CORPORATIVO</a></li>
             <li><a href="Operações.html">OPERAÇÕES</a></li>
             <li><a href="Clientes.html">CLIENTES</a></li>
-            <li><a href="https://painel.umentor.com.br/business/">UNICOMFRIO</a></li>
-            <li><a href="https://comfrio.com.br/">SITE OFICIAL</a></li>
+            <li><a href="https://painel.umentor.com.br/business/" target="_blank">UNICOMFRIO</a></li>
+            <li><a href="https://comfrio.com.br/" target="_blank">SITE OFICIAL</a></li>
             <li><a href="Melhoria.html" target="_blank">CRÉDITOS</a></li>
 			<ul style="display: flex; justify-content: center; margin: 0; padding: 0;">
 				<li style="list-style: none; position: fixed; bottom: 0; text-align: center;">
@@ -412,7 +411,7 @@
 			filter: blur(5px) brightness(0.5); /* Desfoque e escurecimento */
 			z-index: -1;
 		">
-				</div>
+		</div>
 		
 			<!-- Conteúdo -->
 			<div class="inner" style="position: relative; text-align: center; padding: 20px;">
@@ -426,6 +425,7 @@
 
 	</div>
 </section>
+
 			<!-- One -->
 			<section id="one" class="wrapper spotlight style1" style="padding: 20px 8em 0em 8em; position: relative; display: flex; flex-wrap: wrap; background-image: url('images/background-logo.jpg');
 			background-size: cover;
@@ -434,65 +434,246 @@
 
 				<div>
 					<div>
-						<h2 style="color: #616163; margin: 0; padding: 0;">NAVEGUE PELOS TEMAS </h2>
+						<h2 style="color: #616163; margin: 0; padding: 0;">NAVEGUE PELAS UNIDADES E SEGMENTOS </h2>
 					</div>
 				</div>
 
-				<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+				<div style="width: 100%; text-align: center; padding: 1em;">
+					<ul id="painel-filters" style="list-style: none; padding: 0; margin: 0; display: inline-flex; gap: 10px; justify-content: center;">
+						<li class="filter-btn active" data-filter="todos">Todos</li>
+						<li class="filter-btn" data-filter="agro">Agronegócio</li>
+						<li class="filter-btn" data-filter="fmcg">FMCG</li>
+						<li class="filter-btn" data-filter="food">Food Service</li>
+						<li class="filter-btn" data-filter="transportes">Transportes</li>
+					</ul>
+				</div>
 
-					<div class="inner"
-						style="max-width: calc(50% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
+				  <div id="painel-container" style="display: flex; flex-wrap: wrap; justify-content: center; position: relative;">
+
+					<div class="inner" data-categoria="fmcg"
+						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
 								src="images/ind.png"></a>
 						<div class="content" align="center" style="padding: 5%;">
-							<H3 class="major-inicio">FMCG</H3>
-							<p>Visualize aqui todos os KPIs de performance e produtividade disponíveis no segmento por unidade!</p>
-							<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+							<H3 class="major-inicio">BAURU</H3>
+							<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 						</div>
 					</div>
-
-
-					<div class="inner"
-						style="max-width: calc(50% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="armazem.html" target="_blank" class="image" style="margin: 2%;"><img
-								src="images/agro.png"></a>
-						<div class="content" align="center" style="padding: 5%;">
-							<h3 class="major-inicio">AGRONEGÓCIO</h3>
-							<p>Visualize aqui todos os KPIs de performance e produtividade disponíveis no segmento por unidade!</p>
-							<a href="armazem.html" target="_blank" class="special" title="Acessar Armazém">ACESSAR</a>
-						</div>
-					</div>
-
-
-					<div class="inner"
-						style="max-width: calc(50% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="cs.html" target="_blank" class="image" style="margin: 2%"><img src="images/fs.png"></a>
-						<div class="content" align="center" style="padding: 5%;">
-							<H3 class="major-inicio">FOOD SERVICE</H3>
-							<p>Visualize aqui todos os KPIs de performance e produtividade disponíveis no segmento por unidade!</p>
-							<a href="cs.html" target="_blank" class="special">ACESSAR</a>
-						</div>
-					</div>
-
-					<div class="inner"
-					style="max-width: calc(50% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-					onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-					<a href="cs.html" target="_blank" class="image" style="margin: 2%"><img src="images/trp.png"></a>
-					<div class="content" align="center" style="padding: 5%;">
-						<H3 class="major-inicio">TRANSPORTES</H3>
-						<p>Visualize aqui todos os KPIs de performance e produtividade disponíveis no segmento por unidade!</p>
-						<a href="cs.html" target="_blank" class="special">ACESSAR</a>
-					</div>
-				</div>
 					
+					<div class="inner" data-categoria="fmcg"
+						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiOTM4ZGU4YTQtNjRjZi00NjEzLTkxZGMtYTYxNDc1OGJjOTY3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%;"><img
+								src="images/ind.png"></a>
+						<div class="content" align="center" style="padding: 5%;">
+							<h3 class="major-inicio">BEBEDOURO I </h3>
+							<a href="https://app.powerbi.com/view?r=eyJrIjoiOTM4ZGU4YTQtNjRjZi00NjEzLTkxZGMtYTYxNDc1OGJjOTY3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special" title="Acessar Armazém">ACESSAR</a>
+						</div>
+					</div>
+					<div class="inner" data-categoria="fmcg"
+						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiYTAyYzg3YjAtZGEwYS00Yjg1LWExMzUtNTMyYzg5MTdiYWY5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+							<img src="images/ind.png"></a>
+						<div class="content" align="center" style="padding: 5%;">
+							<H3 class="major-inicio">BEBEDOURO II</H3>
+							<a href="https://app.powerbi.com/view?r=eyJrIjoiYTAyYzg3YjAtZGEwYS00Yjg1LWExMzUtNTMyYzg5MTdiYWY5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+						</div>
+					</div>
+					<div class="inner" data-categoria="fmcg"
+					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiMTU5NzQyMTAtNzYwYy00OGNmLWJjY2ItOWE3YmI5YmY0MjNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+						<img src="images/ind.png"></a>
+					<div class="content" align="center" style="padding: 5%;">
+						<H3 class="major-inicio">CAUCAIA</H3>
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiMTU5NzQyMTAtNzYwYy00OGNmLWJjY2ItOWE3YmI5YmY0MjNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+					</div>
 				</div>
+				<div class="inner" data-categoria="agro"
+				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRjY2YwZmYtMzk0OC00OGJiLWIyODUtYzAzYTM3ODJiYTRlIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+					<img src="images/agro.png"></a>
+				<div class="content" align="center" style="padding: 5%;">
+					<H3 class="major-inicio">CUIABA II</H3>
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRjY2YwZmYtMzk0OC00OGJiLWIyODUtYzAzYTM3ODJiYTRlIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+				</div>
+			</div>
+				<div class="inner" data-categoria="fmcg"
+				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiNjczYTNmYjMtMDYwNS00NzcxLTk0MDgtY2VmZWIwMTkyZmM5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+					<img src="images/ind.png"></a>
+				<div class="content" align="center" style="padding: 5%;">
+					<H3 class="major-inicio">EXTREMA</H3>
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiNjczYTNmYjMtMDYwNS00NzcxLTk0MDgtY2VmZWIwMTkyZmM5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+				</div>
+			</div>
+			<div class="inner" data-categoria="agro"
+				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRlMGQ2YWQtOTI2MC00MDgyLTg5YTctODNkMTk2ZjQ1NDJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+					<img src="images/agro.png"></a>
+				<div class="content" align="center" style="padding: 5%;">
+					<H3 class="major-inicio">FORMOSA</H3>
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRlMGQ2YWQtOTI2MC00MDgyLTg5YTctODNkMTk2ZjQ1NDJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+				</div>
+			</div>
+			<div class="inner" data-categoria="fmcg"
+			style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiNjM0ZDQxZDAtYjlkOS00MmY1LTgxMGQtN2ViMTIwYTVmZjVkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+				<img src="images/ind.png"></a>
+			<div class="content" align="center" style="padding: 5%;">
+				<H3 class="major-inicio">GUARULHOS I</H3>
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiNjM0ZDQxZDAtYjlkOS00MmY1LTgxMGQtN2ViMTIwYTVmZjVkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+			</div>
+		</div>
+		<div class="inner" data-categoria="fmcg"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiYjVmN2EyODEtNDliNy00MzNhLThlYmQtMTk2NzZhMjFjOWUzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+			<img src="images/ind.png"></a>
+		<div class="content" align="center" style="padding: 5%;">
+			<H3 class="major-inicio">GUARULHOS II</H3>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiYjVmN2EyODEtNDliNy00MzNhLThlYmQtMTk2NzZhMjFjOWUzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+		</div>
+	</div>
+	<div class="inner" data-categoria="agro"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+				src="images/agro.png"></a>
+		<div class="content" align="center" style="padding: 5%;">
+			<H3 class="major-inicio">ITUMBIARA I</H3>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+		</div>
+	</div>
+	<div class="inner" data-categoria="agro"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+				src="images/agro.png"></a>
+		<div class="content" align="center" style="padding: 5%;">
+			<H3 class="major-inicio">ITUMBIARA II</H3>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+		</div>
+	</div>
+	<div class="inner" data-categoria="food"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+				src="images/fs.png"></a>
+		<div class="content" align="center" style="padding: 5%;">
+			<H3 class="major-inicio">JARINU</H3>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+		</div>
+	</div>
+	<div class="inner" data-categoria="fmcg"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+				src="images/ind.png"></a>
+		<div class="content" align="center" style="padding: 5%;">
+			<H3 class="major-inicio">LIMEIRA</H3>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+		</div>
+	</div>
+	<div class="inner" data-categoria="agro"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+				src="images/agro.png"></a>
+		<div class="content" align="center" style="padding: 5%;">
+			<H3 class="major-inicio">LONDRINA II</H3>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+		</div>
+	</div>
+	<div class="inner" data-categoria="agro"
+	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+			src="images/agro.png"></a>
+	<div class="content" align="center" style="padding: 5%;">
+		<H3 class="major-inicio">LUCAS DO RIO VERDE</H3>
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+	</div>
+</div>
+
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/ind.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">MANAUS</H3>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/ind.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">PINHAIS</H3>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="agro"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/agro.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">PLANALTINA</H3>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/ind.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">RIO CLARO</H3>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/ind.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">SIMÕES FILHO</H3>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/ind.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">UBERLÂNDIA I</H3>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="agro"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/agro.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">UBERLÂNDIA II</H3>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="agro"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/agro.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">UBERLÂNDIA III</H3>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+</div>
 
 				</div>
+
+				
+					
 				<ul class="actions">
-					<a href="homepage.html" class="special" style="margin: 0;">VOLTAR AO INÍCIO</a>
+					<a href="homepage.html" class="special" style="margin: 0;">VOLTAR</a>
 				</ul>
 
 
@@ -666,11 +847,37 @@
 
 			// Evita o comportamento padrão do link (redirecionamento imediato)
 			event.preventDefault();
-		}
-
+		}		
 	</script>
 
-
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const filterButtons = document.querySelectorAll(".filter-btn");
+		const painelCards = document.querySelectorAll("#painel-container .inner");
+	
+		filterButtons.forEach(button => {
+			button.addEventListener("click", function () {
+				// Remove 'active' de todos os botões
+				filterButtons.forEach(btn => btn.classList.remove("active"));
+				// Adiciona 'active' ao botão clicado
+				this.classList.add("active");
+	
+				const filtro = this.getAttribute("data-filter");
+	
+				painelCards.forEach(card => {
+					const categoria = card.getAttribute("data-categoria");
+	
+					if (filtro === "todos" || filtro === categoria) {
+						card.style.display = "flex"; // ou "block", dependendo do layout
+					} else {
+						card.style.display = "none";
+					}
+				});
+			});
+		});
+	});
+	</script>
+	
 
 	<a href="#top">
 		<svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 25 20" data-name="Layer 1">
@@ -792,9 +999,18 @@
 				transform: rotate(360deg);
 			}
 		}
+		#painel-container .inner {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#painel-container .inner.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
 	</style>
-
-
 
 </body>
 
