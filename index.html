@@ -30,36 +30,35 @@
 <body class="is-preload">
 
 	<!-- Banner -->
-	<section id="banner-home">
-		<div class="inner">
-			<video autoplay loop muted>
-				<source src="images/Comfrio.mp4" type="video/mp4">
-				<!-- Fallback para navegadores que não suportam a tag video -->
-				Your browser does not support the video tag.
-			</video>
-			<h2>INTRANET </br>MELHORIA CONTÍNUA</h2>
-			<p>Nós cuidamos do alimento do Brasil</p>
-		</div>
-		<form id="login-form" method="post" action="#">
-			<div class="row gtr-uniform">
-				<div class="col-6 col-12-xsmall" style="padding: 0 0 0 8.2em; width: 31.5%;">
-					<label for="demo-email">Usuário</label>
-					<input type="email" name="demo-email" id="demo-email" value="" />
-				</div>
+<section id="banner-home">
+	<video autoplay loop muted>
+		<source src="images/Comfrio.mp4" type="video/mp4">
+	</video>
+	<div class="inner">
+		<h3>INTRANET</h3>
+		<h2 style="align-self: left;">MELHORIA CONTÍNUA</h2>		
+	</div>
+	<form id="login-form" method="post" action="#">
+		<div class="row gtr-uniform">
+			<div class="col-6 col-12-xsmall" style="padding: 0 0 0 8.2em; width: 31.5%;">
+				<label for="demo-email">Usuário</label>
+				<input type="email" name="demo-email" id="demo-email" value="" />
 			</div>
-			<div class="row gtr-uniform" style="margin-top: 1em;">
-				<div class="col-6 col-12-xsmall" style="padding: 0 0 0 8.2em; width: 31.5%;">
-					<label for="demo-name">Senha</label>
-					<input type="password" name="demo-name" id="demo-name" value="" />
-				</div>
-			</div>
-		</form>
-		<div class="inner">
-			<button id="entrar-loader-button" class="button-home">Entrar</button>
-			<img src="images/LogoComfrio.png" alt="Logo" class="logo" style="width: 270px; height: auto;">
 		</div>
-	</section>
+		<div class="row gtr-uniform" style="margin-top: 1em;">
+			<div class="col-6 col-12-xsmall" style="padding: 0 0 0 8.2em; width: 31.5%;">
+				<label for="demo-name">Senha</label>
+				<input type="password" name="demo-name" id="demo-name" value="" />
+			</div>
+		</div>
+	</form>
+	<div class="inner">
+		<button id="entrar-loader-button" class="button-home">Entrar</button>
+	</div>
 
+	<!-- Logo fora da inner -->
+	<img src="images/LogoComfrio.png" alt="Logo" class="logo-bottom-left">
+</section>
 	<!-- Modal -->
 	<div id="myModal" class="modal">
 		<div class="modal-content">
@@ -184,40 +183,6 @@
 
 	<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
-	<script>
-
-		const firebaseConfig = {
-			apiKey: "AIzaSyBu62-PmM1YmQOJ_20C-U6BiYlzOHd5CjY",
-			authDomain: "intranetgru2.firebaseapp.com",
-			databaseURL: "https://intranetgru2-default-rtdb.firebaseio.com",
-			projectId: "intranetgru2",
-			storageBucket: "intranetgru2.appspot.com",
-			messagingSenderId: "427536035465",
-			appId: "1:427536035465:web:13f2d7ee083e0763d5a058",
-			measurementId: "G-ZP7C60BRKG"
-		};
-		firebase.initializeApp(firebaseConfig);
-
-		function login() {
-			firebase.auth().signInWithEmailAndPassword(
-				form.email().value, form.password().value
-			).then(response => {
-				window.location.href = "/homepage.html";
-
-			}).catch(error => {
-				console.log('error', response)
-
-			});
-
-
-
-
-		}
-
-
-
-
-	</script>
 
 </body>
 
