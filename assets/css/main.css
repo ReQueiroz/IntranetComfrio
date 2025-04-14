@@ -3209,8 +3209,9 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-	background-color: #666;
-
+    background-color: white; /* Cor de fundo branco */
+    border: 2px solid #b6b6b6;  /* Borda com cor #666 */
+    color: #666; /* Cor do texto também em #666, para que fique visível */
 }
 
 input[type="submit"].primary:hover,
@@ -3218,7 +3219,7 @@ input[type="reset"].primary:hover,
 input[type="button"].primary:hover,
 button.primary:hover,
 .button.primary:hover {
-	background-color: #2e3141;
+	background-color: #d6d6d6;
 
 }
 
@@ -3755,6 +3756,27 @@ body.is-menu-visible #menu .inner {
 /* Banner */
 
 
+#banner-home button {
+	padding: 0.75em 2em;
+	font-size: 0.85em;
+	background-color: #666666;
+	color: white;
+	border: none;
+	border-radius: 18px;
+	align-self: flex-start; /* Alinha o botão à esquerda */
+	width: 15%;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#banner-home button:hover {
+	background-color: #719624;
+}
 #banner video {
 	position: absolute;
 	right: 0;
@@ -3775,6 +3797,16 @@ body.is-menu-visible #menu .inner {
 #banner .inner {
 	margin: 0 auto;
 	width: 75em;
+}
+
+
+.logo-bottom-left {
+	position: absolute;
+	bottom: 20px;
+	right: 20px; /* <- troquei aqui */
+	width: 270px;
+	height: auto;
+	z-index: 1;
 }
 
 #banner .logo {
@@ -3857,6 +3889,28 @@ body.is-menu-visible #menu .inner {
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	color: white;
+}
+
+#banner-home {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+
+#banner-home video {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1;
+	filter: brightness(0.4);
+	object-fit: cover;
 }
 
 @media screen and (max-width: 1280px) {
@@ -4020,6 +4074,15 @@ body.is-preload #banner p {
 	width: 2.25em;
 }
 
+.intranet-title {
+	font-size: 1.5em; /* Deixa o texto menor */
+	font-weight: bold;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: white;
+	text-align: center;
+}
+
 #banner-home h2 {
 	-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
 	-webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
@@ -4040,9 +4103,34 @@ body.is-preload #banner p {
 	opacity: 1;
 	border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 	font-size: 4.00em;
-	margin-bottom: 2%;
-
+	text-align: left;
+	margin-top: 0; /* Remover o espaço superior */
 }
+
+#banner-home h3 {
+	-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
+	-webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, -webkit-filter 0.25s ease;
+	-ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, -ms-filter 0.25s ease;
+	transition: opacity 0.5s ease, transform 0.5s ease, filter 0.25s ease;
+	-moz-transform: translateX(0);
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+	-moz-transition-delay: 0.65s;
+	-webkit-transition-delay: 0.65s;
+	-ms-transition-delay: 0.65s;
+	transition-delay: 0.65s;
+	-moz-filter: blur(0);
+	-webkit-filter: blur(0);
+	-ms-filter: blur(0);
+	filter: blur(0);
+	opacity: 1;
+	font-size: 2.00em;
+	text-align: left;
+	margin-bottom: 0; /* Remover o espaço inferior */
+}
+
+
 
 #banner-home p {
 	-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
