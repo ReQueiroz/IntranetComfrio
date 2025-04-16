@@ -549,7 +549,7 @@
 				</div>
 			</div> <!-- fecha .painel-container -->
 			<div style="width: 100%; text-align: center; padding: 2em 0 1em 0;">
-			  <a href="Corporativo.html" class="special" style="display: inline-block; padding: 0.75em 2em;">VOLTAR</a>
+			  <a href="Corporativo.html" class="special no-copy" style="display: inline-block; padding: 0.75em 2em;">VOLTAR</a>
 			</div>
 	
 				  
@@ -598,8 +598,9 @@
 
 <script>
 	document.querySelectorAll('.special').forEach(botao => {
-	  botao.addEventListener('click', function(e) {
-		e.preventDefault();
+  if (!botao.classList.contains('no-copy')) {
+    botao.addEventListener('click', function(e) {
+      e.preventDefault();
   
 		const caminho = this.getAttribute('href');
 		const h3 = this.closest('.conteudo-item').querySelector('h3');
@@ -626,8 +627,9 @@
 		  mensagem.style.display = 'none';
 		  overlay.style.display = 'none';
 		}, 5000);
-	  });
 	});
+  }
+});
   </script>
 			</section>
 
