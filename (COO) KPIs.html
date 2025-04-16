@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>@ CORPORATIVO | MELHORIA CONTÍNUA </title>
+    <title>@ KPIs | MELHORIA CONTÍNUA </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -33,7 +33,7 @@
 				<h1><a href="homepage.html" class="image"><img src="images/LogoComfrio.png" style="width: 100px; height: auto;"></a></h1>
 			</div>
 			<div style="margin: 0 auto; padding-left: 7em;">
-				<h1 style="color: #616163; font-size: 900;">CORPORATIVO</h1>
+				<h1 style="color: #616163; font-size: 900;">KEY PERFORMANCE INDICATORs (KPIs) | CORPORATIVO</h1>
 			</div>
 			<nav style="display: flex; align-items: center;">
 				<div id="sectorContainer"
@@ -75,6 +75,8 @@
 				var sectors = document.getElementsByClassName('major-inicio');
 
 				var matches = [];
+
+
 
 				for (var i = 0; i < sectors.length; i++) {
 					var sector = sectors[i].innerText.toLowerCase();
@@ -405,7 +407,7 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-image: url('images/corporativo.jpg');
+			background-image: url('images/kpis.jpg');
 			background-size: cover;
 			background-position: center;
 			filter: blur(5px) brightness(0.5); /* Desfoque e escurecimento */
@@ -415,7 +417,7 @@
 		
 			<!-- Conteúdo -->
 			<div class="inner" style="position: relative; text-align: center; padding: 20px;">
-				<h2 style="color:#fff; margin: 0;">CORPORATIVO</h2>
+				<h2 style="color:#fff; margin: 0;"> KPIs | CORP.</h2>
 				<p style="color:#fff; margin: 0;">Nós cuidamos do alimento do Brasil</p>
 			</div>
 		</section>
@@ -425,93 +427,208 @@
 
 	</div>
 </section>
-			<!-- One -->
-			<section id="one" class="wrapper spotlight style1" style="padding: 20px 8em 0em 8em; position: relative; display: flex; flex-wrap: wrap; background-image: url('images/background-logo.jpg');
-			background-size: cover;
-			background-position: left center; /* ajustado para a direita e centralizado verticalmente */
-			background-repeat: no-repeat;">
 
-				<div>
-					<div>
-						<h2 style="color: #616163; margin: 0; padding: 0;">NAVEGUE PELOS TEMAS </h2>
+<section id="one" class="wrapper spotlight style1" style="padding: 20px 8em 0em 8em; position: relative; display: flex; flex-wrap: wrap; background-image: url('images/background-logo.jpg'); background-size: cover; background-position: left center; background-repeat: no-repeat;">
+
+	<!-- Título centralizado -->
+	<div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 20px;">
+	  <h2 style="color: #616163; margin: 0; padding: 0;">NAVEGUE PELOS KPIS CORPORATIVOS NA REDE</h2>
+	</div>
+	<!--
+  <div style="width: 100%; text-align: center; padding: 1em;">
+    <ul id="painel-filters" style="list-style: none; padding: 0; margin: 0; display: inline-flex; gap: 10px; justify-content: center;">
+      <li class="filter-btn active" data-filter="todos">Todos</li>
+	  <li class="filter-btn" data-filter="OTIF">OTIF</li>
+      <li class="filter-btn" data-filter="Vol">Volumetria</li>
+	  <li class="filter-btn" data-filter="MOD">Mão de Obra</li>
+      <li class="filter-btn" data-filter="GG">Gente & Gestão</li>
+    </ul>
+  </div>
+-->
+
+  <div class="painel-container" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: space-between; width: 100%;"></div>
+<!-- OVERLAY COM BLUR -->
+<div id="overlay-blur" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9998;
+"></div>
+
+<!-- MENSAGEM DE CÓPIA -->
+<div id="mensagem-copia" style="
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #666;
+  font-size: 1.5em;
+  padding: 2em;
+  border-radius: 15px;
+  z-index: 9999;
+  text-align: center;
+  box-shadow: 0 0 10px black;
+">
+  <strong id="titulo-copia" style="color: #666;"></strong><br>
+  Copiado para Área de Transferência!<br>Vá até a rede e cole o caminho!
+</div>
+
+  					<div class="conteudo-item todos OTIF" style="display: block; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); padding: 1em; width: 24%; ">
+
+						<div style="flex: 1; min-width: 250px; text-align: center;">
+							<div style="display: flex; justify-content: center; align-items: center; margin: 2%;">
+								<a href="#" target="_blank">
+									<img src="images/otif.png" style="width: 50%; height: auto;">
+								</a>
+							</div>
+							<h3 class="major-inicio">OTIF: GERAL</h3>
+							<p style="margin-top: 0; padding-top: 0; text-align: center;">
+								On Time / In Full reportados pelas unidades mensalmente.
+							</p>
+							<a style="width: 100%; display: block; margin: 1em auto;" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\Z.CONSOLIDADA" target="_blank" class="special">COPIAR CAMINHO</a>
+
+						</div>
+					</div>
+				  <!-- Conteúdo: Volumetria -->
+	
+				  <div class="conteudo-item todos Vol" style="display: block; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); padding: 1em; width: 24%; ">
+					<div style="flex: 1; min-width: 250px; text-align: center;">
+						<div style="display: flex; justify-content: center; align-items: center; margin: 2%;">
+							<a href="#" target="_blank">
+								<img src="images/vol.png" style="width: 50%; height: auto;">
+							</a>
+						</div>
+						<h3 class="major-inicio">VOLUMETRIA</h3>
+						<p style="margin-top: 0; padding-top: 0; text-align: center;">
+							Mede as movimentações realizadas em todas as unidades mensalmente.
+						</p>
+						<a style="width: 100%; display: block; margin: 1em auto;" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\Z.CONSOLIDADA" target="_blank" class="special">COPIAR CAMINHO</a>
 					</div>
 				</div>
-
-				<div style="display: flex; flex-wrap: wrap; justify-content: center;">
-
-					<div class="inner"
-						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="aereo.html" class="image" style="margin: 2%"><img
-								src="images/kpi.png"></a>
-						<div class="content" align="center" style="padding: 5%;">
-							<H3 class="major-inicio">KPIS</H3>
-							<a href="(COO) KPIs.html" class="special">ACESSAR</a>
+				
+				  
+				 <!-- Conteúdo: Mão de Obra Direta -->
+					<div class="conteudo-item todos MOD" style="display: block; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); padding: 1em; width: 24%;">
+						<div style="flex: 1; min-width: 250px; text-align: center;">
+						<div style="display: flex; justify-content: center; align-items: center; margin: 2%;">
+							<a href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais" target="_blank">
+							<img src="images/mod.png" style="width: 50%; height: auto;">
+							</a>
+						</div>
+						<h3 class="major-inicio">DIARISTAS E TEMPS.</h3>
+						<p style="margin-top: 0; padding-top: 0; text-align: center;">
+							Análise de Diaristas e Temporários nas unidades periodicamente
+						</p>
+						<a style="width: 100%; display: block; margin: 1em auto;" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\Z.CONSOLIDADA" target="_blank" class="special">COPIAR CAMINHO</a>  
 						</div>
 					</div>
-
-
-					<div class="inner"
-						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="(COO) Dashboards.html" class="image" style="margin: 2%;"><img
-								src="images/dash.png"></a>
-						<div class="content" align="center" style="padding: 5%;">
-							<h3 class="major-inicio">DASHBOARDS (BI)</h3>
-							<a href="(COO) Dashboards.html"class="special" title="Acessar Dashboards">ACESSAR</a>
-						</div>
+				  
+				  <!-- Conteúdo: Gente & Gestão -->
+				  <div class="conteudo-item todos GG" style="display: block; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); padding: 1em; width: 24%;">
+					<div style="flex: 1; min-width: 250px; text-align: center;">
+					<div style="display: flex; justify-content: center; align-items: center; margin: 2%;">
+						<a href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais" target="_blank">
+						<img src="images/rh.png" style="width: 50%; height: auto;">
+						</a>
 					</div>
-
-
-					<div class="inner"
-						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="cs.html" class="image" style="margin: 2%"><img src="images/bsc.png"></a>
-						<div class="content" align="center" style="padding: 5%;">
-							<H3 class="major-inicio">BSC</H3>
-							<a href="(COO) BSC.html" class="special">ACESSAR</a>
-						</div>
-					</div>
-
-					<div class="inner"
-					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-					onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-					<a href="cs.html" class="image" style="margin: 2%"><img src="images/a3.png"></a>
-					<div class="content" align="center" style="padding: 5%;">
-						<H3 class="major-inicio">PROJETOS A3</H3>
-						<a href="(COO) Projetos A3.html" class="special">ACESSAR</a>
-					</div>
-					</div>
-
-				<div class="inner"
-				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-				onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-				<a href="cs.html" class="image" style="margin: 2%"><img src="images/kaizen.png"></a>
-				<div class="content" align="center" style="padding: 5%;">
-					<H3 class="major-inicio">PROG. KAIZEN</H3>
-					<a href="(COO) Programa Kaizen.html" class="special">ACESSAR</a>
+					<h3 class="major-inicio">GENTE & GESTÃO</h3>
+					<p style="margin-top: 0; padding-top: 0; text-align: center;">
+						Análise de Diaristas e Temporários nas unidades periodicamente
+					</p>
+					<a style="width: 100%; display: block; margin: 1em auto;" href="M:\Qualidade\Indicador - Gente e Gestão" target="_blank" class="special">COPIAR CAMINHO</a>
+				  </div>
 				</div>
+				  
+				</div>
+			</div> <!-- fecha .painel-container -->
+			<div style="width: 100%; text-align: center; padding: 2em 0 1em 0;">
+			  <a href="Corporativo.html" class="special" style="display: inline-block; padding: 0.75em 2em;">VOLTAR</a>
 			</div>
-				<div class="inner"
-				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-				onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-				<a href="cs.html" class="image" style="margin: 2%"><img src="images/cult.png"></a>
-				<div class="content" align="center" style="padding: 5%;">
-					<H3 class="major-inicio">CULTURA M.C.</H3>
-					<a href="(COO) Cultura MC.html" class="special">ACESSAR</a>
-				</div>
-			</div>
+	
+				  
+				    <!-- Script para funcionamento dos filtros -->
+					<script>
+						const filterButtons = document.querySelectorAll('.filter-btn');
+						const contentItems = document.querySelectorAll('.conteudo-item');
+						const sectionWrapper = document.querySelector('.painel-container');
+					  
+						filterButtons.forEach(btn => {
+						  btn.addEventListener('click', () => {
+							filterButtons.forEach(b => b.classList.remove('active'));
+							btn.classList.add('active');
+					  
+							const filter = btn.getAttribute('data-filter');
+							let visibleCount = 0;
+					  
+							contentItems.forEach(item => {
+							  if (filter === 'todos' || item.classList.contains(filter)) {
+								item.style.display = 'block';
+								visibleCount++;
+							  } else {
+								item.style.display = 'none';
+							  }
+							});
+					  
+							// Centraliza se houver 1 ou 2 itens visíveis, senão mantém space-between
+							if (visibleCount === 1) {
+  sectionWrapper.style.justifyContent = 'center';
+  contentItems.forEach(item => {
+    if (item.style.display === 'block') {
+      item.style.width = '60%'; // Centralizado e mais largo
+    }
+  });
+} else {
+  sectionWrapper.style.justifyContent = visibleCount === 2 ? 'center' : 'space-between';
+  contentItems.forEach(item => {
+    item.style.width = '48%'; // Volta ao normal
+  });
+}
+						  });
+						});
+					  </script>
 
-					
-					
-				</div>
-
-				</div>
-				<ul class="actions">
-					<a href="homepage.html" class="special" style="margin: 0;">VOLTAR AO INÍCIO</a>
-				</ul>
 
 
+<script>
+	document.querySelectorAll('.special').forEach(botao => {
+	  botao.addEventListener('click', function(e) {
+		e.preventDefault();
+  
+		const caminho = this.getAttribute('href');
+		const h3 = this.closest('.conteudo-item').querySelector('h3');
+		const titulo = h3 ? h3.textContent : '';
+  
+		document.getElementById('titulo-copia').textContent = titulo;
+  
+		// Copia para a área de transferência
+		const inputTemp = document.createElement('input');
+		inputTemp.value = caminho;
+		document.body.appendChild(inputTemp);
+		inputTemp.select();
+		document.execCommand('copy');
+		document.body.removeChild(inputTemp);
+  
+		// Exibe o overlay e a mensagem
+		const overlay = document.getElementById('overlay-blur');
+		const mensagem = document.getElementById('mensagem-copia');
+		overlay.style.display = 'block';
+		mensagem.style.display = 'block';
+  
+		// Esconde tudo depois de 3 segundos
+		setTimeout(() => {
+		  mensagem.style.display = 'none';
+		  overlay.style.display = 'none';
+		}, 5000);
+	  });
+	});
+  </script>
 			</section>
 
 			<!-- Footer -->
@@ -682,11 +799,37 @@
 
 			// Evita o comportamento padrão do link (redirecionamento imediato)
 			event.preventDefault();
-		}
-
+		}		
 	</script>
 
-
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const filterButtons = document.querySelectorAll(".filter-btn");
+		const painelCards = document.querySelectorAll("#painel-container .inner");
+	
+		filterButtons.forEach(button => {
+			button.addEventListener("click", function () {
+				// Remove 'active' de todos os botões
+				filterButtons.forEach(btn => btn.classList.remove("active"));
+				// Adiciona 'active' ao botão clicado
+				this.classList.add("active");
+	
+				const filtro = this.getAttribute("data-filter");
+	
+				painelCards.forEach(card => {
+					const categoria = card.getAttribute("data-categoria");
+	
+					if (filtro === "todos" || filtro === categoria) {
+						card.style.display = "flex"; // ou "block", dependendo do layout
+					} else {
+						card.style.display = "none";
+					}
+				});
+			});
+		});
+	});
+	</script>
+	
 
 	<a href="#top">
 		<svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 25 20" data-name="Layer 1">
@@ -805,9 +948,19 @@
 				transform: rotate(360deg);
 			}
 		}
+		
+		#painel-container .inner {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#painel-container .inner.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
 	</style>
-
-
 
 </body>
 
