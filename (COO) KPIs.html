@@ -448,6 +448,7 @@
 
   <div class="painel-container" style="display: flex; flex-wrap: wrap; gap: 1em; justify-content: space-between; width: 100%;"></div>
 <!-- OVERLAY COM BLUR -->
+<!-- OVERLAY COM BLUR -->
 <div id="overlay-blur" style="
   display: none;
   position: fixed;
@@ -464,13 +465,13 @@
 <div id="mensagem-copia" style="
   display: none;
   position: fixed;
-  top: 40%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   color: #666;
   font-size: 1.5em;
-  padding: 2em;
+  padding: 0.5em 1em 1.5em;
   border-radius: 15px;
   z-index: 9999;
   text-align: center;
@@ -478,15 +479,15 @@
 ">
   <strong id="titulo-copia" style="color: #666;"></strong><br>
   Copiado para Área de Transferência!<br>Vá até a rede e cole o caminho!
+  <img src="images2/passoapasso.gif" style="width: 80%;"><br>
+  <a class="special" id="fechar-mensagem" style="color: #666; width: 20%; font-size: 0.5em; display: flex; align-items: center; justify-content: center; margin: auto;cursor: pointer;">OK</a>
 </div>
 
   					<div class="conteudo-item todos OTIF" style="display: block; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); padding: 1em; width: 24%; ">
 
 						<div style="flex: 1; min-width: 250px; text-align: center;">
 							<div style="display: flex; justify-content: center; align-items: center; margin: 2%;">
-								<a href="#" target="_blank">
 									<img src="images/otif.png" style="width: 50%; height: auto;">
-								</a>
 							</div>
 							<h3 class="major-inicio">OTIF: GERAL</h3>
 							<p style="margin-top: 0; padding-top: 0; text-align: center;">
@@ -501,13 +502,11 @@
 				  <div class="conteudo-item todos Vol" style="display: block; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); padding: 1em; width: 24%; ">
 					<div style="flex: 1; min-width: 250px; text-align: center;">
 						<div style="display: flex; justify-content: center; align-items: center; margin: 2%;">
-							<a href="#" target="_blank">
 								<img src="images/vol.png" style="width: 50%; height: auto;">
-							</a>
 						</div>
 						<h3 class="major-inicio">VOLUMETRIA</h3>
 						<p style="margin-top: 0; padding-top: 0; text-align: center;">
-							Mede as movimentações realizadas em todas as unidades mensalmente.
+							Movimentações realizadas em todas as unidades mensalmente.
 						</p>
 						<a style="width: 100%; display: block; margin: 1em auto;" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\Z.CONSOLIDADA" target="_blank" class="special">COPIAR CAMINHO</a>
 					</div>
@@ -518,9 +517,7 @@
 					<div class="conteudo-item todos MOD" style="display: block; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); padding: 1em; width: 24%;">
 						<div style="flex: 1; min-width: 250px; text-align: center;">
 						<div style="display: flex; justify-content: center; align-items: center; margin: 2%;">
-							<a href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais" target="_blank">
 							<img src="images/mod.png" style="width: 50%; height: auto;">
-							</a>
 						</div>
 						<h3 class="major-inicio">DIARISTAS E TEMPS.</h3>
 						<p style="margin-top: 0; padding-top: 0; text-align: center;">
@@ -534,9 +531,7 @@
 				  <div class="conteudo-item todos GG" style="display: block; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); padding: 1em; width: 24%;">
 					<div style="flex: 1; min-width: 250px; text-align: center;">
 					<div style="display: flex; justify-content: center; align-items: center; margin: 2%;">
-						<a href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais" target="_blank">
 						<img src="images/rh.png" style="width: 50%; height: auto;">
-						</a>
 					</div>
 					<h3 class="major-inicio">GENTE & GESTÃO</h3>
 					<p style="margin-top: 0; padding-top: 0; text-align: center;">
@@ -598,38 +593,44 @@
 
 <script>
 	document.querySelectorAll('.special').forEach(botao => {
-  if (!botao.classList.contains('no-copy')) {
-    botao.addEventListener('click', function(e) {
-      e.preventDefault();
+	  if (!botao.classList.contains('no-copy')) {
+		botao.addEventListener('click', function(e) {
+		  e.preventDefault();
   
-		const caminho = this.getAttribute('href');
-		const h3 = this.closest('.conteudo-item').querySelector('h3');
-		const titulo = h3 ? h3.textContent : '';
+		  const caminho = this.getAttribute('href');
+		  const h3 = this.closest('.conteudo-item')?.querySelector('h3');
+		  const titulo = h3 ? h3.textContent : '';
   
-		document.getElementById('titulo-copia').textContent = titulo;
+		  document.getElementById('titulo-copia').textContent = titulo;
   
-		// Copia para a área de transferência
-		const inputTemp = document.createElement('input');
-		inputTemp.value = caminho;
-		document.body.appendChild(inputTemp);
-		inputTemp.select();
-		document.execCommand('copy');
-		document.body.removeChild(inputTemp);
+		  // Copia para a área de transferência
+		  const inputTemp = document.createElement('input');
+		  inputTemp.value = caminho;
+		  document.body.appendChild(inputTemp);
+		  inputTemp.select();
+		  document.execCommand('copy');
+		  document.body.removeChild(inputTemp);
   
-		// Exibe o overlay e a mensagem
-		const overlay = document.getElementById('overlay-blur');
-		const mensagem = document.getElementById('mensagem-copia');
-		overlay.style.display = 'block';
-		mensagem.style.display = 'block';
+		  // Exibe o overlay e a mensagem
+		  const overlay = document.getElementById('overlay-blur');
+		  const mensagem = document.getElementById('mensagem-copia');
+		  overlay.style.display = 'block';
+		  mensagem.style.display = 'block';
   
-		// Esconde tudo depois de 3 segundos
-		setTimeout(() => {
-		  mensagem.style.display = 'none';
-		  overlay.style.display = 'none';
-		}, 5000);
+		  // Esconde automaticamente depois de 9 segundos
+		  setTimeout(() => {
+			mensagem.style.display = 'none';
+			overlay.style.display = 'none';
+		  }, 90000);
+		});
+	  }
 	});
-  }
-});
+  
+	// Fecha a mensagem ao clicar no botão OK
+	document.getElementById('fechar-mensagem').addEventListener('click', () => {
+	  document.getElementById('mensagem-copia').style.display = 'none';
+	  document.getElementById('overlay-blur').style.display = 'none';
+	});
   </script>
 			</section>
 
