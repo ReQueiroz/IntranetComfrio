@@ -431,7 +431,39 @@
 			background-size: cover;
 			background-position: left center; /* ajustado para a direita e centralizado verticalmente */
 			background-repeat: no-repeat;">
+<!-- OVERLAY COM BLUR -->
+<div id="overlay-blur" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 9998;
+"></div>
 
+<!-- MENSAGEM DE CÓPIA -->
+<div id="mensagem-copia" style="
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #666;
+  font-size: 1.5em;
+  padding: 0.5em 1em 1.5em;
+  border-radius: 15px;
+  z-index: 9999;
+  text-align: center;
+  box-shadow: 0 0 10px black;
+">
+  <div id="conteudo-copia" style="text-align: left;"></div> <!-- novo contêiner alinhado à esquerda -->
+
+  <a class="special no-copy" id="fechar-mensagem" style="color: #666; width: 20%; font-size: 0.5em; display: flex; align-items: center; justify-content: center; margin: auto;cursor: pointer;">OK</a>
+</div>
 				<div>
 					<div>
 						<h2 style="color: #616163; margin: 0; padding: 0;">NAVEGUE PELAS UNIDADES E SEGMENTOS </h2>
@@ -456,6 +488,25 @@
 								src="images/ind.png"></a>
 						<div class="content" align="center" style="padding: 5%;">
 							<H3 class="major-inicio">BAURU</H3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 							<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 						</div>
 					</div>
@@ -466,6 +517,25 @@
 								src="images/ind.png"></a>
 						<div class="content" align="center" style="padding: 5%;">
 							<h3 class="major-inicio">BEBEDOURO I </h3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 							<a href="https://app.powerbi.com/view?r=eyJrIjoiOTM4ZGU4YTQtNjRjZi00NjEzLTkxZGMtYTYxNDc1OGJjOTY3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special" title="Acessar Armazém">ACESSAR</a>
 						</div>
 					</div>
@@ -475,6 +545,25 @@
 							<img src="images/ind.png"></a>
 						<div class="content" align="center" style="padding: 5%;">
 							<H3 class="major-inicio">BEBEDOURO II</H3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 							<a href="https://app.powerbi.com/view?r=eyJrIjoiYTAyYzg3YjAtZGEwYS00Yjg1LWExMzUtNTMyYzg5MTdiYWY5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 						</div>
 					</div>
@@ -484,6 +573,25 @@
 						<img src="images/ind.png"></a>
 					<div class="content" align="center" style="padding: 5%;">
 						<H3 class="major-inicio">CAUCAIA</H3>
+						<div class="info-unidade" style="display: none; text-align: left;">
+							<ul style="margin: 0; font-size: large;">
+							  <li>Endereço: #</li>
+							  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+							</ul>
+						  
+							<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+							<ul style="margin-top: 5px; font-size: large;">
+							  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+							  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+							  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+							</ul>
+							<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+							<ul style="margin-top: 5px; font-size: large;">
+							  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+							  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+							  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+							</ul>
+						  </div>
 						<a href="https://app.powerbi.com/view?r=eyJrIjoiMTU5NzQyMTAtNzYwYy00OGNmLWJjY2ItOWE3YmI5YmY0MjNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 					</div>
 				</div>
@@ -493,6 +601,25 @@
 					<img src="images/agro.png"></a>
 				<div class="content" align="center" style="padding: 5%;">
 					<H3 class="major-inicio">CUIABA II</H3>
+					<div class="info-unidade" style="display: none; text-align: left;">
+						<ul style="margin: 0; font-size: large;">
+						  <li>Endereço: #</li>
+						  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+						</ul>
+					  
+						<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+						<ul style="margin-top: 5px; font-size: large;">
+						  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+						  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+						  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+						</ul>
+						<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+						<ul style="margin-top: 5px; font-size: large;">
+						  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+						  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+						  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+						</ul>
+					  </div>
 					<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRjY2YwZmYtMzk0OC00OGJiLWIyODUtYzAzYTM3ODJiYTRlIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 				</div>
 			</div>
@@ -502,6 +629,25 @@
 					<img src="images/ind.png"></a>
 				<div class="content" align="center" style="padding: 5%;">
 					<H3 class="major-inicio">EXTREMA</H3>
+											<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 					<a href="https://app.powerbi.com/view?r=eyJrIjoiNjczYTNmYjMtMDYwNS00NzcxLTk0MDgtY2VmZWIwMTkyZmM5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 				</div>
 			</div>
@@ -511,6 +657,25 @@
 					<img src="images/agro.png"></a>
 				<div class="content" align="center" style="padding: 5%;">
 					<H3 class="major-inicio">FORMOSA</H3>
+											<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 					<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRlMGQ2YWQtOTI2MC00MDgyLTg5YTctODNkMTk2ZjQ1NDJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 				</div>
 			</div>
@@ -520,6 +685,25 @@
 				<img src="images/ind.png"></a>
 			<div class="content" align="center" style="padding: 5%;">
 				<H3 class="major-inicio">GUARULHOS I</H3>
+										<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 				<a href="https://app.powerbi.com/view?r=eyJrIjoiNjM0ZDQxZDAtYjlkOS00MmY1LTgxMGQtN2ViMTIwYTVmZjVkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 			</div>
 		</div>
@@ -529,6 +713,25 @@
 			<img src="images/ind.png"></a>
 		<div class="content" align="center" style="padding: 5%;">
 			<H3 class="major-inicio">GUARULHOS II</H3>
+									<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 			<a href="https://app.powerbi.com/view?r=eyJrIjoiYjVmN2EyODEtNDliNy00MzNhLThlYmQtMTk2NzZhMjFjOWUzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 		</div>
 	</div>
@@ -538,6 +741,25 @@
 				src="images/agro.png"></a>
 		<div class="content" align="center" style="padding: 5%;">
 			<H3 class="major-inicio">ITUMBIARA I</H3>
+									<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 		</div>
 	</div>
@@ -547,6 +769,25 @@
 				src="images/agro.png"></a>
 		<div class="content" align="center" style="padding: 5%;">
 			<H3 class="major-inicio">ITUMBIARA II</H3>
+									<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 		</div>
 	</div>
@@ -556,6 +797,25 @@
 				src="images/fs.png"></a>
 		<div class="content" align="center" style="padding: 5%;">
 			<H3 class="major-inicio">JARINU</H3>
+									<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 		</div>
 	</div>
@@ -565,6 +825,25 @@
 				src="images/ind.png"></a>
 		<div class="content" align="center" style="padding: 5%;">
 			<H3 class="major-inicio">LIMEIRA</H3>
+									<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 		</div>
 	</div>
@@ -574,6 +853,25 @@
 				src="images/agro.png"></a>
 		<div class="content" align="center" style="padding: 5%;">
 			<H3 class="major-inicio">LONDRINA II</H3>
+									<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 		</div>
 	</div>
@@ -583,6 +881,25 @@
 			src="images/agro.png"></a>
 	<div class="content" align="center" style="padding: 5%;">
 		<H3 class="major-inicio">LUCAS DO RIO VERDE</H3>
+		<div class="info-unidade" style="display: none; text-align: left;">
+			<ul style="margin: 0; font-size: large;">
+			  <li>Endereço: #</li>
+			  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+			</ul>
+		  
+			<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+			<ul style="margin-top: 5px; font-size: large;">
+			  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+			  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+			  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+			</ul>
+			<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+			<ul style="margin-top: 5px; font-size: large;">
+			  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+			  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+			  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+			</ul>
+		  </div>
 		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 	</div>
 </div>
@@ -593,6 +910,25 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		src="images/ind.png"></a>
 <div class="content" align="center" style="padding: 5%;">
 	<H3 class="major-inicio">MANAUS</H3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 </div>
 </div>
@@ -603,6 +939,25 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		src="images/ind.png"></a>
 <div class="content" align="center" style="padding: 5%;">
 	<H3 class="major-inicio">PINHAIS</H3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 </div>
 </div>
@@ -613,6 +968,25 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		src="images/agro.png"></a>
 <div class="content" align="center" style="padding: 5%;">
 	<H3 class="major-inicio">PLANALTINA</H3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 </div>
 </div>
@@ -623,6 +997,25 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		src="images/ind.png"></a>
 <div class="content" align="center" style="padding: 5%;">
 	<H3 class="major-inicio">RIO CLARO</H3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 </div>
 </div>
@@ -632,6 +1025,25 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		src="images/ind.png"></a>
 <div class="content" align="center" style="padding: 5%;">
 	<H3 class="major-inicio">SIMÕES FILHO</H3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 </div>
 </div>
@@ -642,6 +1054,25 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		src="images/ind.png"></a>
 <div class="content" align="center" style="padding: 5%;">
 	<H3 class="major-inicio">UBERLÂNDIA I</H3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 </div>
 </div>
@@ -652,6 +1083,25 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		src="images/agro.png"></a>
 <div class="content" align="center" style="padding: 5%;">
 	<H3 class="major-inicio">UBERLÂNDIA II</H3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 </div>
 </div>
@@ -662,6 +1112,25 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		src="images/agro.png"></a>
 <div class="content" align="center" style="padding: 5%;">
 	<H3 class="major-inicio">UBERLÂNDIA III</H3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin: 0; font-size: large;">
+								  <li>Endereço: #</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://link1.com" target="_blank">LINK 1</a></li>
+								  <li><a href="https://link2.com" target="_blank">LINK 2</a></li>
+								  <li><a href="https://link3.com" target="_blank">LINK 3</a></li>
+								</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large;">
+								  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
+								  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
+								  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+								</ul>
+							  </div>
 	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 </div>
 </div>
@@ -673,8 +1142,58 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 				
 					
 				<ul class="actions">
-					<a href="homepage.html" class="special" style="margin: 0;">VOLTAR</a>
-				</ul>
+					<a href="homepage.html" class="special no-copy" style="margin: 0;">VOLTAR</a>
+				  </ul>
+
+				<script>
+					document.querySelectorAll('.special').forEach(botao => {
+					  if (!botao.classList.contains('no-copy')) {
+						botao.addEventListener('click', function(e) {
+						  e.preventDefault();
+				  
+						  const caminho = this.getAttribute('href');
+						  const content = this.closest('.content');
+						  const h3 = content?.querySelector('h3');
+						  const titulo = h3 ? h3.textContent : '';
+				  
+						  const imagem = this.closest('.inner')?.querySelector('img');
+						  const imagemSrc = imagem ? imagem.getAttribute('src') : '';
+				  
+						  // Atualiza o novo contêiner com conteúdo alinhado à esquerda
+						  document.getElementById('conteudo-copia').innerHTML = `
+							<img src="${imagemSrc}" style="width: 30%; display: block; margin-bottom: 10px;">
+							<h3 class="major-inicio" style="margin-top: 0;">${titulo}</h3>
+							${content.querySelector('.info-unidade')?.innerHTML || ''}
+						  `;
+				  
+						  // Copia o link do botão
+						  const inputTemp = document.createElement('input');
+						  inputTemp.value = caminho;
+						  document.body.appendChild(inputTemp);
+						  inputTemp.select();
+						  document.execCommand('copy');
+						  document.body.removeChild(inputTemp);
+				  
+						  // Exibe a mensagem de sucesso
+						  document.getElementById('overlay-blur').style.display = 'block';
+						  document.getElementById('mensagem-copia').style.display = 'block';
+						});
+					  }
+					});
+				  
+					// Botão OK fecha a mensagem
+					document.getElementById('fechar-mensagem').addEventListener('click', () => {
+					  document.getElementById('mensagem-copia').style.display = 'none';
+					  document.getElementById('overlay-blur').style.display = 'none';
+					});
+				  </script>
+				  
+				  
+				  
+				  
+
+
+
 
 
 			</section>
