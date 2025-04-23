@@ -426,44 +426,57 @@
 	</div>
 </section>
 
-			<!-- One -->
-			<section id="one" class="wrapper spotlight style1" style="padding: 20px 8em 0em 8em; position: relative; display: flex; flex-wrap: wrap; background-image: url('images/background-logo.jpg');
-			background-size: cover;
-			background-position: left center; /* ajustado para a direita e centralizado verticalmente */
-			background-repeat: no-repeat;">
-<!-- OVERLAY COM BLUR -->
-<div id="overlay-blur" style="
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  backdrop-filter: blur(5px);
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 9998;
-"></div>
+		<!-- One -->
+<section id="one" class="wrapper spotlight style1" style="padding: 20px 8em 0em 8em; position: relative; display: flex; flex-wrap: wrap; background-image: url('images/background-logo.jpg');
+background-size: cover;
+background-position: left center; /* ajustado para a direita e centralizado verticalmente */
+background-repeat: no-repeat;">
+  
+  <!-- OVERLAY COM BLUR -->
+  <div id="overlay-blur" style="
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9998;
+  "></div>
 
-<!-- MENSAGEM DE CÓPIA -->
-<div id="mensagem-copia" style="
-  display: none;
-  position: fixed;
-  top: 54%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  color: #666;
-  font-size: 1.5em;
-  padding: 0.5em 1em 1.5em;
-  border-radius: 15px;
-  z-index: 9999;
-  text-align: center;
-  box-shadow: 0 0 10px black;
-">
-  <div id="conteudo-copia" style="text-align: left;"></div> <!-- novo contêiner alinhado à esquerda -->
+  <!-- Botões laterais 
+  <button id="btn-anterior" style="padding: 0; display: none; position: fixed; top: 50%; left: 5em; transform: translateY(-50%); font-size: 3em; background: none; border: none; cursor: pointer; z-index: 10000;">⬅️</button>
 
-  <a class="special no-copy" id="fechar-mensagem" style="color: #666; width: 20%; font-size: 0.5em; display: flex; align-items: center; justify-content: center; margin: auto;cursor: pointer;">OK</a>
-</div>
+  <button id="btn-proximo" style="padding: 0; display: none; position: fixed; top: 50%; right: 5em; transform: translateY(-50%); font-size: 3em; background: none; border: none; cursor: pointer; z-index: 10000;">➡️</button>
+-->
+  <!-- MENSAGEM DE CÓPIA -->
+  <div id="mensagem-copia" style="
+    display: none;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    color: #666;
+    font-size: 1.5em;
+    padding: 0.5em 1em 1.5em;
+    border-radius: 15px;
+    z-index: 9999;
+    text-align: center;
+    box-shadow: 0 0 10px black;
+    width: 50%;
+    max-height: 90vh;
+    overflow: hidden;
+  ">
+    <!-- Conteúdo com rolagem -->
+    <div id="conteudo-copia" style="text-align: left; max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+      <!-- conteúdo será inserido dinamicamente aqui -->
+    </div>
+    
+    <a class="special no-copy" id="fechar-mensagem" style="color: #666; width: 20%; font-size: 0.5em; display: flex; align-items: center; justify-content: center; margin: auto; cursor: pointer;">OK</a>
+  </div>
+
 				<div>
 					<div>
 						<h2 style="color: #616163; margin: 0; padding: 0;">NAVEGUE PELAS UNIDADES E SEGMENTOS </h2>
@@ -476,11 +489,54 @@
 						<li class="filter-btn" data-filter="agro">Agronegócio</li>
 						<li class="filter-btn" data-filter="fmcg">FMCG</li>
 						<li class="filter-btn" data-filter="food">Food Service</li>
-						<li class="filter-btn" data-filter="transportes">Transportes</li>
+						<li class="filter-btn" data-filter="trp">Transportes</li>
 					</ul>
 				</div>
 
 				  <div id="painel-container" style="display: flex; flex-wrap: wrap; justify-content: center; position: relative;">
+
+					<div class="inner" data-categoria="trp"
+					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+							src="images/trp.png"></a>
+					<div class="content" align="center" style="padding: 5%;">
+						<H3 class="major-inicio">ANHANGUERA</H3>
+						<div class="info-unidade" style="display: none; text-align: left;">
+							
+							<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+							  <li>Endereço: </li>
+							  <li>Clientes: Friboi e Seara</li>
+							</ul>
+						  
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>KPIs - Transportes</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
+
+								</ul>
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>###</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
+
+								</ul>
+						  </div>
+						  
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+					</div>
+					
+				</div>
+
+
+
 
 					<div class="inner" data-categoria="fmcg"
 						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
@@ -489,6 +545,7 @@
 						<div class="content" align="center" style="padding: 5%;">
 							<H3 class="major-inicio">BAURU</H3>
 							<div class="info-unidade" style="display: none; text-align: left;">
+								
 								<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
 								  <li>Endereço: Rodovia Marechal Rondon - KM 348 - Nucleo Resid. Edison Bastos Gasparini - Condominio Basines Park - Bauru - CEP 17022-531 SP</li>
 								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
@@ -511,6 +568,12 @@
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>Produtividade - Seara</span>
 										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+										</a>
+									</li>
+									<li style="display: flex; justify-content: space-between; align-items: center;">
+										<span>KPIs - Transportes</span>
+										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
@@ -537,8 +600,10 @@
 									</li>
 									</ul>
 							  </div>
+							  
 							<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 						</div>
+						
 					</div>
 					
 					<div class="inner" data-categoria="fmcg"
@@ -551,7 +616,7 @@
 								<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
 								  <li>Endereço: Rodovia Marechal Rondon - KM 348 - Nucleo Resid. Edison Bastos Gasparini - Condominio Basines Park - Bauru - CEP 17022-531 SP
 								</li>
-								  <li>Clientes: Copacol, Vigor e Seara</li>
+								  <li>Clientes: Bom Peixe, Copacol, Vigor e Seara</li>
 								</ul>
 							  
 								<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
@@ -565,6 +630,12 @@
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>Produtividade - Seara</span>
 										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiZGQxZDliMDQtMzFlOS00ODY4LWExNTMtOWUzYmMzODk5N2M2IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+										</a>
+									</li>
+									<li style="display: flex; justify-content: space-between; align-items: center;">
+										<span>KPIs - Transportes</span>
+										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
@@ -708,29 +779,17 @@
 							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
 							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 								<li style="display: flex; justify-content: space-between; align-items: center;">
-									<span>###</span>
-									<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<span>KPIs - Transportes</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 									<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 									</a>
 								</li>
-								<li style="display: flex; justify-content: space-between; align-items: center;">
-									<span>###</span>
-									<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-									<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-									</a>
-								</li>
-								<li style="display: flex; justify-content: space-between; align-items: center;">
-									<span>###</span>
-									<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-									<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-									</a>
-								</li>
+							
 								</ul>
 							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
 							<ul style="margin-top: 5px; font-size: large; margin-bottom: 0;">
 							  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
-							  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
-							  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+			
 							</ul>
 						  </div>
 						<a href="https://app.powerbi.com/view?r=eyJrIjoiMTU5NzQyMTAtNzYwYy00OGNmLWJjY2ItOWE3YmI5YmY0MjNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
@@ -839,23 +898,12 @@
 						<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
 						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<span>KPIs - Corteva </span>
+								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYTkzMzgyMGUtOTZmZC00ZTc4LTk2ZjUtYjkyOTZlODM5MmIwIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 								<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 								</a>
 							</li>
-							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-								<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-								</a>
-							</li>
-							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-								<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-								</a>
-							</li>
+
 							</ul>
 						<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
 						<ul style="margin-top: 5px; font-size: large; margin-bottom: 0;">
@@ -883,23 +931,18 @@
 					<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
 					<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 						<li style="display: flex; justify-content: space-between; align-items: center;">
-							<span>###</span>
-							<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+							<span>Painel Operacional</span>
+							<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2MzYWMwMDItN2RmZC00NDE5LWI2MGQtZWNhMzBlZDAyNTQ0IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 							<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 							</a>
 						</li>
 						<li style="display: flex; justify-content: space-between; align-items: center;">
-							<span>###</span>
-							<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+							<span>Produtividade - Danone</span>
+							<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMTc0NWNjODAtNmUzZS00NDdmLTg4MGItMWQwZTQ0NGQ5ZTZiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 							<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 							</a>
 						</li>
-						<li style="display: flex; justify-content: space-between; align-items: center;">
-							<span>###</span>
-							<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-							<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-							</a>
-						</li>
+
 						</ul>
 					<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
 					<ul style="margin-top: 5px; font-size: large; margin-bottom: 0;">
@@ -927,29 +970,18 @@
 				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<span>Produtividade - BAT</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYzlmYmNjMzMtYWVlOC00YTYwLThmMGMtMjEyNTczODZiYzg1IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
+				
 					</ul>
 				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 0;">
 				  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
-				  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
-				  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+				  <li><a href="https://indicador1.com" target="_blank">INDICADOR 2</a></li>
+				  <li><a href="https://indicador1.com" target="_blank">INDICADOR 3</a></li>
 				</ul>
 			  </div>
 			<a href="https://app.powerbi.com/view?r=eyJrIjoiYjVmN2EyODEtNDliNy00MzNhLThlYmQtMTk2NzZhMjFjOWUzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
@@ -971,23 +1003,12 @@
 				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<span>KPIs - Corteva</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiNDQwOTM3YjAtNDBlYy00ZWZkLWJhNjAtMDk3ZjRkN2IwMzQzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
+
 					</ul>
 				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 0;">
@@ -1049,7 +1070,7 @@
 				src="images/fs.png"></a>
 		<div class="content" align="center" style="padding: 5%;">
 			<H3 class="major-inicio">JARINU</H3>
-			<div class="info-unidade" style="display: none; text-align: left;">
+			<div class="info-unidade" style="display: none; text-align: left; max-height: 100px; overflow-y: auto; padding-right: 5px;">
 				<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
 				  <li>Endereço: Rodovia Edgard Maximo Zambotto S/N KM 76,5 Campo dos Aleixos - Jarinu/SP - CEP 13242-220
 				</li>
@@ -1059,34 +1080,121 @@
 				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<span>Antaris</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiZjlmYjBjYTctZGRkZS00OTRkLThjZjEtZDUxZDBhMmYyZDY2IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
 					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<span>Boali</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiNTJkNjcwMzAtMjIyYy00MTQyLWJiZmQtMWVhNDE2MGUxODllIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
 					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<span>Grupo Drumattos</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYWY0MjQxNmQtZWVhYy00ZDU1LTk1YWQtNDYyYzc4NDFmNDhkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Lindt - Inventário</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiODQzODg2ZmEtYjk4MC00ZDZiLThjYmItOGJlNjVhZTE4OGJlIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Lindt - Monitoramento Qualidade</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMjI1ZjJhMjMtODJmZC00ZjljLWIyYTgtM2VmZDU4OTgxNThkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Liv Up</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiY2JiNDZhYmUtYmJkZS00YzliLTgxYjItZmM4MDBiOWNiMGFhIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Mania de Churrasco</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiY2E0OTY0ZDItMTgzMi00MDE0LTlmMzItYjA4OGQxNmQ4ZGIwIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Milky Moo</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2Y4NDY0YTYtNTcxZS00MzZiLWE4Y2EtYzc0MDkyNzA5M2IyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Grupo Nós</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZDJlN2EtNTgzOS00MjE5LTgyNTYtMDdiYTY2YThlYTZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Starbucks</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiZTExYjU4YzMtZTYxNi00YjMzLWE4MjEtYWY0MjRmMTkwZTg1IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Produtividade - Food Service</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMjg4Zjg1NzMtYjRjYi00ZDcwLTg1OGUtOWFlYWRmYTdmZWM3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+		
 					</ul>
 				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 0;">
-				  <li><a href="https://indicador1.com" target="_blank">INDICADOR 1</a></li>
-				  <li><a href="https://indicador2.com" target="_blank">INDICADOR 2</a></li>
-				  <li><a href="https://indicador3.com" target="_blank">INDICADOR 3</a></li>
+				  <li><a href="https://indicador1.com" target="_blank">Consolidado dos Clientes</a></li>
 				</ul>
 			  </div>
 			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 		</div>
 	</div>
+	<div class="inner" data-categoria="trp"
+					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+							src="images/trp.png"></a>
+					<div class="content" align="center" style="padding: 5%;">
+						<H3 class="major-inicio">JUNDIAÍ</H3>
+						<div class="info-unidade" style="display: none; text-align: left;">
+							
+							<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+							  <li>Endereço: </li>
+							  <li>Clientes: BRF</li>
+							</ul>
+						  
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>KPIs - Transportes</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
+
+								</ul>
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>###</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
+
+								</ul>
+						  </div>
+						  
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+					</div>
+					
+				</div>
+
 	<div class="inner" data-categoria="fmcg"
 		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
 		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
@@ -1103,23 +1211,18 @@
 				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<span>Painel Operacional - LIM</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMmFiMjA3ZTYtNTViNy00YzIxLThlMTMtZTE4Mzg0NzY0MDc1IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
 					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<span>KPIs - Transportes</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
+					
 					</ul>
 				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 0;">
@@ -1354,7 +1457,45 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 </div>
 </div>
+<div class="inner" data-categoria="trp"
+					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+							src="images/trp.png"></a>
+					<div class="content" align="center" style="padding: 5%;">
+						<H3 class="major-inicio">RECIFE</H3>
+						<div class="info-unidade" style="display: none; text-align: left;">
+							
+							<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+							  <li>Endereço: </li>
+							  <li>Clientes: Friboi</li>
+							</ul>
+						  
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>KPIs - Transportes</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
 
+								</ul>
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>###</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
+
+								</ul>
+						  </div>
+						  
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+					</div>
+					
+				</div>
 <div class="inner" data-categoria="fmcg"
 style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
 <a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
@@ -1371,20 +1512,26 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
 		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 			<li style="display: flex; justify-content: space-between; align-items: center;">
-				<span>###</span>
+				<span>Painel Operacional - RCO</span>
 				<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
 			<li style="display: flex; justify-content: space-between; align-items: center;">
-				<span>###</span>
+				<span>Produtividade - ADM</span>
 				<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
 			<li style="display: flex; justify-content: space-between; align-items: center;">
-				<span>###</span>
+				<span>Reclamações - ADM</span>
 				<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>KPIs - Transportes</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
@@ -1578,7 +1725,45 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 </div>
 </div>
+<div class="inner" data-categoria="trp"
+					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+							src="images/trp.png"></a>
+					<div class="content" align="center" style="padding: 5%;">
+						<H3 class="major-inicio">VIANA</H3>
+						<div class="info-unidade" style="display: none; text-align: left;">
+							
+							<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+							  <li>Endereço: </li>
+							  <li>Clientes: BRF</li>
+							</ul>
+						  
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>KPIs - Transportes</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
 
+								</ul>
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>###</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
+
+								</ul>
+						  </div>
+						  
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+					</div>
+					
+				</div>
 </div>
 
 				</div>
@@ -1588,6 +1773,14 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 				<ul class="actions">
 					<a href="homepage.html" class="special no-copy" style="margin: 0;">VOLTAR</a>
 				  </ul>
+
+				  <style>
+					body.no-scroll {
+					  overflow: hidden;
+					}
+				  </style>
+
+
 
 				<script>
 					document.querySelectorAll('.special').forEach(botao => {
@@ -1606,12 +1799,11 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 						  // Atualiza o novo contêiner com conteúdo alinhado à esquerda
 						  document.getElementById('conteudo-copia').innerHTML = `
 							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-								<h3 style="margin: 0; color: #666">${titulo}</h3>
-								<img src="${imagemSrc}" style="width: 5em; height: auto; margin-left: 10em">
+							  <h3 style="margin: 0; color: #666">${titulo}</h3>
+							  <img src="${imagemSrc}" style="width: 5em; height: auto; margin-left: 10em">
 							</div>
 							${content.querySelector('.info-unidade')?.innerHTML || ''}
-							`;
-
+						  `;
 				  
 						  // Copia o link do botão
 						  const inputTemp = document.createElement('input');
@@ -1621,9 +1813,42 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 						  document.execCommand('copy');
 						  document.body.removeChild(inputTemp);
 				  
-						  // Exibe a mensagem de sucesso
+						  // Exibe a mensagem de sucesso e os botões de navegação
+						  document.body.classList.add('no-scroll');
 						  document.getElementById('overlay-blur').style.display = 'block';
 						  document.getElementById('mensagem-copia').style.display = 'block';
+						  document.getElementById('btn-anterior').style.display = 'block';
+						  document.getElementById('btn-proximo').style.display = 'block';
+				  
+						  // Armazenar as unidades de informação para navegação
+						  const unidades = Array.from(document.querySelectorAll('.info-unidade'));  // Transforma NodeList em Array
+						  let currentIndex = unidades.findIndex(unit => unit.innerHTML === content.querySelector('.info-unidade')?.innerHTML);
+				  
+						  // Função para navegar para a unidade anterior
+						  document.getElementById('btn-anterior').addEventListener('click', () => {
+							if (currentIndex > 0) {
+							  currentIndex--;
+							  updateUnitDisplay(unidades, currentIndex);
+							}
+						  });
+				  
+						  // Função para navegar para a unidade seguinte
+						  document.getElementById('btn-proximo').addEventListener('click', () => {
+							if (currentIndex < unidades.length - 1) {
+							  currentIndex++;
+							  updateUnitDisplay(unidades, currentIndex);
+							}
+						  });
+				  
+						  function updateUnitDisplay(unidades, index) {
+							// Oculta todas as unidades
+							unidades.forEach(unit => unit.classList.remove('active'));
+							// Mostra a unidade ativa
+							unidades[index].classList.add('active');
+						  }
+				  
+						  // Inicia a navegação com a unidade atual
+						  updateUnitDisplay(unidades, currentIndex);
 						});
 					  }
 					});
@@ -1632,12 +1857,12 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 					document.getElementById('fechar-mensagem').addEventListener('click', () => {
 					  document.getElementById('mensagem-copia').style.display = 'none';
 					  document.getElementById('overlay-blur').style.display = 'none';
+					  document.body.classList.remove('no-scroll');
+					  document.getElementById('btn-anterior').style.display = 'none';
+					  document.getElementById('btn-proximo').style.display = 'none';
 					});
 				  </script>
-				  
-				  
-				  
-				  
+							  
 
 
 
@@ -1853,6 +2078,7 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 	</a>
 
 	<style>
+		
 		.hidden {
 			display: none;
 		}
