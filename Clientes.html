@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>@ INÍCIO | COMFRIO </title>
+    <title>@ CLIENTES | MELHORIA CONTÍNUA </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -383,8 +383,8 @@
             <li><a href="Corporativo.html">CORPORATIVO</a></li>
             <li><a href="Operações.html">OPERAÇÕES</a></li>
             <li><a href="Clientes.html">CLIENTES</a></li>
-            <li><a href="https://painel.umentor.com.br/business/">UNICOMFRIO</a></li>
-            <li><a href="https://comfrio.com.br/">SITE OFICIAL</a></li>
+            <li><a href="https://painel.umentor.com.br/business/" target="_blank">UNICOMFRIO</a></li>
+            <li><a href="https://comfrio.com.br/" target="_blank">SITE OFICIAL</a></li>
             <li><a href="Melhoria.html" target="_blank">CRÉDITOS</a></li>
 			<ul style="display: flex; justify-content: center; margin: 0; padding: 0;">
 				<li style="list-style: none; position: fixed; bottom: 0; text-align: center;">
@@ -425,415 +425,1692 @@
 
 	</div>
 </section>
-			<!-- One -->
-			<section id="one" class="wrapper spotlight style1" style="padding: 20px 8em 0em 8em; position: relative; display: flex; flex-wrap: wrap; background-image: url('images/background-logo.jpg');
-			background-size: cover;
-			background-position: left center; /* ajustado para a direita e centralizado verticalmente */
-			background-repeat: no-repeat;">
+
+		<!-- One -->
+<section id="one" class="wrapper spotlight style1" style="padding: 20px 8em 0em 8em; position: relative; display: flex; flex-wrap: wrap; background-image: url('images/background-logo.jpg');
+background-size: cover;
+background-position: left center; /* ajustado para a direita e centralizado verticalmente */
+background-repeat: no-repeat;">
+ 
+
+  <!-- Botões laterais 
+  <button id="btn-anterior" style="padding: 0; display: none; position: fixed; top: 50%; left: 5em; transform: translateY(-50%); font-size: 3em; background: none; border: none; cursor: pointer; z-index: 10000;">⬅️</button>
+
+  <button id="btn-proximo" style="padding: 0; display: none; position: fixed; top: 50%; right: 5em; transform: translateY(-50%); font-size: 3em; background: none; border: none; cursor: pointer; z-index: 10000;">➡️</button>
+-->
+
+<!-- OVERLAY COM BLUR (único, não duplique!) -->
+<div id="overlay-blur" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9998;
+"></div>
+
+<!-- MENSAGEM DE CÓPIA COM CONTEÚDO DE UNIDADE -->
+<div id="mensagem-copia" style="
+  display: none;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #666;
+  font-size: 1.5em;
+  padding: 0.5em 1em 1.5em;
+  border-radius: 15px;
+  z-index: 9999;
+  text-align: center;
+  box-shadow: 0 0 10px black;
+  width: 50%;
+  max-height: 90vh;
+  overflow: hidden;
+">
+  <!-- Conteúdo com rolagem -->
+  <div id="conteudo-copia" style="text-align: left; max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+    <!-- conteúdo será inserido dinamicamente aqui -->
+  </div>
+  
+  <a class="special no-copy" id="fechar-mensagem" style="color: #666; width: 20%; font-size: 0.5em; display: flex; align-items: center; justify-content: center; margin: auto; cursor: pointer;">OK</a>
+</div>
+
+<div id="popup-copiado" style="
+  display: none;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #666;
+  font-size: 1.5em;
+  padding: 0.5em 1em 1.5em;
+  border-radius: 15px;
+  z-index: 9999;
+  text-align: center;
+  box-shadow: 0 0 10px black;
+  overflow: hidden; /* Garante que o popup de confirmação não tenha rolagem */
+">
+  <strong style="color: #666;">Caminho Copiado!</strong><br>
+  Copiado para Área de Transferência!<br>Vá até a rede e cole o caminho!
+  <img src="images2/passoapasso.gif" style="width: 80%; margin-top: 1em;"><br>
+  <a class="special" id="fechar-popup" style="color: #666; width: 20%; font-size: 0.5em; display: flex; align-items: center; justify-content: center; margin: auto; cursor: pointer;">OK</a>
+</div>
+
+
+
 
 				<div>
 					<div>
-						<h2 style="color: #616163; margin: 0; padding: 0;">NAVEGUE PELOS CLIENTES </h2>
+						<h2 style="color: #616163; margin: 0; padding: 0;">NAVEGUE PELOS CLIENTES E SEUS SEGMENTOS </h2>
 					</div>
 				</div>
 
-				<div style="display: flex; flex-wrap: wrap; justify-content: center;">	
-					<!-- Adicionando a label e o input -->
-					<div style="margin-bottom: 2em; display: inline-block; width: 100%;">
-						<label for="demo-name" style=" color: #616163;">Filtrar por Cliente:</label>
-						<input type="text" name="demo-name" id="demo-name" value="Digite o nome do cliente"
-							onfocus="clearInput()" onblur="restoreInput()" onkeyup="filterTable()">
-					</div>
-					<div class="inner"
-						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
+				<div style="width: 100%; text-align: center; padding: 1em;">
+					<ul id="painel-filters" style="list-style: none; padding: 0; margin: 0; display: inline-flex; gap: 10px; justify-content: center;">
+						<li class="filter-btn active" data-filter="todos">Todos</li>
+						<li class="filter-btn" data-filter="agro">Agronegócio</li>
+						<li class="filter-btn" data-filter="fmcg">FMCG</li>
+						<li class="filter-btn" data-filter="food">Food Service</li>
+						<li class="filter-btn" data-filter="trp">Transportes</li>
+					</ul>
+				</div>
+
+				  <div id="painel-container" style="display: flex; flex-wrap: wrap; justify-content: center; position: relative;">
+
+					
+
+
+
+
+					<div class="inner" data-categoria="fmcg"
+						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+						<a href="#" target="_blank" class="image" style="margin: 2%"><img
 								src="images/adm.svg"></a>
 						<div class="content" align="center" style="padding: 5%;">
 							<H3 class="major-inicio">ADM</H3>
-							<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								
+								<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+								  <li>Endereço: Rodovia Marechal Rondon - KM 348 - Nucleo Resid. Edison Bastos Gasparini - Condominio Basines Park - Bauru - CEP 17022-531 SP</li>
+								  <li>Clientes: Friboi, Frimesa, Frigol, Vigor, Marfrig, Souza Cruz e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+									<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+									<li style="display: flex; justify-content: space-between; align-items: center;">
+										<span>Produtividade - Frigol</span>
+										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+										</a>
+									</li>
+								
+									</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+									<li style="display: flex; justify-content: space-between; align-items: center;">
+										<span>OTIF</span>
+										<a class="button primary small btn-copia-excel"
+											href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\BAURU"
+											style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+											<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+										</a>
+									</li>
+									
+									
+									</ul>
+							  </div>
+							  
+							<a href="#" target="_blank" class="special">ACESSAR</a>
 						</div>
+						
 					</div>
-					<div class="inner"
-						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
+					
+					<div class="inner" data-categoria="agro"
+						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiOTM4ZGU4YTQtNjRjZi00NjEzLTkxZGMtYTYxNDc1OGJjOTY3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%;"><img
 								src="images/advanta.jpg"></a>
 						<div class="content" align="center" style="padding: 5%;">
-							<H3 class="major-inicio">ADVANTA</H3>
-							<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+							<h3 class="major-inicio">ADVANTA </h3>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+								  <li>Endereço: Rodovia Marechal Rondon - KM 348 - Nucleo Resid. Edison Bastos Gasparini - Condominio Basines Park - Bauru - CEP 17022-531 SP
+								</li>
+								  <li>Clientes: Bom Peixe, Copacol, Vigor e Seara</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+									<li style="display: flex; justify-content: space-between; align-items: center;">
+										<span>Produtividade - Copacol</span>
+										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiZTE0ZmI3ZTItMWQyYy00NTkwLTg3ZDAtNDcxNjRlOWYyMmU0IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+										</a>
+									</li>
+	
+									</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+									<li style="display: flex; justify-content: space-between; align-items: center;">
+										<span>OTIF</span>
+										<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\BEBEDOURO I" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+										</a>
+									</li>
+									</ul>
+							  </div>
+							<a href="https://app.powerbi.com/view?r=eyJrIjoiOTM4ZGU4YTQtNjRjZi00NjEzLTkxZGMtYTYxNDc1OGJjOTY3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special" title="Acessar Armazém">ACESSAR</a>
 						</div>
 					</div>
-					<div class="inner"
-						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-								src="images/antaris.jpg"></a>
+					<div class="inner" data-categoria="food"
+						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiYTAyYzg3YjAtZGEwYS00Yjg1LWExMzUtNTMyYzg5MTdiYWY5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+							<img src="images/antaris.jpg"></a>
 						<div class="content" align="center" style="padding: 5%;">
 							<H3 class="major-inicio">ANTARIS</H3>
-							<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+								  <li>Endereço: Rodovia Marechal Rondon - KM 348 - Nucleo Resid. Edison Bastos Gasparini - Condominio Basines Park - Bauru - CEP 17022-531 SP
+								</li>
+								  <li>Clientes: Bom Peixe, Três Corações, Cargill, Catupiry, Cocam, Frimesa, Syngenta, Seara e Copacol</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+									<li style="display: flex; justify-content: space-between; align-items: center;">
+										<span>Produtividade - Frimesa</span>
+										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGQ5OWMwYWItMTg2OS00NmM0LWFjN2MtMmZkMDA2ZWY5YWE0IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+										</a>
+									</li>
+
+									</li>
+									</ul>
+								<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+									<li style="display: flex; justify-content: space-between; align-items: center;">
+										<span>OTIF</span>
+										<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\BEBEDOURO II" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+										</a>
+									</li>
+							
+									</ul>
+							  </div>
+							<a href="#" target="_blank" class="special">ACESSAR</a>
 						</div>
 					</div>
-					<div class="inner"
-						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-								src="images/aurora.png"></a>
+					<div class="inner" data-categoria="fmcg"
+						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiYTAyYzg3YjAtZGEwYS00Yjg1LWExMzUtNTMyYzg5MTdiYWY5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+							<img src="images/aurora.png"></a>
 						<div class="content" align="center" style="padding: 5%;">
 							<H3 class="major-inicio">AURORA</H3>
-							<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+							<div class="info-unidade" style="display: none; text-align: left;">
+								<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+								  <li>Endereço:
+								</li>
+								  <li>Clientes: Seminis (Bayer)</li>
+								</ul>
+							  
+								<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+									<li style="display: flex; justify-content: space-between; align-items: center;">
+										<span>KPIs Bayer (Seminis) - PT/BR + ES</span>
+										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiY2RiMzU1MTUtZWUzMi00ZTYwLWIyMTItMzZlMGEyNWRlOGVlIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+										</a>
+									</li>
+
+									</li>
+									</ul>
+							
+							  </div>
+							<a href="https://app.powerbi.com/view?r=eyJrIjoiYTAyYzg3YjAtZGEwYS00Yjg1LWExMzUtNTMyYzg5MTdiYWY5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 						</div>
 					</div>
-					<div class="inner"
-						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-								src="images/bayer.svg"></a>
-						<div class="content" align="center" style="padding: 5%;">
-							<H3 class="major-inicio">BAYER</H3>
-							<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-						</div>
-					</div>
-					<div class="inner"
-						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-								src="images/boali.png"></a>
-						<div class="content" align="center" style="padding: 5%;">
-							<H3 class="major-inicio">BOALI</H3>
-							<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-						</div>
-					</div>
-					<div class="inner"
-						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-								src="images/bompeixe.png"></a>
-						<div class="content" align="center" style="padding: 5%;">
-							<H3 class="major-inicio">BOM PEIXE</H3>
-							<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-						</div>
-					</div>
-					<div class="inner"
-						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-						onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-						<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-								src="images/brf.png"></a>
-						<div class="content" align="center" style="padding: 5%;">
-							<H3 class="major-inicio">BRF</H3>
-							<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-						</div>
-					</div>
-					<div class="inner"
-					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-					onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-					<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-							src="images/camaradacamarao.jpg"></a>
+					<div class="inner" data-categoria="agro"
+					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiMTU5NzQyMTAtNzYwYy00OGNmLWJjY2ItOWE3YmI5YmY0MjNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+						<img src="images/bayer.svg"></a>
 					<div class="content" align="center" style="padding: 5%;">
-						<H3 class="major-inicio">CAMARADA CAMARÃO</H3>
-						<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-					</div>
-					</div>
-					<div class="inner"
-					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-					onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-					<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-							src="images/camaraoecia.png"></a>
-					<div class="content" align="center" style="padding: 5%;">
-						<H3 class="major-inicio">CAMARÃO & CIA</H3>
-						<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+						<H3 class="major-inicio">BAYER</H3>
+						<div class="info-unidade" style="display: none; text-align: left;">
+							<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+							  <li>Endereço: Rua 9, Número 01 A Conjunto Industrial- Maracanaú - CEP 61925-090 - Caucaia CE
+							</li>
+							  <li>Clientes: Danone, Vigor e JBS</li>
+							</ul>
+						  
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>KPIs - Transportes</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
+							
+								</ul>
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>OTIF</span>
+									<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\CAUCAIA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
+						
+								</ul>
+						  </div>
+						<a href="https://app.powerbi.com/view?r=eyJrIjoiMTU5NzQyMTAtNzYwYy00OGNmLWJjY2ItOWE3YmI5YmY0MjNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 					</div>
 				</div>
-				<div class="inner"
-				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-				onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-				<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-						src="images/citrosuco.jpg"></a>
+				<div class="inner" data-categoria="food"
+				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRjY2YwZmYtMzk0OC00OGJiLWIyODUtYzAzYTM3ODJiYTRlIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+					<img src="images2/boali.webp"></a>
 				<div class="content" align="center" style="padding: 5%;">
-					<H3 class="major-inicio">CITROSUCO</H3>
-					<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+					<H3 class="major-inicio">BOALI</H3>
+					<div class="info-unidade" style="display: none; text-align: left;">
+						<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+						  <li>Endereço: Rodovia do Imigrantes S/N - KM 501 - Distrito Industrial - Cuiabá - CEP 78098-325 MT
+						</li>
+						  <li>Clientes: TMG Sementes, Bayer, KWS, Latina, Syngenta e Shulls Sementes</li>
+						</ul>
+					  
+						
+						<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+							<li style="display: flex; justify-content: space-between; align-items: center;">
+								<span>OTIF</span>
+								<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\CUIABÁ" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+								</a>
+							</li>
+						
+					  </div>
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRjY2YwZmYtMzk0OC00OGJiLWIyODUtYzAzYTM3ODJiYTRlIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 				</div>
 			</div>
-			
-			<div class="inner"
-			style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-			onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-			<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-					src="images/copacol.svg"></a>
+				<div class="inner" data-categoria="trp"
+				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiNjczYTNmYjMtMDYwNS00NzcxLTk0MDgtY2VmZWIwMTkyZmM5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+					<img src="images/bompeixe.png"></a>
+				<div class="content" align="center" style="padding: 5%;">
+					<H3 class="major-inicio">BOM PEIXE</H3>
+					<div class="info-unidade" style="display: none; text-align: left;">
+						<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+						  <li>Endereço: #</li>
+						  <li>Clientes: Reckitt</li>
+						</ul>
+					  
+						<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+							<li style="display: flex; justify-content: space-between; align-items: center;">
+								<span>Dashboard Operacional - Reckitt</span>
+								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiOGM5MjRhYTktZDI5Mi00MGE1LWFhYzYtN2FiMWUxNTFkYTFhIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+								</a>
+							</li>
+							</ul>
+						<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+							<li style="display: flex; justify-content: space-between; align-items: center;">
+								<span>OTIF</span>
+								<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\EXTREMA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+								</a>
+							</li>
+							</ul>
+					  </div>
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiNjczYTNmYjMtMDYwNS00NzcxLTk0MDgtY2VmZWIwMTkyZmM5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+				</div>
+			</div>
+			<div class="inner" data-categoria="fmcg"
+				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRlMGQ2YWQtOTI2MC00MDgyLTg5YTctODNkMTk2ZjQ1NDJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+					<img src="images/brf.png"></a>
+				<div class="content" align="center" style="padding: 5%;">
+					<H3 class="major-inicio">BRF</H3>
+					<div class="info-unidade" style="display: none; text-align: left;">
+						<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+						  <li>Endereço: Rodovia DF 250, KM 20  Núcleo Rural Santos Dumont, Lote 50 Caixa Postal: 083 Planaltina/DF  CEP: 73.310-970 Corteva
+						</li>
+						  <li>Clientes: Corteva</li>
+						</ul>
+					  
+						<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+							<li style="display: flex; justify-content: space-between; align-items: center;">
+								<span>KPIs - Corteva </span>
+								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYTkzMzgyMGUtOTZmZC00ZTc4LTk2ZjUtYjkyOTZlODM5MmIwIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+								</a>
+							</li>
+
+							</ul>
+						<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+							<li style="display: flex; justify-content: space-between; align-items: center;">
+								<span>OTIF</span>
+								<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\FORMOSA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+								</a>
+							</li>
+					
+							</ul>
+					  </div>
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRlMGQ2YWQtOTI2MC00MDgyLTg5YTctODNkMTk2ZjQ1NDJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+				</div>
+			</div>
+			<div class="inner" data-categoria="food"
+			style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiNjM0ZDQxZDAtYjlkOS00MmY1LTgxMGQtN2ViMTIwYTVmZjVkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+				<img src="images/camaradacamarao.jpg"></a>
 			<div class="content" align="center" style="padding: 5%;">
-				<H3 class="major-inicio">COPACOL</H3>
-				<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+				<H3 class="major-inicio">CAMARADA CAMARÃO</H3>
+				<div class="info-unidade" style="display: none; text-align: left;">
+					<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+					  <li>Endereço: R. Landri Sales, 1070 - Cidade Aracilia - Guarulhos - CEP 07250-130 SP Galpão G8
+					</li>
+					  <li>Clientes: Danone</li>
+					</ul>
+				  
+					<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+					<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+						<li style="display: flex; justify-content: space-between; align-items: center;">
+							<span>Painel Operacional</span>
+							<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2MzYWMwMDItN2RmZC00NDE5LWI2MGQtZWNhMzBlZDAyNTQ0IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+							<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+							</a>
+						</li>
+		
+
+						</ul>
+					<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+					<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+						<li style="display: flex; justify-content: space-between; align-items: center;">
+							<span>OTIF</span>
+							<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\GUARULHOS" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+							<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+							</a>
+						</li>
+			
+						
+						</ul>
+				  </div>
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiNjM0ZDQxZDAtYjlkOS00MmY1LTgxMGQtN2ViMTIwYTVmZjVkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 			</div>
 		</div>
+		<div class="inner" data-categoria="food"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiYjVmN2EyODEtNDliNy00MzNhLThlYmQtMTk2NzZhMjFjOWUzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%">
+			<img src="images/camaraoecia.png"></a>
+		<div class="content" align="center" style="padding: 5%;">
+			<H3 class="major-inicio">CAMARÃO & CIA</H3>
+			<div class="info-unidade" style="display: none; text-align: left;">
+				<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+				  <li>Endereço: R. Landri Sales, 1070 - Cidade Aracilia - Guarulhos - CEP 07250-130 SP Galpão G10
+				</li>
+				  <li>Clientes: BAT</li>
+				</ul>
+			  
+				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Produtividade - BAT</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYzlmYmNjMzMtYWVlOC00YTYwLThmMGMtMjEyNTczODZiYzg1IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+				
+					</ul>
+				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>OTIF</span>
+						<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\GUARULHOS II" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+		
+					
+					</ul>
+			  </div>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiYjVmN2EyODEtNDliNy00MzNhLThlYmQtMTk2NzZhMjFjOWUzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+		</div>
+	</div>
+	<div class="inner" data-categoria="fmcg"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+				src="images/citrosuco.jpg"></a>
+		<div class="content" align="center" style="padding: 5%;">
+			<H3 class="major-inicio">CITROSUCO</H3>
+			<div class="info-unidade" style="display: none; text-align: left;">
+				<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+				  <li>Endereço: Rodovia BR 452 KM 189 S/N Zona Rural -Itumbiara GO CEP 75500-00 - Caixa Postal 023
+				</li>
+				  <li>Clientes: Corteva</li>
+				</ul>
+			  
+				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>KPIs - Corteva</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiNDQwOTM3YjAtNDBlYy00ZWZkLWJhNjAtMDk3ZjRkN2IwMzQzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
 
-		<div class="inner"
-		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-		onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-		<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
+					</ul>
+				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>OTIF</span>
+						<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\ITUMBIARA I" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+				
+					</ul>
+			  </div>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+		</div>
+	</div>
+	<div class="inner" data-categoria="fmcg"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+				src="images/copacol.svg"></a>
+		<div class="content" align="center" style="padding: 5%;">
+			<H3 class="major-inicio">COPACOL</H3>
+			<div class="info-unidade" style="display: none; text-align: left;">
+				<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+				  <li>Endereço: Rodovia BR 452 KM 189 S/N Zona Rural -Itumbiara GO CEP 75500-00 - Caixa Postal 023
+				</li>
+				  <li>Clientes: Corteva</li>
+				</ul>
+			  
+
+				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>OTIF</span>
+						<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\ITUMBIARA INHOUSE" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+
+					</ul>
+			  </div>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+		</div>
+	</div>
+	<div class="inner" data-categoria="fmcg"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
 				src="images/3coracoes.png"></a>
 		<div class="content" align="center" style="padding: 5%;">
 			<H3 class="major-inicio">3 CORAÇÕES</H3>
-			<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+			<div class="info-unidade" style="display: none; text-align: left; max-height: 100px; overflow-y: auto; padding-right: 5px;">
+				<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+				  <li>Endereço: Rodovia Edgard Maximo Zambotto S/N KM 76,5 Campo dos Aleixos - Jarinu/SP - CEP 13242-220
+				</li>
+				  <li>Clientes: Mania de Churrasco, Starbucks, Liv Up, Drumattos, Antaris, Nós, Boali, Xbloom e Milky Moo</li>
+				</ul>
+			  
+				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Antaris</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiZjlmYjBjYTctZGRkZS00OTRkLThjZjEtZDUxZDBhMmYyZDY2IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+					
+		
+					</ul>
+				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Consolidado dos Clientes</span>
+						<a class="button primary small btn-copia-excel"  href="M:\Qualidade\Qualidade na Logística\2025\01.OTIF REAL" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+				
+					</ul>
+			  </div>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 		</div>
 	</div>
+	<div class="inner" data-categoria="agro"
+					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+					<a href="#" target="_blank" class="image" style="margin: 2%"><img
+							src="images/corteva.png"></a>
+					<div class="content" align="center" style="padding: 5%;">
+						<H3 class="major-inicio">CORTEVA</H3>
+						<div class="info-unidade" style="display: none; text-align: left;">
+							
+							<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+							  <li>Endereço: </li>
+							  <li>Clientes: BRF</li>
+							</ul>
+						  
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>KPIs - Transportes</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
 
-		<div class="inner"
-		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-		onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-		<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-				src="images/corteva.png"></a>
-		<div class="content" align="center" style="padding: 5%;">
-			<H3 class="major-inicio">CORTEVA</H3>
-			<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-		</div>
-	</div>
+								</ul>
+					
+						  </div>
+						  
+						<a href="#" target="_blank" class="special">ACESSAR</a>
+					</div>
+					
+				</div>
 
-	<div class="inner"
-		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-		onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-		<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
+	<div class="inner" data-categoria="fmcg"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
 				src="images/danone.png"></a>
 		<div class="content" align="center" style="padding: 5%;">
 			<H3 class="major-inicio">DANONE</H3>
-			<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+			<div class="info-unidade" style="display: none; text-align: left;">
+				<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+				  <li>Endereço: Rodovia Edgard Maximo Zambotto S/N KM 76,5 Campo dos Aleixos - Jarinu/SP - CEP 13242-220
+				</li>
+				  <li>Clientes: BRF, Vigor, Di Carlo, ADM, Bimbo e Cargill</li>
+				</ul>
+			  
+				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Painel Operacional - LIM</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMmFiMjA3ZTYtNTViNy00YzIxLThlMTMtZTE4Mzg0NzY0MDc1IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+		
+					
+					</ul>
+				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>OTIF</span>
+						<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\LIMEIRA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+		
+					
+					</ul>
+			  </div>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 		</div>
 	</div>
-
-	<div class="inner"
-		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-		onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-		<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
+	<div class="inner" data-categoria="trp"
+		style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
 				src="images/friboi.svg"></a>
 		<div class="content" align="center" style="padding: 5%;">
 			<H3 class="major-inicio">FRIBOI</H3>
-			<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
+			<div class="info-unidade" style="display: none; text-align: left;">
+				<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+				  <li>Endereço: Av. Joanna Rodrigues Jondral N° 250 - Cilo II - CEP 86067-050 Londrina/PR
+				</li>
+				  <li>Clientes: Bayer e Latina Sementes</li>
+				</ul>
+			  
+				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Avaliação de Fornecedores - Bayer</span>
+						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiZDRhMzcwZmEtMzJkMy00MDNmLWFiYzYtNjA5Y2ZiOTIyZGUzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+					
+					</ul>
+				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+					<li style="display: flex; justify-content: space-between; align-items: center;">
+						<span>OTIF</span>
+						<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\LONDRINA II" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+						</a>
+					</li>
+			
+					</ul>
+			  </div>
+			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 		</div>
 	</div>
-	
-	<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
+	<div class="inner" data-categoria="fmcg"
+	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
 			src="images/frigol.jpg"></a>
 	<div class="content" align="center" style="padding: 5%;">
 		<H3 class="major-inicio">FRIGOL</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/frimesa.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">FRIMESA</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/hnt.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">HNT</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/jbs.svg"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">JBS</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/johnny.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">JOHNNY ROCKETS</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/lavioletera.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">LA VIOLETERA</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/lindt.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">LINDT</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/livup.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">LIV UP</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/mdias.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">M DIAS BRANCO</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/mania.jpg"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">MANIA DE CHURRASCO</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/milkymoo.jpg"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">MILKY MOO</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/minerva.svg"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">MINERVA FOODS</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/nos.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">NÓS</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/reckitt.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">RECKITT</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/seara.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">SEARA</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/seminis.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">SEMINIS</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/souza.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">SOUZA CRUZ</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/vassoura.jpg"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">VASSOURA QUEBRADA</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/vigor.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">VIGOR</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-
-<div class="inner"
-	style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;"
-	onmouseover="expandInner(this)" onmouseout="collapseInner(this)">
-	<a href="aereo.html" target="_blank" class="image" style="margin: 2%"><img
-			src="images/xbloom.png"></a>
-	<div class="content" align="center" style="padding: 5%;">
-		<H3 class="major-inicio">XBLOOM</H3>
-		<a href="aereo.html" target="_blank" class="special">ACESSAR</a>
-	</div>
-</div>
-				</div>
-				<ul class="actions">
-					<a href="homepage.html" class="special" style="margin: 0;">VOLTAR AO INÍCIO</a>
+		<div class="info-unidade" style="display: none; text-align: left;">
+			<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+			  <li>Endereço: Rod MT 449 S/N - Setor 02 Lote 08B3 - Zona Rural - Lucas do Rio Verde - CEP 78460-417 MT
+			</li>
+			  <li>Clientes: Bayer, Corteva e Oilema</li>
+			</ul>
+		  
+			<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+			<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+				<li style="display: flex; justify-content: space-between; align-items: center;">
+					<span>Avaliação de Fornecedores - Bayer</span>
+					<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiNTMzM2Y1YmItMGUwMC00ZWE1LTkxYmYtOTIyMWYxNWRjZDZiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+					<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+					</a>
+				</li>
+		
+			
 				</ul>
+			<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+			<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+				<li style="display: flex; justify-content: space-between; align-items: center;">
+					<span>OTIF</span>
+					<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\LUCAS DO RIO VERDE" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+					<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+					</a>
+				</li>
+			
+				</ul>
+		  </div>
+		<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+	</div>
+</div>
 
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/frimesa.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">FRIMESA</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rua: Avenida dos Oitis, Nº 1720, CD Dist Park Manaus GP 2 – Distrito Industrial I - CEP: 69.075-842 - Manaus - Amazonas
+		</li>
+		  <li>Clientes: Electrolux</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\MANAUS" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="food"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/hnt.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">HNT</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Avenida Maringá N° 4000 - Jardim Atuba - Pinhais - CEP 83326-010
+		</li>
+		  <li>Clientes: M Dias Branco, Jasmine, 3 Corações, Seara, JBS, Danone, ADM, Neodent, BAT, Nutricia, Frimesa, La Violetera e Comfrio Foods</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Produtividade - 3 Corações</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMDY0OGI2OWUtMWY1ZC00YmQwLWE3N2QtMDU4Y2Y5MGJmOGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\PINHAIS" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			
+	
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/jbs.svg"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">JBS</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rodovia DF 250, KM 20  Núcleo Rural Santos Dumont, Lote 50 Caixa Postal: 083 Planaltina/DF  CEP: 73.310-970 Corteva
+		</li>
+		  <li>Clientes: Corteva</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>KPIs - Corteva</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2MwMTJkNGQtYWVkMi00ZmQ1LWI4ZjUtZmY2YTE0MmQ4OGRhIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\PLANALTINA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+	
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+<div class="inner" data-categoria="food"
+					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+					<a href="#" target="_blank" class="image" style="margin: 2%"><img
+							src="images/johnny.png"></a>
+					<div class="content" align="center" style="padding: 5%;">
+						<H3 class="major-inicio">JOHNNY ROCKETS</H3>
+						<div class="info-unidade" style="display: none; text-align: left;">
+							
+							<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+							  <li>Endereço: </li>
+							  <li>Clientes: Friboi</li>
+							</ul>
+						  
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>KPIs - Transportes</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
+
+								</ul>
+					
+						  </div>
+						  
+						<a href="#" target="_blank" class="special">ACESSAR</a>
+					</div>
+					
+				</div>
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/lavioletera.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">LA VIOLETERA</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rodovia Edgard Maximo Zambotto S/N KM 76,5 Campo dos Aleixos - Jarinu/SP - CEP 13242-220
+		</li>
+		  <li>Clientes: ADM</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Painel Operacional - RCO</span>
+				<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\RIO CLARO" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			
+
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/lindt.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">LINDT</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Av. Eng Elmo Serejo de Farias, n° 3333 - Simões Filho - BA, CEP 43700-000 - Galpão 3 Módulos 1 e 2
+		</li>
+		  <li>Clientes: Danone</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>SLAs - Danone</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMDA5YjMzZWUtZmY1Yi00YjA2LWE0MWMtMjQ2MDQzMjI4ZmIyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			
+		
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\SIMÕES FILHO" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+	
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="food"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/livup.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">LIV UP</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rua do Prata N° 993 - Chácaras Bonanza - Uberlândia/MG - CEP 38421-238
+		</li>
+		  <li>Clientes: Advanta, Aurora, Bahamas, Coronata, Friboi, Frimesa, Bayer, Scala, Seara e Minerva</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Produtividade - Aurora</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiNzc4MjU2M2EtM2YwOC00YTY1LWEzNDUtOGEyOTA2ZDkzOGY2IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLÂNDIA I" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			
+	
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/mdias.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">M DIAS BRANCO</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rua do Prata N° 993 - Chácaras Bonanza - Uberlândia/MG - CEP 38421-238
+		</li>
+		  <li>Clientes: Bayer</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>KPIs - Bayer</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiZjFkNTNkZjctMTU2Yy00MDhjLWFjYmMtOGQ3NTFjZWE2MTYxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+		
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLÂNDIA II" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+		
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="food"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/mania.jpg"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">MANIA DE CHURRASCO</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rua do Prata N° 993 - Chácaras Bonanza - Uberlândia/MG - CEP 38421-238
+		</li>
+		  <li>Clientes: Advanta, Bayer e Corteva</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Avaliação de Fornecedores - Bayer</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2Q2NGYxMTAtZTZkMC00YjJlLTlkOGEtMmM4YzgwOWIyOTNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Painel Operacional - UBL III</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYmVlYzFlYjgtYTA3Yi00ZDg3LTg1ZTItMTU4ZWY0ZDNiNWJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLANDIA F 03" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+<div class="inner" data-categoria="food"
+					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
+					<a href="#" target="_blank" class="image" style="margin: 2%"><img
+							src="images/milkymoo.jpg"></a>
+					<div class="content" align="center" style="padding: 5%;">
+						<H3 class="major-inicio">MILKY MOO</H3>
+						<div class="info-unidade" style="display: none; text-align: left;">
+							
+							<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+							  <li>Endereço: </li>
+							  <li>Clientes: BRF</li>
+							</ul>
+						  
+							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+								<li style="display: flex; justify-content: space-between; align-items: center;">
+									<span>KPIs - Transportes</span>
+									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+									</a>
+								</li>
+
+								</ul>
+						
+						  </div>
+						  
+						  
+						<a href="#" target="_blank" class="special">ACESSAR</a>
+					</div>
+					
+				</div>
+
+				<div class="inner" data-categoria="fmcg"
+				style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+				<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+						src="images/minerva.svg"></a>
+				<div class="content" align="center" style="padding: 5%;">
+					<H3 class="major-inicio">MINERVA FOODS</H3>
+					<div class="info-unidade" style="display: none; text-align: left;">
+						<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+						  <li>Endereço: Rua do Prata N° 993 - Chácaras Bonanza - Uberlândia/MG - CEP 38421-238
+						</li>
+						  <li>Clientes: Advanta, Bayer e Corteva</li>
+						</ul>
+					  
+						<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+							<li style="display: flex; justify-content: space-between; align-items: center;">
+								<span>Avaliação de Fornecedores - Bayer</span>
+								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2Q2NGYxMTAtZTZkMC00YjJlLTlkOGEtMmM4YzgwOWIyOTNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+								</a>
+							</li>
+							<li style="display: flex; justify-content: space-between; align-items: center;">
+								<span>Painel Operacional - UBL III</span>
+								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYmVlYzFlYjgtYTA3Yi00ZDg3LTg1ZTItMTU4ZWY0ZDNiNWJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+								</a>
+							</li>
+							</ul>
+						<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+							<li style="display: flex; justify-content: space-between; align-items: center;">
+								<span>OTIF</span>
+								<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLANDIA F 03" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+								</a>
+							</li>
+				
+							</ul>
+					  </div>
+					<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+				</div>
+				</div>
+
+
+				<div class="inner" data-categoria="food"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/nos.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">NÓS</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rua do Prata N° 993 - Chácaras Bonanza - Uberlândia/MG - CEP 38421-238
+		</li>
+		  <li>Clientes: Advanta, Bayer e Corteva</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Avaliação de Fornecedores - Bayer</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2Q2NGYxMTAtZTZkMC00YjJlLTlkOGEtMmM4YzgwOWIyOTNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Painel Operacional - UBL III</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYmVlYzFlYjgtYTA3Yi00ZDg3LTg1ZTItMTU4ZWY0ZDNiNWJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLANDIA F 03" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+
+
+<div class="inner" data-categoria="food"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images2/rango.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">RANGO BRABO</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rua do Prata N° 993 - Chácaras Bonanza - Uberlândia/MG - CEP 38421-238
+		</li>
+		  <li>Clientes: Advanta, Bayer e Corteva</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Avaliação de Fornecedores - Bayer</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2Q2NGYxMTAtZTZkMC00YjJlLTlkOGEtMmM4YzgwOWIyOTNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Painel Operacional - UBL III</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYmVlYzFlYjgtYTA3Yi00ZDg3LTg1ZTItMTU4ZWY0ZDNiNWJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLANDIA F 03" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+
+
+
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/reckitt.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">RECKITT</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rua do Prata N° 993 - Chácaras Bonanza - Uberlândia/MG - CEP 38421-238
+		</li>
+		  <li>Clientes: Advanta, Bayer e Corteva</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Avaliação de Fornecedores - Bayer</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2Q2NGYxMTAtZTZkMC00YjJlLTlkOGEtMmM4YzgwOWIyOTNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Painel Operacional - UBL III</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYmVlYzFlYjgtYTA3Yi00ZDg3LTg1ZTItMTU4ZWY0ZDNiNWJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLANDIA F 03" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+
+
+<div class="inner" data-categoria="food"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images2/recoba.jpg"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">RECOBA</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rua do Prata N° 993 - Chácaras Bonanza - Uberlândia/MG - CEP 38421-238
+		</li>
+		  <li>Clientes: Advanta, Bayer e Corteva</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Avaliação de Fornecedores - Bayer</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2Q2NGYxMTAtZTZkMC00YjJlLTlkOGEtMmM4YzgwOWIyOTNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Painel Operacional - UBL III</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYmVlYzFlYjgtYTA3Yi00ZDg3LTg1ZTItMTU4ZWY0ZDNiNWJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLANDIA F 03" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/seara.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">SEARA</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rua do Prata N° 993 - Chácaras Bonanza - Uberlândia/MG - CEP 38421-238
+		</li>
+		  <li>Clientes: Advanta, Bayer e Corteva</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Avaliação de Fornecedores - Bayer</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2Q2NGYxMTAtZTZkMC00YjJlLTlkOGEtMmM4YzgwOWIyOTNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Painel Operacional - UBL III</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYmVlYzFlYjgtYTA3Yi00ZDg3LTg1ZTItMTU4ZWY0ZDNiNWJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLANDIA F 03" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+
+<div class="inner" data-categoria="agro"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/seminis.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">SEMINIS</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rua do Prata N° 993 - Chácaras Bonanza - Uberlândia/MG - CEP 38421-238
+		</li>
+		  <li>Clientes: Advanta, Bayer e Corteva</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Avaliação de Fornecedores - Bayer</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2Q2NGYxMTAtZTZkMC00YjJlLTlkOGEtMmM4YzgwOWIyOTNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Painel Operacional - UBL III</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYmVlYzFlYjgtYTA3Yi00ZDg3LTg1ZTItMTU4ZWY0ZDNiNWJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLANDIA F 03" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/souza.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">SOUZA CRUZ</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Rua do Prata N° 993 - Chácaras Bonanza - Uberlândia/MG - CEP 38421-238
+		</li>
+		  <li>Clientes: Advanta, Bayer e Corteva</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Avaliação de Fornecedores - Bayer</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2Q2NGYxMTAtZTZkMC00YjJlLTlkOGEtMmM4YzgwOWIyOTNiIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>Painel Operacional - UBL III</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiYmVlYzFlYjgtYTA3Yi00ZDg3LTg1ZTItMTU4ZWY0ZDNiNWJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLANDIA F 03" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+<div class="inner" data-categoria="food"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/starbucks.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">STARBUCKS</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Av. Eng Elmo Serejo de Farias, n° 3333 - Simões Filho - BA, CEP 43700-000 - Galpão 3 Módulos 1 e 2
+		</li>
+		  <li>Clientes: Danone</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>SLAs - Danone</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMDA5YjMzZWUtZmY1Yi00YjA2LWE0MWMtMjQ2MDQzMjI4ZmIyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			
+		
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\SIMÕES FILHO" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+	
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+
+<div class="inner" data-categoria="food"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/vassoura.jpg"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">VASSOURA QUEBRADA</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Av. Eng Elmo Serejo de Farias, n° 3333 - Simões Filho - BA, CEP 43700-000 - Galpão 3 Módulos 1 e 2
+		</li>
+		  <li>Clientes: Danone</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>SLAs - Danone</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMDA5YjMzZWUtZmY1Yi00YjA2LWE0MWMtMjQ2MDQzMjI4ZmIyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			
+		
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\SIMÕES FILHO" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+	
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+<div class="inner" data-categoria="fmcg"
+style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white">
+<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+		src="images/vigor.png"></a>
+<div class="content" align="center" style="padding: 5%;">
+	<H3 class="major-inicio">VIGOR</H3>
+	<div class="info-unidade" style="display: none; text-align: left;">
+		<ul style="margin-top: 0em; font-size: large;margin-bottom: 1em;">
+		  <li>Endereço: Av. Eng Elmo Serejo de Farias, n° 3333 - Simões Filho - BA, CEP 43700-000 - Galpão 3 Módulos 1 e 2
+		</li>
+		  <li>Clientes: Danone</li>
+		</ul>
+	  
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>SLAs - Danone</span>
+				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMDA5YjMzZWUtZmY1Yi00YjA2LWE0MWMtMjQ2MDQzMjI4ZmIyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+			
+		
+			</ul>
+		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
+		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
+			<li style="display: flex; justify-content: space-between; align-items: center;">
+				<span>OTIF</span>
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\SIMÕES FILHO" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+				</a>
+			</li>
+	
+			</ul>
+	  </div>
+	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+				</div>
+
+				
+					
+				<ul class="actions">
+					<a href="homepage.html" class="special no-copy" style="margin: 0;">VOLTAR AO INÍCIO</a>
+				  </ul>
+
+				  <style>
+					body.no-scroll {
+					  overflow: hidden;
+					}
+				  </style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById('mensagem-copia');
+  const overlay = document.getElementById('overlay-blur');
+  const conteudoUnidade = document.getElementById('conteudo-copia');
+  const popupCopiado = document.getElementById('popup-copiado');
+
+  // FUNÇÃO FECHAR POPUP PRINCIPAL
+  const fecharTudo = () => {
+    popup.style.display = 'none';
+    overlay.style.display = 'none';
+    document.body.classList.remove('no-scroll'); // Restaura o scroll da página
+  };
+
+  // BOTÃO DE FECHAR POPUP PRINCIPAL
+  document.getElementById('fechar-mensagem').addEventListener('click', fecharTudo);
+  
+  // FECHAR POPUP AO CLICAR NO OVERLAY
+  overlay.addEventListener('click', () => {
+    // Fecha ambos os popups se estiverem visíveis
+    if (popup.style.display === 'block') {
+      popup.style.display = 'none';
+    }
+
+    if (popupCopiado.style.display === 'block') {
+      popupCopiado.style.display = 'none';
+    }
+
+    // Esconde o overlay
+    overlay.style.display = 'none';
+
+    // Restaura o scroll da página
+    document.body.classList.remove('no-scroll');
+  });
+
+  // BOTÕES QUE ABREM O POPUP
+  document.querySelectorAll('.special').forEach(botao => {
+    botao.addEventListener('click', function (e) {
+      const content = this.closest('.content');
+      if (!content) return; // Permite o comportamento normal do link se não estiver dentro de .content
+
+      e.preventDefault(); // Impede o comportamento padrão (navegação)
+
+      const infoUnidadeElement = content.querySelector('.info-unidade');
+
+      if (!infoUnidadeElement || infoUnidadeElement.innerHTML.trim() === '') {
+        // Se não houver conteúdo informativo, permite abrir o link normalmente
+        window.open(this.href, '_blank');
+        return;
+      }
+
+      const infoUnidade = infoUnidadeElement.innerHTML;
+      const titulo = content.querySelector('h3')?.textContent || '';
+      const imagemSrc = this.closest('.inner')?.querySelector('img')?.getAttribute('src') || '';
+
+      conteudoUnidade.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <h3 style="margin: 0; color: #666">${titulo}</h3>
+          <img src="${imagemSrc}" style="width: 5em; height: auto; margin-left: 10em">
+        </div>
+        <div>${infoUnidade}</div>
+      `;
+
+      conteudoUnidade.style.display = 'block';
+      overlay.style.display = 'block';
+      popup.style.display = 'block';
+      document.body.classList.add('no-scroll'); // Desativa o scroll da página fora do pop-up
+
+      // EVITAR SCROLL DENTRO DO POPUP
+      popup.style.overflow = 'hidden'; // Evita scroll dentro do pop-up
+      popupCopiado.style.overflow = 'hidden'; // Evita scroll dentro do pop-up de confirmação
+
+      // CAPTURA SOMENTE OS BOTÕES DE CÓPIA EXCEL
+      setTimeout(() => {
+        document.querySelectorAll('.btn-copia-excel').forEach(botao => {
+          botao.addEventListener('click', function (e) {
+            e.preventDefault();
+            const link = this.href;
+
+            navigator.clipboard.writeText(link).then(() => {
+              fecharTudo(); // Fecha o popup principal
+              // Texto dinâmico do <span> mais próximo
+              const spanTexto = this.closest('li').querySelector('span')?.textContent.trim() || 'Caminho Copiado';
+              popupCopiado.querySelector('strong').textContent = spanTexto;
+
+              // Mostrar overlay e popup de confirmação
+              overlay.style.display = 'block';
+              popupCopiado.style.display = 'block';
+
+              // Espera um tempo e depois fecha o popup de confirmação
+              setTimeout(() => {
+                popupCopiado.style.display = 'none';
+                overlay.style.display = 'none';
+                // Restaura o scroll da página
+                document.body.classList.remove('no-scroll');
+              }, 9000); // Ajuste o tempo conforme necessário
+            });
+          });
+        });
+      }, 0);
+    });
+  });
+
+  // BOTÃO "OK" DO POPUP DE CONFIRMAÇÃO
+  const fecharConfirmacao = document.getElementById('fechar-popup');
+  if (fecharConfirmacao) {
+    fecharConfirmacao.addEventListener('click', () => {
+      popupCopiado.style.display = 'none';
+      overlay.style.display = 'none'; // Esconde o overlay
+      document.body.classList.remove('no-scroll'); // Restaura o scroll
+    });
+  }
+});
+
+
+
+  </script>
+  
+  
+  
+  
+	
+							  
+							  
+							  
+							  
 
 			</section>
 
@@ -1005,11 +2282,37 @@
 
 			// Evita o comportamento padrão do link (redirecionamento imediato)
 			event.preventDefault();
-		}
-
+		}		
 	</script>
 
-
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const filterButtons = document.querySelectorAll(".filter-btn");
+		const painelCards = document.querySelectorAll("#painel-container .inner");
+	
+		filterButtons.forEach(button => {
+			button.addEventListener("click", function () {
+				// Remove 'active' de todos os botões
+				filterButtons.forEach(btn => btn.classList.remove("active"));
+				// Adiciona 'active' ao botão clicado
+				this.classList.add("active");
+	
+				const filtro = this.getAttribute("data-filter");
+	
+				painelCards.forEach(card => {
+					const categoria = card.getAttribute("data-categoria");
+	
+					if (filtro === "todos" || filtro === categoria) {
+						card.style.display = "flex"; // ou "block", dependendo do layout
+					} else {
+						card.style.display = "none";
+					}
+				});
+			});
+		});
+	});
+	</script>
+	
 
 	<a href="#top">
 		<svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 25 20" data-name="Layer 1">
@@ -1019,6 +2322,7 @@
 	</a>
 
 	<style>
+		
 		.hidden {
 			display: none;
 		}
@@ -1128,9 +2432,18 @@
 				transform: rotate(360deg);
 			}
 		}
+		#painel-container .inner {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#painel-container .inner.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
 	</style>
-
-
 
 </body>
 
