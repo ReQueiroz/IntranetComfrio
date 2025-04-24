@@ -431,51 +431,78 @@
 background-size: cover;
 background-position: left center; /* ajustado para a direita e centralizado verticalmente */
 background-repeat: no-repeat;">
-  
-  <!-- OVERLAY COM BLUR -->
-  <div id="overlay-blur" style="
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(5px);
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 9998;
-  "></div>
+ 
 
   <!-- Botões laterais 
   <button id="btn-anterior" style="padding: 0; display: none; position: fixed; top: 50%; left: 5em; transform: translateY(-50%); font-size: 3em; background: none; border: none; cursor: pointer; z-index: 10000;">⬅️</button>
 
   <button id="btn-proximo" style="padding: 0; display: none; position: fixed; top: 50%; right: 5em; transform: translateY(-50%); font-size: 3em; background: none; border: none; cursor: pointer; z-index: 10000;">➡️</button>
 -->
-  <!-- MENSAGEM DE CÓPIA -->
-  <div id="mensagem-copia" style="
-    display: none;
-    position: fixed;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    color: #666;
-    font-size: 1.5em;
-    padding: 0.5em 1em 1.5em;
-    border-radius: 15px;
-    z-index: 9999;
-    text-align: center;
-    box-shadow: 0 0 10px black;
-    width: 50%;
-    max-height: 90vh;
-    overflow: hidden;
-  ">
-    <!-- Conteúdo com rolagem -->
-    <div id="conteudo-copia" style="text-align: left; max-height: 70vh; overflow-y: auto; padding-right: 10px;">
-      <!-- conteúdo será inserido dinamicamente aqui -->
-    </div>
-    
-    <a class="special no-copy" id="fechar-mensagem" style="color: #666; width: 20%; font-size: 0.5em; display: flex; align-items: center; justify-content: center; margin: auto; cursor: pointer;">OK</a>
+
+<!-- OVERLAY COM BLUR (único, não duplique!) -->
+<div id="overlay-blur" style="
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9998;
+"></div>
+
+<!-- MENSAGEM DE CÓPIA COM CONTEÚDO DE UNIDADE -->
+<div id="mensagem-copia" style="
+  display: none;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #666;
+  font-size: 1.5em;
+  padding: 0.5em 1em 1.5em;
+  border-radius: 15px;
+  z-index: 9999;
+  text-align: center;
+  box-shadow: 0 0 10px black;
+  width: 50%;
+  max-height: 90vh;
+  overflow: hidden;
+">
+  <!-- Conteúdo com rolagem -->
+  <div id="conteudo-copia" style="text-align: left; max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+    <!-- conteúdo será inserido dinamicamente aqui -->
   </div>
+  
+  <a class="special no-copy" id="fechar-mensagem" style="color: #666; width: 20%; font-size: 0.5em; display: flex; align-items: center; justify-content: center; margin: auto; cursor: pointer;">OK</a>
+</div>
+
+<div id="popup-copiado" style="
+  display: none;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #666;
+  font-size: 1.5em;
+  padding: 0.5em 1em 1.5em;
+  border-radius: 15px;
+  z-index: 9999;
+  text-align: center;
+  box-shadow: 0 0 10px black;
+  overflow: hidden; /* Garante que o popup de confirmação não tenha rolagem */
+">
+  <strong style="color: #666;">Caminho Copiado!</strong><br>
+  Copiado para Área de Transferência!<br>Vá até a rede e cole o caminho!
+  <img src="images2/passoapasso.gif" style="width: 80%; margin-top: 1em;"><br>
+  <a class="special" id="fechar-popup" style="color: #666; width: 20%; font-size: 0.5em; display: flex; align-items: center; justify-content: center; margin: auto; cursor: pointer;">OK</a>
+</div>
+
+
+
 
 				<div>
 					<div>
@@ -497,7 +524,7 @@ background-repeat: no-repeat;">
 
 					<div class="inner" data-categoria="trp"
 					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
-					<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+					<a href="#" target="_blank" class="image" style="margin: 2%"><img
 							src="images/trp.png"></a>
 					<div class="content" align="center" style="padding: 5%;">
 						<H3 class="major-inicio">ANHANGUERA</H3>
@@ -518,19 +545,10 @@ background-repeat: no-repeat;">
 								</li>
 
 								</ul>
-							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
-							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
-								<li style="display: flex; justify-content: space-between; align-items: center;">
-									<span>###</span>
-									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-									</a>
-								</li>
-
-								</ul>
+		
 						  </div>
 						  
-						<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+						<a href="#" target="_blank" class="special">ACESSAR</a>
 					</div>
 					
 				</div>
@@ -540,7 +558,7 @@ background-repeat: no-repeat;">
 
 					<div class="inner" data-categoria="fmcg"
 						style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
-						<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+						<a href="#" target="_blank" class="image" style="margin: 2%"><img
 								src="images/ind.png"></a>
 						<div class="content" align="center" style="padding: 5%;">
 							<H3 class="major-inicio">BAURU</H3>
@@ -567,13 +585,13 @@ background-repeat: no-repeat;">
 									</li>
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>Produtividade - Seara</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copiar-interno" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>KPIs - Transportes</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copiar-interno" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiN2YyZWEyOTEtOTJlOC00ZjI2LWIzMDgtZjNjZmQ3MjlkMGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
@@ -582,31 +600,33 @@ background-repeat: no-repeat;">
 								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>OTIF</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
+										<a class="button primary small btn-copia-excel"
+											href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\BAURU"
+											style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+											<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>Diário Operacional - Frigol</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copia-excel" href="M:\Unidade Bauru\PCL\4 - CLIENTE FRIGOL\PRODUTIVIDADE\KPI - REPORT" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>Diário Operacional - Frimesa</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\BAURU\FRIMESA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>Diário Operacional - Seara</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\BAURU\SEARA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>Diário Operacional - Souza Cruz</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copia-excel" href="M:\Unidade Bauru\PCL\7 - CLIENTE SOUZA CRUZ\Resumo operacional" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
@@ -614,7 +634,7 @@ background-repeat: no-repeat;">
 									</ul>
 							  </div>
 							  
-							<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+							<a href="#" target="_blank" class="special">ACESSAR</a>
 						</div>
 						
 					</div>
@@ -657,19 +677,19 @@ background-repeat: no-repeat;">
 								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>OTIF</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\BEBEDOURO I" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>Diário Operacional - Copacol</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\BEBEDOURO I\2025\COPACOL" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>Diário Operacional - Seara</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\BEBEDOURO I\2025\SEARA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
@@ -706,25 +726,25 @@ background-repeat: no-repeat;">
 								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>OTIF</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\BEBEDOURO II" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>Diário Operacional - Frimesa</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\BEBEDOURO II\2025\FRIMESA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
 									<li style="display: flex; justify-content: space-between; align-items: center;">
 										<span>Diário Operacional - Syngenta</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+										<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\BEBEDOURO II\2025\SYNGENTA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 										</a>
 									</li>
 									</ul>
 							  </div>
-							<a href="https://app.powerbi.com/view?r=eyJrIjoiYTAyYzg3YjAtZGEwYS00Yjg1LWExMzUtNTMyYzg5MTdiYWY5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+							<a href="#" target="_blank" class="special">ACESSAR</a>
 						</div>
 					</div>
 					<div class="inner" data-categoria="agro"
@@ -751,27 +771,7 @@ background-repeat: no-repeat;">
 
 									</li>
 									</ul>
-								<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
-								<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
-									<li style="display: flex; justify-content: space-between; align-items: center;">
-										<span>###</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-										</a>
-									</li>
-									<li style="display: flex; justify-content: space-between; align-items: center;">
-										<span>###</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-										</a>
-									</li>
-									<li style="display: flex; justify-content: space-between; align-items: center;">
-										<span>###</span>
-										<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-										<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-										</a>
-									</li>
-									</ul>
+							
 							  </div>
 							<a href="https://app.powerbi.com/view?r=eyJrIjoiYTAyYzg3YjAtZGEwYS00Yjg1LWExMzUtNTMyYzg5MTdiYWY5IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 						</div>
@@ -803,25 +803,25 @@ background-repeat: no-repeat;">
 							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 								<li style="display: flex; justify-content: space-between; align-items: center;">
 									<span>OTIF</span>
-									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\CAUCAIA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 									</a>
 								</li>
 								<li style="display: flex; justify-content: space-between; align-items: center;">
 									<span>Diário Operacional - Danone</span>
-									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\CAUCAIA\2025\DANONE" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 									</a>
 								</li>
 								<li style="display: flex; justify-content: space-between; align-items: center;">
 									<span>Diário Operacional - JBS</span>
-									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\CAUCAIA\2025\JBS" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 									</a>
 								</li>
 								<li style="display: flex; justify-content: space-between; align-items: center;">
 									<span>Diário Operacional - Vigor Cross</span>
-									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+									<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\CAUCAIA\2025\VIGOR" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 									</a>
 								</li>
@@ -843,48 +843,16 @@ background-repeat: no-repeat;">
 						  <li>Clientes: TMG Sementes, Bayer, KWS, Latina, Syngenta e Shulls Sementes</li>
 						</ul>
 					  
-						<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
-						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
-							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-								<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-								</a>
-							</li>
-							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-								<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-								</a>
-							</li>
-							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-								<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-								</a>
-							</li>
-							</ul>
+						
 						<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
 						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 							<li style="display: flex; justify-content: space-between; align-items: center;">
 								<span>OTIF</span>
-								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\CUIABÁ" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 								</a>
 							</li>
-							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-								</a>
-							</li>
-							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-								</a>
-							</li>
-							</ul>
+						
 					  </div>
 					<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRjY2YwZmYtMzk0OC00OGJiLWIyODUtYzAzYTM3ODJiYTRlIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
 				</div>
@@ -932,19 +900,7 @@ background-repeat: no-repeat;">
 						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 							<li style="display: flex; justify-content: space-between; align-items: center;">
 								<span>OTIF</span>
-								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-								</a>
-							</li>
-							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-								</a>
-							</li>
-							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\EXTREMA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 								</a>
 							</li>
@@ -980,22 +936,11 @@ background-repeat: no-repeat;">
 						<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 							<li style="display: flex; justify-content: space-between; align-items: center;">
 								<span>OTIF</span>
-								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+								<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\FORMOSA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 								</a>
 							</li>
-							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-								</a>
-							</li>
-							<li style="display: flex; justify-content: space-between; align-items: center;">
-								<span>###</span>
-								<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-								<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-								</a>
-							</li>
+					
 							</ul>
 					  </div>
 					<a href="https://app.powerbi.com/view?r=eyJrIjoiZWRlMGQ2YWQtOTI2MC00MDgyLTg5YTctODNkMTk2ZjQ1NDJmIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
@@ -1034,13 +979,13 @@ background-repeat: no-repeat;">
 					<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 						<li style="display: flex; justify-content: space-between; align-items: center;">
 							<span>OTIF</span>
-							<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+							<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\GUARULHOS" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 							<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 							</a>
 						</li>
 						<li style="display: flex; justify-content: space-between; align-items: center;">
 							<span>Diário Operacional - Danone</span>
-							<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+							<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\GUARULHOS\DANONE" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 							<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 							</a>
 						</li>
@@ -1077,13 +1022,13 @@ background-repeat: no-repeat;">
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 					<li style="display: flex; justify-content: space-between; align-items: center;">
 						<span>OTIF</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\GUARULHOS II" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
 					<li style="display: flex; justify-content: space-between; align-items: center;">
 						<span>Diário Operacional - BAT</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\GUARULHOS II\SOUZA CRUZ" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
@@ -1120,22 +1065,11 @@ background-repeat: no-repeat;">
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 					<li style="display: flex; justify-content: space-between; align-items: center;">
 						<span>OTIF</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\ITUMBIARA I" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
+				
 					</ul>
 			  </div>
 			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
@@ -1154,47 +1088,16 @@ background-repeat: no-repeat;">
 				  <li>Clientes: Corteva</li>
 				</ul>
 			  
-				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
-				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
-					</ul>
+
 				<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 					<li style="display: flex; justify-content: space-between; align-items: center;">
 						<span>OTIF</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\ITUMBIARA INHOUSE" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
-					<li style="display: flex; justify-content: space-between; align-items: center;">
-						<span>###</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-						</a>
-					</li>
+
 					</ul>
 			  </div>
 			<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
@@ -1287,19 +1190,19 @@ background-repeat: no-repeat;">
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 					<li style="display: flex; justify-content: space-between; align-items: center;">
 						<span>Consolidado dos Clientes</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<a class="button primary small btn-copia-excel"  href="M:\Qualidade\Qualidade na Logística\2025\01.OTIF REAL" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
 					<li style="display: flex; justify-content: space-between; align-items: center;">
 						<span>OTIF</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\JARINU" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
 					<li style="display: flex; justify-content: space-between; align-items: center;">
 						<span>Diário Operacional - Lindt</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<a class="button primary small btn-copia-excel"  href="#" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
@@ -1310,7 +1213,7 @@ background-repeat: no-repeat;">
 	</div>
 	<div class="inner" data-categoria="trp"
 					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
-					<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+					<a href="#" target="_blank" class="image" style="margin: 2%"><img
 							src="images/trp.png"></a>
 					<div class="content" align="center" style="padding: 5%;">
 						<H3 class="major-inicio">JUNDIAÍ</H3>
@@ -1331,30 +1234,10 @@ background-repeat: no-repeat;">
 								</li>
 
 								</ul>
-							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
-							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
-								<li style="display: flex; justify-content: space-between; align-items: center;">
-									<span>###</span>
-									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-									</a>
-								</li>
-								<li style="display: flex; justify-content: space-between; align-items: center;">
-									<span>###</span>
-									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-									</a>
-								</li>
-								<li style="display: flex; justify-content: space-between; align-items: center;">
-									<span>###</span>
-									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-									</a>
-								</li>
-								</ul>
+					
 						  </div>
 						  
-						<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+						<a href="#" target="_blank" class="special">ACESSAR</a>
 					</div>
 					
 				</div>
@@ -1392,13 +1275,13 @@ background-repeat: no-repeat;">
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 					<li style="display: flex; justify-content: space-between; align-items: center;">
 						<span>OTIF</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\LIMEIRA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
 					<li style="display: flex; justify-content: space-between; align-items: center;">
 						<span>Diário Operacional - BRF</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\LIMEIRA\2025\BRF" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
@@ -1435,7 +1318,7 @@ background-repeat: no-repeat;">
 				<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 					<li style="display: flex; justify-content: space-between; align-items: center;">
 						<span>OTIF</span>
-						<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+						<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\LONDRINA II" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 						<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 						</a>
 					</li>
@@ -1478,7 +1361,7 @@ background-repeat: no-repeat;">
 			<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 				<li style="display: flex; justify-content: space-between; align-items: center;">
 					<span>OTIF</span>
-					<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+					<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\LUCAS DO RIO VERDE" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 					<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 					</a>
 				</li>
@@ -1502,48 +1385,15 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		  <li>Clientes: Electrolux</li>
 		</ul>
 	  
-		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">DASHBOARDS DISPONÍVEIS</h3>
-		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
-			<li style="display: flex; justify-content: space-between; align-items: center;">
-				<span>###</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMDY0OGI2OWUtMWY1ZC00YmQwLWE3N2QtMDU4Y2Y5MGJmOGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-				</a>
-			</li>
-			<li style="display: flex; justify-content: space-between; align-items: center;">
-				<span>###</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMDY0OGI2OWUtMWY1ZC00YmQwLWE3N2QtMDU4Y2Y5MGJmOGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-				</a>
-			</li>
-			<li style="display: flex; justify-content: space-between; align-items: center;">
-				<span>###</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMDY0OGI2OWUtMWY1ZC00YmQwLWE3N2QtMDU4Y2Y5MGJmOGNjIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-				<img src="images2/bi.png" alt="Link" style="width: 20px; height: 20px;">
-				</a>
-			</li>
-		
-			</ul>
 		<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
 		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>OTIF</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\MANAUS" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
-			<li style="display: flex; justify-content: space-between; align-items: center;">
-				<span>###</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMGFiYTA3ZGUtN2M2My00ZTdmLThiMzAtNGNiM2JkYjUxNGIxIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-				</a>
-			</li>
-			<li style="display: flex; justify-content: space-between; align-items: center;">
-				<span>###</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiMzliZjlkZjEtYTBiNi00MWRlLTgyNGYtZTk4ZTRlN2ZjYzU3IiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-				</a>
-			</li>
+
 			</ul>
 	  </div>
 	<a href="https://app.powerbi.com/view?r=eyJrIjoiMzdkMTQxMzItZDY3NS00MzM2LTkzZWItNGZjYzE5OWZjOTUyIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
@@ -1600,37 +1450,37 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>OTIF</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\PINHAIS" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>Diário Operacional - Danone</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\PINHAIS\DANONE" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>Diário Operacional - JBS</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\PINHAIS\JBS" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>Diário Operacional - M Dias Branco</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\PINHAIS\M. DIAS BRANCO" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>Diário Operacional - Seara</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\PINHAIS\SEARA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>Diário Operacional - BAT</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\PINHAIS\SOUZA CRUZ - BAT" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
@@ -1668,7 +1518,7 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>OTIF</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\PLANALTINA" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
@@ -1680,7 +1530,7 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 </div>
 <div class="inner" data-categoria="trp"
 					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
-					<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+					<a href="#" target="_blank" class="image" style="margin: 2%"><img
 							src="images/trp.png"></a>
 					<div class="content" align="center" style="padding: 5%;">
 						<H3 class="major-inicio">RECIFE</H3>
@@ -1701,19 +1551,10 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 								</li>
 
 								</ul>
-							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
-							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
-								<li style="display: flex; justify-content: space-between; align-items: center;">
-									<span>###</span>
-									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-									</a>
-								</li>
-
-								</ul>
+					
 						  </div>
 						  
-						<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+						<a href="#" target="_blank" class="special">ACESSAR</a>
 					</div>
 					
 				</div>
@@ -1761,13 +1602,13 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>OTIF</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\RIO CLARO" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>Diário Operacional - ADM </span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\RIO CLARO\ADM" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
@@ -1810,7 +1651,7 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>OTIF</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\SIMÕES FILHO" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
@@ -1854,19 +1695,19 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>OTIF</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLÂNDIA I" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>Diário Operacional - Aurora </span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\UBERLÂNDIA I\2025\Aurora" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>Diário Operacional - Seara</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel"  href="M:\Painel Gerencial\PAINEL UNIDADES\Diário Operacionais\UBERLÂNDIA I\2025\Seara" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
@@ -1904,7 +1745,7 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>OTIF</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLÂNDIA II" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
@@ -1947,7 +1788,7 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 		<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
 			<li style="display: flex; justify-content: space-between; align-items: center;">
 				<span>OTIF</span>
-				<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
+				<a class="button primary small btn-copia-excel" href="M:\Painel Gerencial\PAINEL UNIDADES\Indicadores Operacionais\UBERLANDIA F 03" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
 				<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
 				</a>
 			</li>
@@ -1959,7 +1800,7 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 </div>
 <div class="inner" data-categoria="trp"
 					style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; padding: 0; border-radius: 15px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1); background-color: white;">
-					<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="image" style="margin: 2%"><img
+					<a href="#" target="_blank" class="image" style="margin: 2%"><img
 							src="images/trp.png"></a>
 					<div class="content" align="center" style="padding: 5%;">
 						<H3 class="major-inicio">VIANA</H3>
@@ -1980,19 +1821,10 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 								</li>
 
 								</ul>
-							<h3 class="major-inicio" style="margin-bottom: 0; font-size: medium;">INDICADORES (EXCEL)</h3>
-							<ul style="margin-top: 5px; font-size: large; margin-bottom: 1em; list-style: none; padding-left: 0;">
-								<li style="display: flex; justify-content: space-between; align-items: center;">
-									<span>###</span>
-									<a class="button primary small" target="_blank" href="https://app.powerbi.com/view?r=eyJrIjoiM2VhODk5OTgtMWRlMi00MjY0LTllZDQtZjI4NDNmNjhiODgzIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" style="display: flex; justify-content: center; align-items: center; width: 24px; height: 24px;">
-									<img src="images/link.png" alt="Link" style="width: 20px; height: 20px;">
-									</a>
-								</li>
-
-								</ul>
+						
 						  </div>
 						  
-						<a href="https://app.powerbi.com/view?r=eyJrIjoiYzlkMzExMjgtNjUwYy00OGU4LTgyMGEtY2M0ZmVhZDdkNDZkIiwidCI6IjZmMDcwMjkxLWE3ZWEtNDIxNi04YjZmLTI5NDYwOTA3YTBjYyJ9" target="_blank" class="special">ACESSAR</a>
+						<a href="#" target="_blank" class="special">ACESSAR</a>
 					</div>
 					
 				</div>
@@ -2012,93 +1844,132 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
 					}
 				  </style>
 
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById('mensagem-copia');
+  const overlay = document.getElementById('overlay-blur');
+  const conteudoUnidade = document.getElementById('conteudo-copia');
+  const popupCopiado = document.getElementById('popup-copiado');
+
+  // FUNÇÃO FECHAR POPUP PRINCIPAL
+  const fecharTudo = () => {
+    popup.style.display = 'none';
+    overlay.style.display = 'none';
+    document.body.classList.remove('no-scroll'); // Restaura o scroll da página
+  };
+
+  // BOTÃO DE FECHAR POPUP PRINCIPAL
+  document.getElementById('fechar-mensagem').addEventListener('click', fecharTudo);
+  
+  // FECHAR POPUP AO CLICAR NO OVERLAY
+  overlay.addEventListener('click', () => {
+    // Fecha ambos os popups se estiverem visíveis
+    if (popup.style.display === 'block') {
+      popup.style.display = 'none';
+    }
+
+    if (popupCopiado.style.display === 'block') {
+      popupCopiado.style.display = 'none';
+    }
+
+    // Esconde o overlay
+    overlay.style.display = 'none';
+
+    // Restaura o scroll da página
+    document.body.classList.remove('no-scroll');
+  });
+
+  // BOTÕES QUE ABREM O POPUP
+  document.querySelectorAll('.special').forEach(botao => {
+    botao.addEventListener('click', function (e) {
+      const content = this.closest('.content');
+      if (!content) return; // Permite o comportamento normal do link se não estiver dentro de .content
+
+      e.preventDefault(); // Impede o comportamento padrão (navegação)
+
+      const infoUnidadeElement = content.querySelector('.info-unidade');
+
+      if (!infoUnidadeElement || infoUnidadeElement.innerHTML.trim() === '') {
+        // Se não houver conteúdo informativo, permite abrir o link normalmente
+        window.open(this.href, '_blank');
+        return;
+      }
+
+      const infoUnidade = infoUnidadeElement.innerHTML;
+      const titulo = content.querySelector('h3')?.textContent || '';
+      const imagemSrc = this.closest('.inner')?.querySelector('img')?.getAttribute('src') || '';
+
+      conteudoUnidade.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+          <h3 style="margin: 0; color: #666">${titulo}</h3>
+          <img src="${imagemSrc}" style="width: 5em; height: auto; margin-left: 10em">
+        </div>
+        <div>${infoUnidade}</div>
+      `;
+
+      conteudoUnidade.style.display = 'block';
+      overlay.style.display = 'block';
+      popup.style.display = 'block';
+      document.body.classList.add('no-scroll'); // Desativa o scroll da página fora do pop-up
+
+      // EVITAR SCROLL DENTRO DO POPUP
+      popup.style.overflow = 'hidden'; // Evita scroll dentro do pop-up
+      popupCopiado.style.overflow = 'hidden'; // Evita scroll dentro do pop-up de confirmação
+
+      // CAPTURA SOMENTE OS BOTÕES DE CÓPIA EXCEL
+      setTimeout(() => {
+        document.querySelectorAll('.btn-copia-excel').forEach(botao => {
+          botao.addEventListener('click', function (e) {
+            e.preventDefault();
+            const link = this.href;
+
+            navigator.clipboard.writeText(link).then(() => {
+              fecharTudo(); // Fecha o popup principal
+              // Texto dinâmico do <span> mais próximo
+              const spanTexto = this.closest('li').querySelector('span')?.textContent.trim() || 'Caminho Copiado';
+              popupCopiado.querySelector('strong').textContent = spanTexto;
+
+              // Mostrar overlay e popup de confirmação
+              overlay.style.display = 'block';
+              popupCopiado.style.display = 'block';
+
+              // Espera um tempo e depois fecha o popup de confirmação
+              setTimeout(() => {
+                popupCopiado.style.display = 'none';
+                overlay.style.display = 'none';
+                // Restaura o scroll da página
+                document.body.classList.remove('no-scroll');
+              }, 9000); // Ajuste o tempo conforme necessário
+            });
+          });
+        });
+      }, 0);
+    });
+  });
+
+  // BOTÃO "OK" DO POPUP DE CONFIRMAÇÃO
+  const fecharConfirmacao = document.getElementById('fechar-popup');
+  if (fecharConfirmacao) {
+    fecharConfirmacao.addEventListener('click', () => {
+      popupCopiado.style.display = 'none';
+      overlay.style.display = 'none'; // Esconde o overlay
+      document.body.classList.remove('no-scroll'); // Restaura o scroll
+    });
+  }
+});
 
 
-				<script>
-					document.querySelectorAll('.special').forEach(botao => {
-					  if (!botao.classList.contains('no-copy')) {
-						botao.addEventListener('click', function(e) {
-						  e.preventDefault();
-				  
-						  const caminho = this.getAttribute('href');
-						  const content = this.closest('.content');
-						  const h3 = content?.querySelector('h3');
-						  const titulo = h3 ? h3.textContent : '';
-				  
-						  const imagem = this.closest('.inner')?.querySelector('img');
-						  const imagemSrc = imagem ? imagem.getAttribute('src') : '';
-				  
-						  // Atualiza o novo contêiner com conteúdo alinhado à esquerda
-						  document.getElementById('conteudo-copia').innerHTML = `
-							<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-							  <h3 style="margin: 0; color: #666">${titulo}</h3>
-							  <img src="${imagemSrc}" style="width: 5em; height: auto; margin-left: 10em">
-							</div>
-							${content.querySelector('.info-unidade')?.innerHTML || ''}
-						  `;
-				  
-						  // Copia o link do botão
-						  const inputTemp = document.createElement('input');
-						  inputTemp.value = caminho;
-						  document.body.appendChild(inputTemp);
-						  inputTemp.select();
-						  document.execCommand('copy');
-						  document.body.removeChild(inputTemp);
-				  
-						  // Exibe a mensagem de sucesso e os botões de navegação
-						  document.body.classList.add('no-scroll');
-						  document.getElementById('overlay-blur').style.display = 'block';
-						  document.getElementById('mensagem-copia').style.display = 'block';
-						  document.getElementById('btn-anterior').style.display = 'block';
-						  document.getElementById('btn-proximo').style.display = 'block';
-				  
-						  // Armazenar as unidades de informação para navegação
-						  const unidades = Array.from(document.querySelectorAll('.info-unidade'));  // Transforma NodeList em Array
-						  let currentIndex = unidades.findIndex(unit => unit.innerHTML === content.querySelector('.info-unidade')?.innerHTML);
-				  
-						  // Função para navegar para a unidade anterior
-						  document.getElementById('btn-anterior').addEventListener('click', () => {
-							if (currentIndex > 0) {
-							  currentIndex--;
-							  updateUnitDisplay(unidades, currentIndex);
-							}
-						  });
-				  
-						  // Função para navegar para a unidade seguinte
-						  document.getElementById('btn-proximo').addEventListener('click', () => {
-							if (currentIndex < unidades.length - 1) {
-							  currentIndex++;
-							  updateUnitDisplay(unidades, currentIndex);
-							}
-						  });
-				  
-						  function updateUnitDisplay(unidades, index) {
-							// Oculta todas as unidades
-							unidades.forEach(unit => unit.classList.remove('active'));
-							// Mostra a unidade ativa
-							unidades[index].classList.add('active');
-						  }
-				  
-						  // Inicia a navegação com a unidade atual
-						  updateUnitDisplay(unidades, currentIndex);
-						});
-					  }
-					});
-				  
-					// Botão OK fecha a mensagem
-					document.getElementById('fechar-mensagem').addEventListener('click', () => {
-					  document.getElementById('mensagem-copia').style.display = 'none';
-					  document.getElementById('overlay-blur').style.display = 'none';
-					  document.body.classList.remove('no-scroll');
-					  document.getElementById('btn-anterior').style.display = 'none';
-					  document.getElementById('btn-proximo').style.display = 'none';
-					});
-				  </script>
+
+  </script>
+  
+  
+  
+  
+	
 							  
-
-
-
-
+							  
+							  
+							  
 
 			</section>
 
