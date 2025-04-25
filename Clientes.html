@@ -2150,7 +2150,7 @@ style="flex-basis: calc(33.33% - 2%); max-width: calc(33.33% - 2%); margin: 1%; 
         document.querySelectorAll('.btn-copia-excel').forEach(botao => {
           botao.addEventListener('click', function (e) {
             e.preventDefault();
-            const link = this.href;
+            const link = this.getAttribute('href');
 
             navigator.clipboard.writeText(link).then(() => {
               fecharTudo(); // Fecha o popup principal
