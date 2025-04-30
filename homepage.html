@@ -477,6 +477,179 @@
 
 					
 				</ul>
+<!-- Botão flutuante para abrir o Chatbot -->
+<button id="abrir-chatbot">💬</button>
+
+<!-- Modal do Chatbot -->
+<div id="chatbot-container" class="oculto">
+	<h3 style="position: absolute; top: 10px; left: 15px; font-size: 1em; color: #666; margin: 0;">Ajuda</h3>
+	<div id="chatbot-messages" style="margin-top: 30px;"></div> <!-- Adicionado o margin-top para espaçamento abaixo do título -->
+	<span id="fechar-chatbot" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-weight: bold; font-size: 1.5em;">&times;</span>
+</div>
+
+<style>
+/* Caixa do chatbot inicialmente escondida com animação */
+#chatbot-container {
+	position: fixed;
+	bottom: 20px;
+	left: 35px;
+	height: 50%; /* Aumentado para 50% */
+	width: 300px;
+	background: white;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding: 1em;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	font-family: sans-serif;
+	z-index: 10000;
+	opacity: 0;
+	transform: translateY(20px);
+	pointer-events: none;
+	transition: all 0.3s ease;
+}
+
+/* Quando ativado */
+#chatbot-container.visivel {
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+/* Quando invisível (inicialmente escondido) */
+#chatbot-container.oculto {
+	display: none;
+}
+
+/* Estilo do botão */
+#abrir-chatbot {
+	position: fixed;
+	top: 85%;
+	left: 40px;
+	padding-left: 1em;
+	padding-right: 1em;
+	display: block;
+	background-color: #95B443;
+	border: none;
+	border-radius: 100%;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+	transition: ease-in-out .2s;
+	font-size: 1.2em;
+	cursor: pointer;
+	z-index: 9999;
+}
+
+#abrir-chatbot:hover {
+	background-color: #666;
+}
+
+/* Restante do chat */
+#chatbot-messages {
+	height: 80%; /* Aumentado para 80% da altura */
+	overflow-y: auto;
+	margin-bottom: 0.5em;
+	border: 1px solid #eee;
+	padding: 0.5em;
+	background: #f9f9f9;
+	border-radius: 5px;
+}
+
+#chatbot-messages .user {
+	text-align: right;
+	color: #333;
+	margin: 5px 0;
+}
+
+#chatbot-messages .bot {
+	text-align: left;
+	color: #555;
+	margin: 5px 0;
+}
+</style>
+
+<script>
+const messages = document.getElementById('chatbot-messages');
+const container = document.getElementById('chatbot-container');
+const abrirBtn = document.getElementById('abrir-chatbot');
+const fecharBtn = document.getElementById('fechar-chatbot');
+
+const respostas = {
+	"indicadores": "Você pode acessar a tela de Indicadores em: /indicadores.html",
+	"usuários": "Você pode gerenciar usuários em: /usuarios.html",
+	"ajuda": "Você pode acessar a Central de Ajuda aqui: /ajuda.html",
+	"home": "Acesse a página inicial aqui: /index.html",
+};
+
+// Função para adicionar mensagem no chat
+function adicionarMensagem(texto, classe = "user") {
+	const msg = document.createElement('div');
+	msg.textContent = texto;
+	msg.className = classe;
+	messages.appendChild(msg);
+	messages.scrollTop = messages.scrollHeight;
+}
+
+// Função para responder automaticamente
+function responder(pergunta) {
+	const p = pergunta.toLowerCase();
+	for (let chave in respostas) {
+		if (p.includes(chave)) {
+			return respostas[chave];
+		}
+	}
+	return "Desculpe, não entendi. Tente algo como: 'indicadores', 'usuários', 'ajuda' ou 'home'.";
+}
+
+// Ação do botão de abrir o chatbot
+abrirBtn.addEventListener('click', () => {
+	// Torna o chatbot visível com a animação de fade-in
+	if (container.classList.contains('oculto')) {
+		container.classList.remove('oculto');
+		setTimeout(() => container.classList.add('visivel'), 10); // Inicia a animação após o display ser definido
+	} else {
+		container.classList.remove('visivel');
+		setTimeout(() => container.classList.add('oculto'), 300); // Após a animação, esconde o container
+	}
+	
+	// Exibe a mensagem de boas-vindas e as opções ao abrir
+	if (!messages.dataset.inicial) {
+		adicionarMensagem("Olá! Como posso te ajudar hoje? Escolha uma opção abaixo:", "bot");
+
+		const opcoes = ["Indicadores", "Usuários", "Ajuda", "Home"];
+		const botoesContainer = document.createElement("div");
+		botoesContainer.style.marginTop = "0.5em";
+
+		// Cria os botões de opções
+		opcoes.forEach(opcao => {
+			const btn = document.createElement("button");
+			btn.textContent = opcao;
+			btn.style.margin = "3px";
+			btn.style.padding = "5px";
+			btn.style.borderRadius = "10px";
+			btn.style.border = "none";
+			btn.style.cursor = "pointer";
+			btn.style.backgroundColor = "#666";
+			btn.style.color = "white";
+			btn.addEventListener("click", () => {
+				adicionarMensagem(opcao, "user");
+				const resposta = responder(opcao);
+				setTimeout(() => adicionarMensagem(resposta, "bot"), 500);
+			});
+			botoesContainer.appendChild(btn);
+		});
+
+		messages.appendChild(botoesContainer);
+		messages.dataset.inicial = "true"; // Marca como já exibida
+	}
+});
+
+// Ação do botão de fechar o chatbot
+fecharBtn.addEventListener('click', () => {
+	container.classList.remove('visivel');
+	setTimeout(() => container.classList.add('oculto'), 300); // Após a animação, esconde o container
+});
+</script>
+
+
 
 
 			</section>
