@@ -10,6 +10,7 @@ const firebaseConfig = {
   appId: "1:347790318348:web:901f10beadae6981e40729"
 };
 
+// Inicializa o Firebase
 firebase.initializeApp(firebaseConfig);
 
 // Função de verificação de autenticação
@@ -22,21 +23,31 @@ function checkAuth() {
       // Autenticado, exibe conteúdo
       document.body.style.display = 'block';
 
-      // Se os elementos existirem, exibe nome de usuário e botão de logout
+      // Extrai apenas o nome antes do @
+      const userName = user.displayName || (user.email ? user.email.split('@')[0] : 'Usuário');
+
+      // Atualiza o nome do usuário no cabeçalho
       const loginDropdown = document.getElementById("loginDropdown");
       const sairBtn = document.getElementById("sairBtn");
 
       if (loginDropdown) {
-        loginDropdown.innerHTML = `Login: ${user.displayName || 'Usuário'} <i class="fas fa-cog"></i>`;
+        const loginLink = loginDropdown.querySelector("a");
+        if (loginLink) {
+          loginLink.innerHTML = `Login: ${userName} <i class="fas fa-cog"></i>`;
+        }
       }
+
       if (sairBtn) {
-        sairBtn.style.display = 'block';
+        sairBtn.style.display = 'flex';
         sairBtn.addEventListener("click", function () {
-          firebase.auth().signOut().then(function () {
-            window.location.href = 'index.html';
-          }).catch(function(error) {
-            console.error("Erro ao sair: ", error);
-          });
+          // Adiciona um atraso de 2 segundos antes de sair
+          setTimeout(function() {
+            firebase.auth().signOut().then(function () {
+              window.location.href = 'index.html';
+            }).catch(function(error) {
+              console.error("Erro ao sair: ", error);
+            });
+          }, 1000); // 1000 ms = 1 segundo
         });
       }
     }

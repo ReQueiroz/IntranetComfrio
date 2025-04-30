@@ -21,6 +21,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+
 </head>
 
 <body class="is-preload">
@@ -44,7 +45,7 @@
 				<span id="loginDropdown" style="position: relative;">
 					<a href="#" onclick="toggleDropdown(event)"
 						style="background-color: white; border-radius: 10px; color: black; box-shadow: 0px 0px 5px rgba(0, 0, 0, 1)"
-						onmouseover="changeBackgroundColor(true)" onmouseout="changeBackgroundColor(false)">Login: ADMIN
+						onmouseover="changeBackgroundColor(true)" onmouseout="changeBackgroundColor(false)">
 						<i class="fas fa-cog"></i></a>
 
 					<!-- Dropdown de opções -->
@@ -1392,16 +1393,11 @@ window.addEventListener('DOMContentLoaded', () => {
 	</style>
 
 
-<!-- Scripts Firebase -->
-<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js"></script>
-
-<!-- Script de autenticação -->
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
 <script src="auth.js"></script>
-
-<!-- Verificação de autenticação -->
 <script>
-  checkAuth(); // Função que você pode usar para garantir que a autenticação seja verificada antes de continuar
+  checkAuth();
 </script>
 
 
