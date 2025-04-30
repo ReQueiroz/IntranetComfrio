@@ -111,24 +111,22 @@
   </script>
 
 
-	<!-- Firebase SDKs -->
-<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js"></script>
+	<!-- Firebase compat SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
 
 <script>
-
-import { initializeApp } from "firebase/app";
-  // 🔧 Substitua pelos seus dados
+  // Configuração do Firebase
   const firebaseConfig = {
-  apiKey: "AIzaSyBlY1s_OQKLGFJaZSyDJzKIoX3WnFGSq58",
-  authDomain: "intranetcomfrio.firebaseapp.com",
-  projectId: "intranetcomfrio",
-  storageBucket: "intranetcomfrio.appspot.com",
-  messagingSenderId: "347790318348",
-  appId: "1:347790318348:web:901f10beadae6981e40729"
-};
+    apiKey: "AIzaSyBlY1s_OQKLGFJaZSyDJzKIoX3WnFGSq58",
+    authDomain: "intranetcomfrio.firebaseapp.com",
+    projectId: "intranetcomfrio",
+    storageBucket: "intranetcomfrio.appspot.com",
+    messagingSenderId: "347790318348",
+    appId: "1:347790318348:web:901f10beadae6981e40729"
+  };
 
-
+  // Inicializa o Firebase
   firebase.initializeApp(firebaseConfig);
 </script>
 
