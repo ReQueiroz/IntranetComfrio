@@ -48,7 +48,12 @@
 		<div class="row gtr-uniform" style="margin-top: 1em;">
 			<div class="col-6 col-12-xsmall" style="padding: 0 0 0 8.2em; width: 31.5%;">
 				<label for="demo-name">Senha</label>
-				<input type="password" name="demo-name" id="demo-name" value="" />
+				<div style="position: relative;">
+					<input type="password" name="demo-password" id="demo-password" value="" style="padding-right: 2.5em;" />
+					<span id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+						👁️
+					</span>
+				</div>
 			</div>
 		</div>
 	</form>
@@ -96,93 +101,88 @@
 		
 	</style>
 
+<script>
+	$('#togglePassword').click(function () {
+	  const input = $('#demo-password');
+	  const isPassword = input.attr('type') === 'password';
+	  input.attr('type', isPassword ? 'text' : 'password');
+	  $(this).text(isPassword ? '🙈' : '👁️');
+	});
+  </script>
 
-	<script>
-		// Função para fazer login
-		function doLogin() {
-			var username = $('#demo-email').val();
-			var password = $('#demo-name').val();
+  
+	<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js"></script>
 
-			// Verificar se o usuário e senha estão preenchidos corretamente
-			if (username === 'admin' && password === 'admin') {
-				// Redirecionar para homepage.html após 2 segundos
-				setTimeout(function () {
-					window.location.href = 'homepage.html';
-				}, 2000);
-			} else {
-				// Mostrar o modal de usuário não cadastrado
-				$('#myModal').addClass('active');
-			}
-		}
-
-		// Ao clicar no botão de entrar (para abrir o modal de carregamento)
-		$('#entrar-loader-button').click(function () {
-			var username = $('#demo-email').val();
-			var password = $('#demo-name').val();
-
-			if (username === 'admin' && password === 'admin') {
-				openEntrarLoaderModal();
-				setTimeout(function () {
-					window.location.href = 'homepage.html';
-				}, 2000);
-			} else {
-				doLogin();
-			}
-		});
-
-		// Ao clicar no botão de fechar do modal
-		$('.close').click(function () {
-			// Esconder o modal
-			$('#myModal').removeClass('active');
-		});
-
-		// Ao clicar fora do modal
-		$(window).click(function (e) {
-			if ($(e.target).hasClass('modal')) {
-				// Esconder o modal
-				$('#myModal').removeClass('active');
-			}
-		});
-
-		// Função para abrir o modal loader de entrada
-		function openEntrarLoaderModal() {
-			$('#myModalLoaderEntrar').css('display', 'flex');
-		}
-
-		// Ao clicar fora do modal loader de entrada
-		$(window).click(function (e) {
-			if (e.target.id === 'myModalLoaderEntrar') {
-				closeEntrarLoaderModal();
-			}
-		});
-
-		// Função para fechar o modal loader de entrada
-		function closeEntrarLoaderModal() {
-			$('#myModalLoaderEntrar').css('display', 'none');
-		}
-
-		// Função para autenticar usuário usando Firebase
-		function login() {
-			var email = $('#demo-email').val();
-			var password = $('#demo-name').val();
-
-			firebase.auth().signInWithEmailAndPassword(email, password)
-				.then(function (userCredential) {
-					// Autenticação bem-sucedida, redirecionar para a página de homepage
-					window.location.href = 'homepage.html';
-				})
-				.catch(function (error) {
-					// Mostrar erro no console
-					console.error('Erro de autenticação:', error.message);
-					// Mostrar modal de erro de autenticação
-					$('#myModal').addClass('active');
-				});
-		}
-	</script>
+<script>
+  // 🔧 Substitua pelos seus dados
+  const firebaseConfig = {
+  apiKey: "AIzaSyBlY1s_OQKLGFJaZSyDJzKIoX3WnFGSq58",
+  authDomain: "intranetcomfrio.firebaseapp.com",
+  projectId: "intranetcomfrio",
+  storageBucket: "intranetcomfrio.appspot.com",
+  messagingSenderId: "347790318348",
+  appId: "1:347790318348:web:901f10beadae6981e40729"
+};
 
 
-	<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js"></script>
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+  // Ação ao clicar no botão "Entrar"
+  $('#entrar-loader-button').click(function () {
+    const email = $('#demo-email').val();
+    const senha = $('#demo-password').val();
+
+    if (!email || !senha) {
+      $('#myModal').addClass('active');
+      return;
+    }
+
+    openEntrarLoaderModal();
+
+    firebase.auth().signInWithEmailAndPassword(email, senha)
+      .then(function (userCredential) {
+        // Usuário autenticado
+        setTimeout(function () {
+          window.location.href = 'homepage.html';
+        }, 2000);
+      })
+      .catch(function (error) {
+        console.error('Erro ao autenticar:', error);
+        closeEntrarLoaderModal();
+        $('#myModal').addClass('active');
+      });
+  });
+
+  // Modal de erro (usuário/senha incorretos)
+  $('.close').click(function () {
+    $('#myModal').removeClass('active');
+  });
+
+  $(window).click(function (e) {
+    if ($(e.target).hasClass('modal')) {
+      $('#myModal').removeClass('active');
+    }
+  });
+
+  // Funções de modais
+  function openEntrarLoaderModal() {
+    $('#myModalLoaderEntrar').css('display', 'flex');
+  }
+
+  function closeEntrarLoaderModal() {
+    $('#myModalLoaderEntrar').css('display', 'none');
+  }
+
+  $(window).click(function (e) {
+    if (e.target.id === 'myModalLoaderEntrar') {
+      closeEntrarLoaderModal();
+    }
+  });
+</script>
 
 </body>
 
